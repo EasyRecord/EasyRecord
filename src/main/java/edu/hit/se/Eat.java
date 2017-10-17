@@ -6,10 +6,13 @@ Date time=new Date(0,0,0);
 double expense;
 int people;
 public String getAddress() {
-        return address;
+    System.out.println("In Get");
+    return address;
     }
 public void setAddress(String address) {
-        this.address=address;
+    System.out.println("in Set");
+    System.out.println(this.address);
+    this.address=address;
     }
 public Date getTime() {
         return time;

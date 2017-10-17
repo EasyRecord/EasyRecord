@@ -22,55 +22,59 @@ public class DynamicCompileDemo {
                 .append("}");
         try {
             //将源文件写入到磁盘中
-            String javaFileName = "Temp.java";
-            //生成的Java源文件存放到<module>/build/generated/source/java目录下  (开发工具为Android Studio, java-demo是我的module名称)
-            File sourceDir = new File("src/main/java/edu/hit/se");
-            if (!sourceDir.exists()) {
-                sourceDir.mkdirs();
-            }
-            File javaFile = new File(sourceDir, javaFileName);
-            PrintWriter writer = new PrintWriter(new FileWriter(javaFile));
-            writer.write(sourceCode.toString());
-            writer.flush();
-            writer.close();
-
-            //动态编译磁盘中的代码
-            //生成的字节码文件存放到<module>/build/classes/main目录下
-            File distDir = new File("src/main/java");
-            if (!distDir.exists()) {
-                distDir.mkdirs();
-            }
-
-            JavaCompiler javac = ToolProvider.getSystemJavaCompiler();
-            //JavaCompiler最核心的方法是run, 通过这个方法编译java源文件, 前3个参数传null时,
-            //分别使用标准输入/输出/错误流来 处理输入和编译输出. 使用编译参数-d指定字节码输出目录.
-//            distDir = new File("src/main/java/edu/hit/se");
-//            System.out.println(distDir.getAbsolutePath()+"\n"+ javaFile.getAbsolutePath());
-            int compileResult = javac.run(null, null, null, "-d", distDir.getAbsolutePath(), javaFile.getAbsolutePath());
-            //run方法的返回值: 0-表示编译成功, 否则表示编译失败
-            if(compileResult != 0) {
-                System.err.println("编译失败!!");
-                return;
-            }
+//            String javaFileName = "Temp.java";
+//            //生成的Java源文件存放到<module>/build/generated/source/java目录下  (开发工具为Android Studio, java-demo是我的module名称)
+//            File sourceDir = new File("src/main/java/edu/hit/se");
+//            if (!sourceDir.exists()) {
+//                sourceDir.mkdirs();
+//            }
+//            File javaFile = new File(sourceDir, javaFileName);
+//            PrintWriter writer = new PrintWriter(new FileWriter(javaFile));
+//            writer.write(sourceCode.toString());
+//            writer.flush();
+//            writer.close();
+//
+//            //动态编译磁盘中的代码
+//            //生成的字节码文件存放到<module>/build/classes/main目录下
+//            File distDir = new File("src/main/java");
+//            if (!distDir.exists()) {
+//                distDir.mkdirs();
+//            }
+//
+//            JavaCompiler javac = ToolProvider.getSystemJavaCompiler();
+//            //JavaCompiler最核心的方法是run, 通过这个方法编译java源文件, 前3个参数传null时,
+//            //分别使用标准输入/输出/错误流来 处理输入和编译输出. 使用编译参数-d指定字节码输出目录.
+////            distDir = new File("src/main/java/edu/hit/se");
+////            System.out.println(distDir.getAbsolutePath()+"\n"+ javaFile.getAbsolutePath());
+//            int compileResult = javac.run(null, null, null, "-d", distDir.getAbsolutePath(), javaFile.getAbsolutePath());
+//            //run方法的返回值: 0-表示编译成功, 否则表示编译失败
+//            if(compileResult != 0) {
+//                System.err.println("编译失败!!");
+//                return;
+//            }
 
             //动态执行 (反射执行)
             Class klass = Class.forName("edu.hit.se.Temp");
+
             Method evalMethod = klass.getMethod("call", String.class);
-            String result = (String)evalMethod.invoke(klass.newInstance(), source);
+            String result = (String) evalMethod.invoke(klass.newInstance(), source);
             System.out.println("eval(" + source + ") = " + result);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e){
+
         }
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (NoSuchMethodException e) {
+//            e.printStackTrace();
+//        } catch (InvocationTargetException e) {
+//            e.printStackTrace();
+//        } catch (IllegalAccessException e) {
+//            e.printStackTrace();
+//        } catch (InstantiationException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
     public static void main(String[] args) {

@@ -163,6 +163,8 @@ public class GeneratePdo extends ActionSupport{
 
 
 
+//        Eat eat=new Eat();
+
         }
         catch (Exception e){
             e.printStackTrace();
