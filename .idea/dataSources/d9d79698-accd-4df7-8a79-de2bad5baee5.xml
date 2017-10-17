@@ -81,8 +81,9 @@
     </foreign-key>
     <column id="27" parent="10" name="generateTime">
       <Position>1</Position>
-      <DataType>date|0</DataType>
+      <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
     <column id="28" parent="10" name="address">
       <Position>2</Position>
@@ -90,7 +91,7 @@
     </column>
     <column id="29" parent="10" name="time">
       <Position>3</Position>
-      <DataType>date|0</DataType>
+      <DataType>timestamp|0</DataType>
     </column>
     <column id="30" parent="10" name="expense">
       <Position>4</Position>

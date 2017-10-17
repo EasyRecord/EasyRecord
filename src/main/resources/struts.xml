@@ -7,12 +7,15 @@
 
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
 
-    <package name="myPackage" extends="struts-default">
+    <package name="myPackage" namespace="/" extends="struts-default">
 
-        <default-action-ref name="index" />
-
-        <action name="index" class="edu.hit.se.IndexAction">
-            <result>/WEB-INF/jsp/index.jsp</result>
+        <default-action-ref name="GeneratePdo" />
+        
+        <action name="GeneratePdo" class="edu.hit.se.GeneratePdo">
+            <result>/WEB-INF/jsp/success.jsp</result>
+        </action>
+        <action name="index">
+            <result>/WEB-INF/jsp/success.jsp</result>
         </action>
 
         <action name="helloWorld" class="helloWorldAction">
@@ -25,6 +28,32 @@
             <result>/WEB-INF/jsp/helloWorld.jsp</result>
         </action>
 
+        <!--<action name="test" class="edu.hit.se.T">-->
+            <!--<result name="input">/jsp/index.jsp</result>-->
+            <!--<result>/WEB-INF/jsp/helloWorld.jsp</result>-->
+        <!--</action>-->
+
+
+
+    </package>
+
+    <package name="js" namespace="/" extends="json-default">
+        <action name="GetPdoHeader" class="edu.hit.se.GetPdoHeader">
+            <result name="success" type="json"></result>
+        </action>
+
+        <!--<action name="findauthorid" class="edu.hit.se.SearchAuthor" method="execute">-->
+            <!--<result name="success" type="json"></result>-->
+        <!--</action>-->
+
+        <!--<action name="findisbn"  class="edu.hit.se.SearchISBN" method="execute">-->
+            <!--&lt;!&ndash;<result name="input">/WEB-INF/jsp/index.jsp</result>&ndash;&gt;-->
+            <!--<result name="success" type="json"></result>-->
+        <!--</action>-->
+        <!--<action name="deletebook"  class="edu.hit.se.DeleteBook">-->
+            <!--&lt;!&ndash;<result name="input">/WEB-INF/jsp/index.jsp</result>&ndash;&gt;-->
+            <!--<result name="success" type="json"></result>-->
+        <!--</action>-->
     </package>
 
 </struts>

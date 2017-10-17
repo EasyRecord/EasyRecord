@@ -120,7 +120,7 @@ public class GeneratePdo extends ActionSupport{
 //            writer.close();
 
             //创建数据表
-            String sql="CREATE TABLE `PDO`.`"+pdoName+"` (\r\n`generateTime` DATE NOT NULL,\r\n";
+            String sql="CREATE TABLE `PDO`.`"+pdoName+"` (\r\n`generateTime` Timestamp NOT NULL,\r\n";
             for (int i=0;i<property.size();i++){
                 System.out.println("In");
                 if(elementType.elementAt(i).equals("int")){
@@ -131,8 +131,8 @@ public class GeneratePdo extends ActionSupport{
                     sql+="`"+property.elementAt(i)+"` DOUBLE NULL,\r\n";
 
                 }
-                else if(elementType.elementAt(i).equals("Date")){
-                    sql+="`"+property.elementAt(i)+"` DATE NULL,\r\n";
+                else if(elementType.elementAt(i).equals("Timestamp")){
+                    sql+="`"+property.elementAt(i)+"` Timestamp NULL,\r\n";
 
                 }
                 else if(elementType.elementAt(i).equals("String")){

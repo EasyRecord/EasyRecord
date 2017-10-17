@@ -23,7 +23,7 @@ public class GeneratePdoTest {
         property.add("people");
 
         elementType.add("String");
-        elementType.add("Date");
+        elementType.add("Timestamp");
         elementType.add("double");
         elementType.add("int");
 

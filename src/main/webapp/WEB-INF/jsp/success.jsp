@@ -10,7 +10,7 @@
 	<s:head />
 </head>
 <body>
-	Index
+	Success
 </body>
 </html>
 	
