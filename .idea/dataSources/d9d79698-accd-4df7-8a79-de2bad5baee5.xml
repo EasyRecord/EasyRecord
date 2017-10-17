@@ -15,94 +15,121 @@
     </schema>
     <table id="8" parent="2" name="Author"/>
     <table id="9" parent="2" name="Book"/>
-    <table id="10" parent="7" name="link"/>
-    <table id="11" parent="7" name="pdoName"/>
-    <column id="12" parent="8" name="AuthorID">
+    <table id="10" parent="7" name="Eat"/>
+    <table id="11" parent="7" name="link"/>
+    <table id="12" parent="7" name="pdoName"/>
+    <column id="13" parent="8" name="AuthorID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="13" parent="8" name="Name">
+    <column id="14" parent="8" name="Name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="14" parent="8" name="Age">
+    <column id="15" parent="8" name="Age">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="15" parent="8" name="Country">
+    <column id="16" parent="8" name="Country">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="16" parent="8" name="PRIMARY">
+    <key id="17" parent="8" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>AuthorID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="17" parent="9" name="ISBN">
+    <column id="18" parent="9" name="ISBN">
       <Position>1</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="18" parent="9" name="Title">
+    <column id="19" parent="9" name="Title">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="19" parent="9" name="AuthorID">
+    <column id="20" parent="9" name="AuthorID">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="20" parent="9" name="Publisher">
+    <column id="21" parent="9" name="Publisher">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="21" parent="9" name="PublishDate">
+    <column id="22" parent="9" name="PublishDate">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="22" parent="9" name="Price">
+    <column id="23" parent="9" name="Price">
       <Position>6</Position>
       <DataType>decimal(10,2)|0</DataType>
     </column>
-    <index id="23" parent="9" name="AuthorID">
+    <index id="24" parent="9" name="AuthorID">
       <ColNames>AuthorID</ColNames>
     </index>
-    <key id="24" parent="9" name="PRIMARY">
+    <key id="25" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ISBN</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="25" parent="9" name="AuthorID">
+    <foreign-key id="26" parent="9" name="AuthorID">
       <ColNames>AuthorID</ColNames>
       <RefSchemaName>BookDB</RefSchemaName>
       <RefTableName>Author</RefTableName>
       <RefColNames>AuthorID</RefColNames>
     </foreign-key>
-    <column id="26" parent="10" name="start">
+    <column id="27" parent="10" name="generateTime">
       <Position>1</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="27" parent="10" name="info">
+    <column id="28" parent="10" name="address">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="29" parent="10" name="time">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="30" parent="10" name="expense">
+      <Position>4</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="31" parent="10" name="people">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="32" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>generateTime</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="11" name="start">
+      <Position>1</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="11" name="info">
       <Position>2</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="28" parent="10" name="pointer">
+    <column id="35" parent="11" name="pointer">
       <Position>3</Position>
       <DataType>date|0</DataType>
     </column>
-    <key id="29" parent="10" name="PRIMARY">
+    <key id="36" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>start</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="30" parent="11" name="names">
+    <column id="37" parent="12" name="names">
       <Position>1</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="31" parent="11" name="PRIMARY">
+    <key id="38" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>names</ColNames>
       <Primary>1</Primary>

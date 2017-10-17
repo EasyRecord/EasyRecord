@@ -7,7 +7,7 @@ public class MysqlConnector {
     //驱动程序名
     static String driver = "com.mysql.jdbc.Driver";
     //URL指向要访问的数据库名login
-    static String url = "jdbc:mysql://123.207.143.243:3306/BookDB";
+    static String url = "jdbc:mysql://123.207.143.243:3306/PDO";
     //MySQL配置时的用户名
     static String user = "root";
     //MySQL配置时的密码
