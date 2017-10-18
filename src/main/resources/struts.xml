@@ -28,10 +28,10 @@
             <result>/WEB-INF/jsp/helloWorld.jsp</result>
         </action>
 
-        <!--<action name="test" class="edu.hit.se.T">-->
-            <!--<result name="input">/jsp/index.jsp</result>-->
-            <!--<result>/WEB-INF/jsp/helloWorld.jsp</result>-->
-        <!--</action>-->
+        <action name="SearchRecord" class="edu.hit.se.T">
+            <result name="input">/jsp/index.jsp</result>
+            <result>/WEB-INF/jsp/helloWorld.jsp</result>
+        </action>
 
 
 

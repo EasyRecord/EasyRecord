@@ -21,6 +21,15 @@ public class InsertRecordTest {
         insertRecord.setInfo(info);
         insertRecord.setProperty(property);
         insertRecord.execute();
+        insertRecord.execute();
+        insertRecord.execute();
+        insertRecord.execute();
+        insertRecord.execute();
+        insertRecord.execute();
+        insertRecord.execute();
+        insertRecord.execute();
+        insertRecord.execute();
+
 //        property.add()
     }
 }

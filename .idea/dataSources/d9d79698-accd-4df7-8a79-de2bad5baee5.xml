@@ -81,9 +81,9 @@
     </foreign-key>
     <column id="27" parent="10" name="generateTime">
       <Position>1</Position>
-      <DataType>timestamp|0</DataType>
+      <DataType>timestamp(3)|0</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
     </column>
     <column id="28" parent="10" name="address">
       <Position>2</Position>
@@ -91,7 +91,7 @@
     </column>
     <column id="29" parent="10" name="time">
       <Position>3</Position>
-      <DataType>timestamp|0</DataType>
+      <DataType>timestamp(3)|0</DataType>
     </column>
     <column id="30" parent="10" name="expense">
       <Position>4</Position>
@@ -106,31 +106,35 @@
       <ColNames>generateTime</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="33" parent="11" name="start">
+    <column id="33" parent="11" name="generateTime">
       <Position>1</Position>
-      <DataType>date|0</DataType>
+      <DataType>timestamp(3)|0</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
     </column>
-    <column id="34" parent="11" name="info">
+    <column id="34" parent="11" name="source">
       <Position>2</Position>
-      <DataType>date|0</DataType>
-      <NotNull>1</NotNull>
+      <DataType>timestamp(3)|0</DataType>
     </column>
-    <column id="35" parent="11" name="pointer">
+    <column id="35" parent="11" name="target">
       <Position>3</Position>
-      <DataType>date|0</DataType>
+      <DataType>timestamp(3)|0</DataType>
     </column>
-    <key id="36" parent="11" name="PRIMARY">
+    <column id="36" parent="11" name="pdoNameTarget">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="37" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>start</ColNames>
+      <ColNames>generateTime</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="37" parent="12" name="names">
+    <column id="38" parent="12" name="names">
       <Position>1</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="38" parent="12" name="PRIMARY">
+    <key id="39" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>names</ColNames>
       <Primary>1</Primary>
