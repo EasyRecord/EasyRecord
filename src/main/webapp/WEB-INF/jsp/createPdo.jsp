@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: qiusuo
@@ -11,6 +12,8 @@
     <title>Title</title>
 </head>
 <body>
+<s:debug></s:debug>
+新建PDO
 
 </body>
 </html>

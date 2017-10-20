@@ -68,7 +68,7 @@
     
     <!-- Welcome file lists -->
     <welcome-file-list>
-        <welcome-file>/WEB-INF/jsp/testGetPdoHeader.jsp</welcome-file>
+        <!--<welcome-file>/WEB-INF/jsp/testGetPdoHeader.jsp</welcome-file>-->
 
 
         <welcome-file>index.jsp</welcome-file>

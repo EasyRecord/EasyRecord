@@ -5,25 +5,25 @@
 
 <struts>
 
-    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
 
     <package name="pages" namespace="/" extends="struts-default">
 
         <default-action-ref name="index" />
 
-        <action name="index">
+        <action name="index" >
             <result>/WEB-INF/jsp/index.jsp</result>
         </action>
-        <action name="GoToGeneratePdo">
+        <action name="GoToGeneratePdo" class="edu.hit.se.GetAllPdoName">
             <result>/WEB-INF/jsp/createPdo.jsp</result>
         </action>
-        <action name="GoToInsertRecord">
+        <action name="GoToInsertRecord" class="edu.hit.se.GetAllPdoName">
             <result>/WEB-INF/jsp/insertRecord.jsp</result>
         </action>
-        <action name="GoToSearch">
+        <action name="GoToSearch" class="edu.hit.se.GetAllPdoName">
             <result>/WEB-INF/jsp/search.jsp</result>
         </action>
-        <action name="GoToImport">
+        <action name="GoToImport" class="edu.hit.se.GetAllPdoName">
             <result>/WEB-INF/jsp/import.jsp</result>
         </action>
         
