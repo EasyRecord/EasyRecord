@@ -47,7 +47,7 @@ public class GetPdoHeader extends ActionSupport{
             HttpSession session = null;
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");
-            String sql="SHOW  columns from "+user+"."+pdoName;
+            String sql="SHOW  columns from "+user+"_"+pdoName;
             MysqlConnector mysqlConnector=new MysqlConnector();
 
 

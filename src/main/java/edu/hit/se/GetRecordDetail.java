@@ -82,7 +82,7 @@ public class GetRecordDetail extends ActionSupport{
             HttpSession session = null;
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");
-            String sql="SHOW  columns from "+user+"."+pdoName;
+            String sql="SHOW  columns from "+user+"_"+pdoName;
             MysqlConnector mysqlConnector=new MysqlConnector();
 
 
@@ -95,7 +95,7 @@ public class GetRecordDetail extends ActionSupport{
             while (rs.next()){
                 property.add(rs.getString("Field"));
             }
-            sql="SELECT * from "+user+"."+pdoName+" WHERE generateTime='"+key+"'";
+            sql="SELECT * from "+user+"_"+pdoName+" WHERE generateTime='"+key+"'";
 
 //            rs.close();
 //            statement = con.createStatement();
@@ -105,7 +105,7 @@ public class GetRecordDetail extends ActionSupport{
                for (int i=0;i<property.size();i++)
                    info.add(rs.getString(property.elementAt(i)));
             }
-            sql="select * from "+user+".link WHERE source='"+key+"'";
+            sql="select * from "+user+"_link WHERE source='"+key+"'";
             rs = statement.executeQuery(sql);
             Vector<String > targetPk=new Vector<>();
 //            Vector<String > pdoNameDestination=new Vector<>();
@@ -120,14 +120,14 @@ public class GetRecordDetail extends ActionSupport{
             for(int i=0;i<relatedPdoNames.size();i++){
                 tempProperty.clear();
                 tempInfo.clear();
-                sql="SHOW  columns from "+user+"."+relatedPdoNames.elementAt(i);
+                sql="SHOW  columns from "+user+"_"+relatedPdoNames.elementAt(i);
                 rs = statement.executeQuery(sql);
 
                 while (rs.next()){
                     tempProperty.add(rs.getString("Field"));
                 }
                 relatedRecordProperties.add(tempProperty);
-                sql="SELECT * FROM "+user+"."+relatedPdoNames.elementAt(i)+" WHERE generateTime='"+targetPk.elementAt(i)+"'";
+                sql="SELECT * FROM "+user+"_"+relatedPdoNames.elementAt(i)+" WHERE generateTime='"+targetPk.elementAt(i)+"'";
                 rs = statement.executeQuery(sql);
                 if(rs.next()){
                    for(int j=0;j<tempProperty.size();j++){

@@ -125,7 +125,7 @@ public class GeneratePdo extends ActionSupport{
             HttpSession session = null;
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");
-            String sql="CREATE TABLE "+user+"."+pdoName+" (\r\n`generateTime` Timestamp(3) NOT NULL,\r\n";
+            String sql="CREATE TABLE "+user+"_"+pdoName+" (\r\n`generateTime` Timestamp(3) NOT NULL,\r\n";
             for (int i=0;i<property.size();i++){
                 System.out.println("In");
                 if(elementType.elementAt(i).equals("int")){
@@ -157,7 +157,7 @@ public class GeneratePdo extends ActionSupport{
             statement = con.createStatement();
             statement.executeUpdate(sql);
 
-            sql="INSERT INTO "+user+".pdoName (names) VALUES ('"+pdoName+"')";
+            sql="INSERT INTO "+user+"_pdoName (names) VALUES ('"+pdoName+"')";
             System.out.println(sql);
             statement.executeUpdate(sql);
 

@@ -42,7 +42,7 @@ public class Register extends ActionSupport {
 //            sql="CREATE DATABASE "+username;
 //            System.out.println(sql);
 //            statement.execute(sql);
-            sql="CREATE TABLE `"+username+".pdoName` (\n" +
+            sql="CREATE TABLE `"+username+"_pdoName` (\n" +
                     "  `names` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,\n" +
                     "  PRIMARY KEY (`names`)\n" +
                     ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
@@ -50,7 +50,7 @@ public class Register extends ActionSupport {
 
             statement = con.createStatement();
             statement.execute(sql);
-            sql="CREATE TABLE `"+username+".link` (\n" +
+            sql="CREATE TABLE `"+username+"_link` (\n" +
                     "  `generateTime` timestamp(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),\n" +
                     "  `source` timestamp(3) NULL DEFAULT NULL,\n" +
                     "  `target` timestamp(3) NULL DEFAULT NULL,\n" +

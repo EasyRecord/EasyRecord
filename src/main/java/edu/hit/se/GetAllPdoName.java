@@ -25,7 +25,7 @@ public class GetAllPdoName extends ActionSupport {
             HttpSession session = null;
             session = ServletActionContext.getRequest().getSession();
             String user = (String) session.getAttribute("user");
-            String sql = "select * from "+user+".pdoName";
+            String sql = "select * from "+user+"_pdoName";
 
             MysqlConnector mysqlConnector = new MysqlConnector();
 
@@ -34,6 +34,7 @@ public class GetAllPdoName extends ActionSupport {
             Statement statement = null;
 
             statement = con.createStatement();
+            System.out.println(sql);
             ResultSet rs = statement.executeQuery(sql);
             Vector<String> temp = new Vector<>();
 

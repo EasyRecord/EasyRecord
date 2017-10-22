@@ -21,8 +21,8 @@
     </schema>
     <table id="10" parent="2" name="Author"/>
     <table id="11" parent="2" name="Book"/>
-    <table id="12" parent="7" name="test.link"/>
-    <table id="13" parent="7" name="test.pdoName"/>
+    <table id="12" parent="7" name="test_link"/>
+    <table id="13" parent="7" name="test_pdoName"/>
     <table id="14" parent="8" name="userInfo"/>
     <column id="15" parent="10" name="AuthorID">
       <Position>1</Position>

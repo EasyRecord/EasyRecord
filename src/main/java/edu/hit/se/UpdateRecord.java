@@ -45,7 +45,7 @@ public class UpdateRecord extends ActionSupport {
             HttpSession session = null;
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");
-            String sql="UPDATE "+user+"."+pdoName+" SET "+property.elementAt(1)+" ='"+inofo.elementAt(1)+"'";
+            String sql="UPDATE "+user+"_"+pdoName+" SET "+property.elementAt(1)+" ='"+inofo.elementAt(1)+"'";
             for (int i=2;i<property.size();i++){
                 sql+=", "+property.elementAt(i)+" ='"+inofo.elementAt(i)+"'";
             }

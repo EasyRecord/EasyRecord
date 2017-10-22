@@ -32,7 +32,7 @@ public class DeleteRecord extends ActionSupport{
             HttpSession session = null;
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");
-            String sql="DELETE FROM "+user+"."+pdoName+" WHERE generateTime='"+key+"'";
+            String sql="DELETE FROM "+user+"_"+pdoName+" WHERE generateTime='"+key+"'";
 
             System.out.println(sql);
             MysqlConnector mysqlConnector=new MysqlConnector();
@@ -43,7 +43,7 @@ public class DeleteRecord extends ActionSupport{
 
             statement = con.createStatement();
             int rs = statement.executeUpdate(sql);
-            sql="DELETE FROM "+user+".link"+" WHERE source='"+key+"'";
+            sql="DELETE FROM "+user+"_link"+" WHERE source='"+key+"'";
             rs = statement.executeUpdate(sql);
             con.close();
         }

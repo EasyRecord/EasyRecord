@@ -48,7 +48,7 @@ public class InsertRecord extends ActionSupport{
             Timestamp now=new Timestamp((new java.util.Date()).getTime());
             System.out.println(property);
             System.out.println(info);
-            String sql="INSERT INTO "+user+"."+pdoName+" (generateTime";
+            String sql="INSERT INTO "+user+"_"+pdoName+" (generateTime";
             for (int i=0;i<property.size();i++){
                 sql+=","+property.elementAt(i)+"";
             }

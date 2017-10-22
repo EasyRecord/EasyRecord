@@ -34,7 +34,7 @@ public class Disassociation extends ActionSupport {
             HttpSession session = null;
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");
-            String sql="DELETE FROM "+user+".link WHERE source='"+key+" ' AND target='"+keyDestination+"'";
+            String sql="DELETE FROM "+user+"_link WHERE source='"+key+" ' AND target='"+keyDestination+"'";
 
             System.out.println(sql);
             MysqlConnector mysqlConnector=new MysqlConnector();

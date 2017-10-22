@@ -49,7 +49,7 @@ public class Association extends ActionSupport {
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");
 
-            String sql = "INSERT INTO "+user+".link (generateTime,source,target,pdoNameTarget) VALUES ('"+ (new Timestamp((new java.util.Date()).getTime())).toString()+ " ','" +key+"','"+keyDestination+"','"+pdoNameDestination+"'";
+            String sql = "INSERT INTO "+user+"_ink (generateTime,source,target,pdoNameTarget) VALUES ('"+ (new Timestamp((new java.util.Date()).getTime())).toString()+ " ','" +key+"','"+keyDestination+"','"+pdoNameDestination+"'";
 //            for (int i = 0; i < property.size(); i++) {
 //                sql += "," + property.elementAt(i) + "";
 //            }

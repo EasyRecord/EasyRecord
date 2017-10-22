@@ -26,7 +26,7 @@ public class GoToImport extends ActionSupport{
             HttpSession session = null;
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");
-            String sql="SELECT * FROM "+user+".pdoName";
+            String sql="SELECT * FROM "+user+"_pdoName";
             MysqlConnector mysqlConnector=new MysqlConnector();
 
 

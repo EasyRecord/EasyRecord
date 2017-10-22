@@ -14,6 +14,8 @@
 <body>
 <s:debug></s:debug>
 新建PDO
+<form>
 
+</form>
 </body>
 </html>
