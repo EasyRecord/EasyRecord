@@ -11,6 +11,7 @@
     <title>Register</title>
 </head>
 <body>
+<h1>这是注册页面</h1>
 <form action="Register.action" method="post">
     <div class="form-group">
         <label for="username">UserName</label>

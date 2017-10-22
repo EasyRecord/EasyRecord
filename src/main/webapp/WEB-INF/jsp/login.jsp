@@ -12,7 +12,7 @@
     <title>Login</title>
 </head>
 <body>
-
+<h1>这是登陆页面</h1>
 <form action="Login.action" method="post">
     <div class="form-group">
         <label for="username">UserName</label>
