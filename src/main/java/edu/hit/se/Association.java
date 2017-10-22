@@ -1,7 +1,9 @@
 package edu.hit.se;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.ServletActionContext;
 
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.Timestamp;
@@ -43,8 +45,11 @@ public class Association extends ActionSupport {
 //            Timestamp now = new Timestamp((new java.util.Date()).getTime());
 //            System.out.println(property);
 //            System.out.println(info);
+            HttpSession session = null;
+            session = ServletActionContext.getRequest().getSession();
+            String user=(String )session.getAttribute("user");
 
-            String sql = "INSERT INTO link (generateTime,source,target,pdoNameTarget) VALUES ('"+ (new Timestamp((new java.util.Date()).getTime())).toString()+ " ','" +key+"','"+keyDestination+"','"+pdoNameDestination+"'";
+            String sql = "INSERT INTO "+user+".link (generateTime,source,target,pdoNameTarget) VALUES ('"+ (new Timestamp((new java.util.Date()).getTime())).toString()+ " ','" +key+"','"+keyDestination+"','"+pdoNameDestination+"'";
 //            for (int i = 0; i < property.size(); i++) {
 //                sql += "," + property.elementAt(i) + "";
 //            }
@@ -55,7 +60,8 @@ public class Association extends ActionSupport {
 //            sql += ")";
             MysqlConnector mysqlConnector = new MysqlConnector();
 
-            Connection con = mysqlConnector.solution();
+
+            Connection con=mysqlConnector.solution("PDO");
 
             Statement statement = null;
 

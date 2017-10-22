@@ -1,10 +1,12 @@
 package edu.hit.se;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.ServletActionContext;
 
 //import java.io.File;
 //import java.io.FileWriter;
 //import java.io.PrintWriter;
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 //import java.sql.ResultSet;
 import java.sql.Statement;
@@ -120,7 +122,10 @@ public class GeneratePdo extends ActionSupport{
 //            writer.close();
 
             //创建数据表
-            String sql="CREATE TABLE `PDO`.`"+pdoName+"` (\r\n`generateTime` Timestamp(3) NOT NULL,\r\n";
+            HttpSession session = null;
+            session = ServletActionContext.getRequest().getSession();
+            String user=(String )session.getAttribute("user");
+            String sql="CREATE TABLE "+user+"."+pdoName+" (\r\n`generateTime` Timestamp(3) NOT NULL,\r\n";
             for (int i=0;i<property.size();i++){
                 System.out.println("In");
                 if(elementType.elementAt(i).equals("int")){
@@ -145,14 +150,14 @@ public class GeneratePdo extends ActionSupport{
 
             MysqlConnector mysqlConnector=new MysqlConnector();
 
-            Connection con=mysqlConnector.solution();
 
+            Connection con=mysqlConnector.solution("PDO");
             Statement statement=null;
 
             statement = con.createStatement();
             statement.executeUpdate(sql);
 
-            sql="INSERT INTO pdoName (names) VALUES ('"+pdoName+"')";
+            sql="INSERT INTO "+user+".pdoName (names) VALUES ('"+pdoName+"')";
             System.out.println(sql);
             statement.executeUpdate(sql);
 

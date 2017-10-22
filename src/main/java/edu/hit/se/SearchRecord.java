@@ -1,7 +1,9 @@
 package edu.hit.se;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.ServletActionContext;
 
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -47,7 +49,10 @@ public class SearchRecord extends ActionSupport{
 
     public String execute(){
         try {
-            String sql="select * from "+pdoName+"where ";
+            HttpSession session = null;
+            session = ServletActionContext.getRequest().getSession();
+            String user=(String )session.getAttribute("user");
+            String sql="select * from "+user+"."+pdoName+"where ";
             sql+=property.elementAt(0)+"='"+filter.elementAt(0)+"' ";
             for (int i=1;i<property.size();i++){
                 sql+="AND "+property.elementAt(i)+"='"+filter.elementAt(i)+"'";
@@ -55,8 +60,7 @@ public class SearchRecord extends ActionSupport{
 
             MysqlConnector mysqlConnector=new MysqlConnector();
 
-            Connection con=mysqlConnector.solution();
-
+            Connection con=mysqlConnector.solution("PDO");
             Statement statement=null;
 
             statement = con.createStatement();

@@ -1,7 +1,9 @@
 package edu.hit.se;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.ServletActionContext;
 
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -77,11 +79,14 @@ public class GetRecordDetail extends ActionSupport{
 
     public String execute(){
         try {
-            String sql="SHOW  columns from "+pdoName;
+            HttpSession session = null;
+            session = ServletActionContext.getRequest().getSession();
+            String user=(String )session.getAttribute("user");
+            String sql="SHOW  columns from "+user+"."+pdoName;
             MysqlConnector mysqlConnector=new MysqlConnector();
 
-            Connection con=mysqlConnector.solution();
 
+            Connection con=mysqlConnector.solution("PDO");
             Statement statement=null;
 
             statement = con.createStatement();
@@ -90,17 +95,17 @@ public class GetRecordDetail extends ActionSupport{
             while (rs.next()){
                 property.add(rs.getString("Field"));
             }
-            sql="SELECT * from "+pdoName+" WHERE generateTime='"+key+"'";
+            sql="SELECT * from "+user+"."+pdoName+" WHERE generateTime='"+key+"'";
 
 //            rs.close();
 //            statement = con.createStatement();
             rs = statement.executeQuery(sql);
 
-            while (rs.next()){
+            if (rs.next()){
                for (int i=0;i<property.size();i++)
                    info.add(rs.getString(property.elementAt(i)));
             }
-            sql="select * from link WHERE source='"+key+"'";
+            sql="select * from "+user+".link WHERE source='"+key+"'";
             rs = statement.executeQuery(sql);
             Vector<String > targetPk=new Vector<>();
 //            Vector<String > pdoNameDestination=new Vector<>();
@@ -115,14 +120,14 @@ public class GetRecordDetail extends ActionSupport{
             for(int i=0;i<relatedPdoNames.size();i++){
                 tempProperty.clear();
                 tempInfo.clear();
-                sql="SHOW  columns from "+relatedPdoNames.elementAt(i);
+                sql="SHOW  columns from "+user+"."+relatedPdoNames.elementAt(i);
                 rs = statement.executeQuery(sql);
 
                 while (rs.next()){
                     tempProperty.add(rs.getString("Field"));
                 }
                 relatedRecordProperties.add(tempProperty);
-                sql="SELECT * FROM "+relatedPdoNames.elementAt(i)+" WHERE generateTime='"+targetPk.elementAt(i)+"'";
+                sql="SELECT * FROM "+user+"."+relatedPdoNames.elementAt(i)+" WHERE generateTime='"+targetPk.elementAt(i)+"'";
                 rs = statement.executeQuery(sql);
                 if(rs.next()){
                    for(int j=0;j<tempProperty.size();j++){

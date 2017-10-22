@@ -18,5 +18,6 @@
 <a href="GoToSearch.action">搜索</a>
 <a href="GoToImport.action">导入</a>
 <s:debug></s:debug>
+<% out.print(session.getAttribute("user"));%>
 </body>
 </html>

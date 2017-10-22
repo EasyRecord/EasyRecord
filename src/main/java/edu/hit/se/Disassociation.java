@@ -1,7 +1,9 @@
 package edu.hit.se;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.ServletActionContext;
 
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.util.Set;
@@ -29,14 +31,16 @@ public class Disassociation extends ActionSupport {
     public String execute(){
 
         try {
-
-            String sql="DELETE FROM link WHERE source='"+key+" ' AND target='"+keyDestination+"'";
+            HttpSession session = null;
+            session = ServletActionContext.getRequest().getSession();
+            String user=(String )session.getAttribute("user");
+            String sql="DELETE FROM "+user+".link WHERE source='"+key+" ' AND target='"+keyDestination+"'";
 
             System.out.println(sql);
             MysqlConnector mysqlConnector=new MysqlConnector();
 
-            Connection con=mysqlConnector.solution();
 
+            Connection con=mysqlConnector.solution("PDO");
             Statement statement=null;
 
             statement = con.createStatement();

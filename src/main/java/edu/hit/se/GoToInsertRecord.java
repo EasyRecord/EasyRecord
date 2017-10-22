@@ -1,7 +1,9 @@
 package edu.hit.se;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.ServletActionContext;
 
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -19,26 +21,29 @@ public class GoToInsertRecord extends ActionSupport {
         this.pdoNames = pdoNames;
     }
 
-    public String execute(){
+    public String execute() {
+
         try {
-            String sql="SELECT * FROM PDO";
-            MysqlConnector mysqlConnector=new MysqlConnector();
+            HttpSession session = null;
+            session = ServletActionContext.getRequest().getSession();
+            String user = (String) session.getAttribute("user");
+            String sql = "SELECT * FROM " + user + ".pdoName";
+            MysqlConnector mysqlConnector = new MysqlConnector();
 
-            Connection con=mysqlConnector.solution();
 
-            Statement statement=null;
+            Connection con = mysqlConnector.solution("PDO");
+            Statement statement = null;
 
             statement = con.createStatement();
             ResultSet rs = statement.executeQuery(sql);
 
-            while (rs.next()){
+            while (rs.next()) {
                 pdoNames.add(rs.getString("names"));
             }
             rs.close();
             con.close();
 
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return SUCCESS;

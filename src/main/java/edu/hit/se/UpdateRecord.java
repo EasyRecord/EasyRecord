@@ -1,7 +1,9 @@
 package edu.hit.se;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.ServletActionContext;
 
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.Timestamp;
@@ -40,8 +42,10 @@ public class UpdateRecord extends ActionSupport {
 
     public String execute(){
         try {
-
-            String sql="UPDATE "+pdoName+" SET "+property.elementAt(1)+" ='"+inofo.elementAt(1)+"'";
+            HttpSession session = null;
+            session = ServletActionContext.getRequest().getSession();
+            String user=(String )session.getAttribute("user");
+            String sql="UPDATE "+user+"."+pdoName+" SET "+property.elementAt(1)+" ='"+inofo.elementAt(1)+"'";
             for (int i=2;i<property.size();i++){
                 sql+=", "+property.elementAt(i)+" ='"+inofo.elementAt(i)+"'";
             }
@@ -49,8 +53,8 @@ public class UpdateRecord extends ActionSupport {
             System.out.println(sql);
             MysqlConnector mysqlConnector=new MysqlConnector();
 
-            Connection con=mysqlConnector.solution();
 
+            Connection con=mysqlConnector.solution("PDO");
             Statement statement=null;
 
             statement = con.createStatement();

@@ -1,7 +1,9 @@
 package edu.hit.se;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.ServletActionContext;
 
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -38,11 +40,14 @@ public class GetAllRecord extends ActionSupport {
 
     public String execute(){
         try {
-            String sql="SHOW  columns from "+pdoName;
+            HttpSession session = null;
+            session = ServletActionContext.getRequest().getSession();
+            String user=(String )session.getAttribute("user");
+            String sql="SHOW  columns from "+user+"."+pdoName;
             MysqlConnector mysqlConnector=new MysqlConnector();
 
-            Connection con=mysqlConnector.solution();
 
+            Connection con=mysqlConnector.solution("PDO");
             Statement statement=null;
 
             statement = con.createStatement();
@@ -51,7 +56,7 @@ public class GetAllRecord extends ActionSupport {
             while (rs.next()){
                 property.add(rs.getString("Field"));
             }
-            sql="select * from "+pdoName;
+            sql="select * from "+user+"."+pdoName;
 
 
 

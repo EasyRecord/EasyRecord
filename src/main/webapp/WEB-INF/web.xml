@@ -64,16 +64,21 @@
         <servlet-name>dwr</servlet-name>
         <url-pattern>/dwr/*</url-pattern>
     </servlet-mapping>
-    
+
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
     
     <!-- Welcome file lists -->
     <welcome-file-list>
         <!--<welcome-file>/WEB-INF/jsp/testGetPdoHeader.jsp</welcome-file>-->
 
-
-        <welcome-file>index.jsp</welcome-file>
-        <welcome-file>default.jsp</welcome-file>
-        <welcome-file>index.html</welcome-file>
+        <welcome-file>/WEB-INF/jsp/login.jsp</welcome-file>
+        <!--<welcome-file>index.jsp</welcome-file>-->
+        <!--<welcome-file>default.jsp</welcome-file>-->
+        <!--<welcome-file>index.html</welcome-file>-->
     </welcome-file-list>
 
 </web-app>

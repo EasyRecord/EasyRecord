@@ -9,11 +9,24 @@
 
     <package name="pages" namespace="/" extends="struts-default">
 
-        <default-action-ref name="index" />
+        <default-action-ref name="Logout" />
 
-        <action name="index" >
+        <action name="Login" class="edu.hit.se.Login">
             <result>/WEB-INF/jsp/index.jsp</result>
         </action>
+
+        <action name="Logout" class="edu.hit.se.Logout">
+            <result>/WEB-INF/jsp/login.jsp</result>
+        </action>
+
+        <action name="ReadyToRegister" >
+            <result>/WEB-INF/jsp/register.jsp</result>
+        </action>
+
+        <action name="Register" class="edu.hit.se.Register">
+            <result>/WEB-INF/jsp/login.jsp</result>
+        </action>
+
         <action name="GoToGeneratePdo" class="edu.hit.se.GetAllPdoName">
             <result>/WEB-INF/jsp/createPdo.jsp</result>
         </action>

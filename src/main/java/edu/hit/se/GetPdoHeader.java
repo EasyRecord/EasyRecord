@@ -1,8 +1,10 @@
 package edu.hit.se;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.ServletActionContext;
 //import com.sun.xml.internal.ws.api.ha.StickyFeature;
 
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -42,11 +44,14 @@ public class GetPdoHeader extends ActionSupport{
     public String execute(){
         System.out.println(pdoName);
         try {
-            String sql="SHOW  columns from "+pdoName;
+            HttpSession session = null;
+            session = ServletActionContext.getRequest().getSession();
+            String user=(String )session.getAttribute("user");
+            String sql="SHOW  columns from "+user+"."+pdoName;
             MysqlConnector mysqlConnector=new MysqlConnector();
 
-            Connection con=mysqlConnector.solution();
 
+            Connection con=mysqlConnector.solution("PDO");
             Statement statement=null;
 
             statement = con.createStatement();

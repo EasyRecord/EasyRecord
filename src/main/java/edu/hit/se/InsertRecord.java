@@ -1,7 +1,9 @@
 package edu.hit.se;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.ServletActionContext;
 
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -40,10 +42,13 @@ public class InsertRecord extends ActionSupport{
     public String execute(){
 
         try {
+            HttpSession session = null;
+            session = ServletActionContext.getRequest().getSession();
+            String user=(String )session.getAttribute("user");
             Timestamp now=new Timestamp((new java.util.Date()).getTime());
             System.out.println(property);
             System.out.println(info);
-            String sql="INSERT INTO "+pdoName+" (generateTime";
+            String sql="INSERT INTO "+user+"."+pdoName+" (generateTime";
             for (int i=0;i<property.size();i++){
                 sql+=","+property.elementAt(i)+"";
             }
@@ -55,8 +60,7 @@ public class InsertRecord extends ActionSupport{
             System.out.println(sql);
             MysqlConnector mysqlConnector=new MysqlConnector();
 
-            Connection con=mysqlConnector.solution();
-
+            Connection con=mysqlConnector.solution("PDO");
             Statement statement=null;
 
             statement = con.createStatement();
