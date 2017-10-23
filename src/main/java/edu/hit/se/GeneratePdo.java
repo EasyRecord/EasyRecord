@@ -122,12 +122,15 @@ public class GeneratePdo extends ActionSupport{
 //            writer.close();
 
             //创建数据表
+            System.out.println(pdoName.toString());
+            System.out.println(property.toString());
+            System.out.println(property.toString());
             HttpSession session = null;
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");
             String sql="CREATE TABLE "+user+"_"+pdoName+" (\r\n`generateTime` Timestamp(3) NOT NULL,\r\n";
             for (int i=0;i<property.size();i++){
-                System.out.println("In");
+//                System.out.println("In");
                 if(elementType.elementAt(i).equals("int")){
                     sql+="`"+property.elementAt(i)+"` INT NULL,\r\n";
 
