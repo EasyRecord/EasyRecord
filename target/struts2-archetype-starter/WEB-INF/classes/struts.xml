@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+
+    <package name="pages" namespace="/" extends="struts-default">
+
+        <default-action-ref name="Logout" />
+
+        <action name="Login" class="edu.hit.se.Login">
+            <result>/WEB-INF/jsp/index.jsp</result>
+        </action>
+
+        <action name="Logout" class="edu.hit.se.Logout">
+            <result>/WEB-INF/jsp/login.jsp</result>
+        </action>
+
+        <action name="ReadyToRegister" >
+            <result>/WEB-INF/jsp/register.jsp</result>
+        </action>
+
+        <action name="Register" class="edu.hit.se.Register">
+            <result>/WEB-INF/jsp/login.jsp</result>
+        </action>
+
+        <action name="GoToGeneratePdo" class="edu.hit.se.GetAllPdoName">
+            <result>/WEB-INF/jsp/createPdo.jsp</result>
+        </action>
+        <action name="GoToInsertRecord" class="edu.hit.se.GetAllPdoName">
+            <result>/WEB-INF/jsp/insertRecord.jsp</result>
+        </action>
+        <action name="GoToSearch" class="edu.hit.se.GetAllPdoName">
+            <result>/WEB-INF/jsp/search.jsp</result>
+        </action>
+        <action name="GoToImport" class="edu.hit.se.GetAllPdoName">
+            <result>/WEB-INF/jsp/import.jsp</result>
+        </action>
+        
+        <action name="GeneratePdo" class="edu.hit.se.GeneratePdo">
+            <result>/WEB-INF/jsp/index.jsp</result>
+        </action>
+
+        <action name="InsertRecord" class="edu.hit.se.InsertRecord">
+            <result>/WEB-INF/jsp/index.jsp</result>
+        </action>
+
+        <action name="SearchRecord" class="edu.hit.se.SearchRecord">
+            <result>/WEB-INF/jsp/resultList.jsp</result>
+        </action>
+
+        <action name="GetRecordDetail" class="edu.hit.se.GetRecordDetail">
+            <result>/WEB-INF/jsp/detail.jsp</result>
+        </action>
+
+        <action name="ReadyToUpdateRecord" class="edu.hit.se.ReadyToUpdateRecord">
+            <result>/WEB-INF/jsp/update.jsp</result>
+        </action>
+
+        <action name="Connect" class="edu.hit.se.Connect">
+            <result>/WEB-INF/jsp/associate.jsp</result>
+        </action>
+
+
+    </package>
+
+    <package name="ajax" namespace="/" extends="json-default">
+        <action name="GetPdoHeader" class="edu.hit.se.GetPdoHeader">
+            <result name="success" type="json"></result>
+        </action>
+        <action name="DeleteRecord" class="edu.hit.se.DeleteRecord">
+            <result name="success" type="json"></result>
+        </action>
+        <action name="Disassociation" class="edu.hit.se.Disassociation">
+            <result name="success" type="json"></result>
+        </action>
+
+        <action name="UpdateRecord" class="edu.hit.se.UpdateRecord">
+            <result name="success" type="json"></result>
+        </action>
+
+        <action name="GetAllRecord" class="edu.hit.se.GetAllRecord">
+            <result name="success" type="json"></result>
+        </action>
+
+        <action name="Association" class="edu.hit.se.Association">
+            <result name="success" type="json"></result>
+        </action>
+
+        <action name="Import" class="edu.hit.se.Import">
+            <result name="success" type="json"></result>
+        </action>
+
+    </package>
+
+</struts>
