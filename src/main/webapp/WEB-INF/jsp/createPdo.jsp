@@ -73,7 +73,7 @@
                 <%--<li role="presentation"><a href="GoToLogin.action">登录</a></li>--%>
                 <%--<li role="presentation"><a href="ReadyToRegister.action">注册</a></li>--%>
 
-                <% out.print(session.getAttribute("user"));%>
+                <%--<% out.print(session.getAttribute("user"));%>--%>
                 <li role="presentation"><a href="Logout.action">登出</a></li>
                 <% if(session.getAttribute("user")==null) response.sendRedirect("Logout.action");%>
             </ul>
@@ -95,11 +95,8 @@
             <div class="form-group">
                 <label for="pdoName" class="col-sm-1 control-label">PDO名</label>
                 <div class="col-sm-10">
-<<<<<<< HEAD
-                    <input type="text" class="form-control" id="pdoName" name="pdoName" placeholder="PDO名">
-=======
+
                     <input type="text" class="form-control" id="pdoName" placeholder="PDO名" name="pdoName">
->>>>>>> origin/zhaoyang
                 </div>
             </div>
 

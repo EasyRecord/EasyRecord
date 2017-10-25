@@ -38,6 +38,7 @@
 <body>
 <%--<a href="index.jsp">测试</a>--%>
 <% if(session.getAttribute("user")==null) response.sendRedirect("Logout.action");%>
+<%--<% if(session.getAttribute("user")==null) response.sendRedirect("Logout.action");%>--%>
 <div class="container">
     <!-- navigation bar -->
     <div class="header clearfix">
@@ -49,9 +50,9 @@
                 <%--<li role="presentation"><a href="Register.action">注册</a></li>--%>
 
 
-                <% out.print(session.getAttribute("user"));%>
+                <%--<% out.print(session.getAttribute("user"));%>--%>
                 <li role="presentation"><a href="Logout.action">登出</a></li>
-                <% if(session.getAttribute("user")==null) response.sendRedirect("Logout.action");%>
+
             </ul>
             <h3 class="text-muted">EasyRecord</h3>
         </nav>
