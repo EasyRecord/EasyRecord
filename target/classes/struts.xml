@@ -27,16 +27,16 @@
             <result>/WEB-INF/jsp/login.jsp</result>
         </action>
 
-        <action name="GoToGeneratePdo" class="edu.hit.se.GetAllPdoName">
+        <action name="GoToGeneratePdo" class="edu.hit.se.GetAllPdoNames">
             <result>/WEB-INF/jsp/createPdo.jsp</result>
         </action>
-        <action name="GoToInsertRecord" class="edu.hit.se.GetAllPdoName">
+        <action name="GoToInsertRecord" class="edu.hit.se.GetAllPdoNames">
             <result>/WEB-INF/jsp/insertRecord.jsp</result>
         </action>
-        <action name="GoToSearch" class="edu.hit.se.GetAllPdoName">
+        <action name="GoToSearch" class="edu.hit.se.GetAllPdoNames">
             <result>/WEB-INF/jsp/search.jsp</result>
         </action>
-        <action name="GoToImport" class="edu.hit.se.GetAllPdoName">
+        <action name="GoToImport" class="edu.hit.se.GetAllPdoNames">
             <result>/WEB-INF/jsp/import.jsp</result>
         </action>
         

@@ -98,6 +98,7 @@ public class SearchAll extends ActionSupport {
                         if(first) {
                             pdoNameShot.add(pdoNames.elementAt(i));
                             propertiesShot.add(properties.elementAt(i));
+                            first=false;
                         }
                         for(int k=0;k<properties.elementAt(i).size();k++){
                             info.add(rs.getString(properties.elementAt(i).elementAt(k)));
