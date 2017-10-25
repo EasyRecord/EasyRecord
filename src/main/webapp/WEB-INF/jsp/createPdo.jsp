@@ -64,7 +64,6 @@
     </script>
 </head>
 <body>
-<% if(session.getAttribute("user")==null) response.sendRedirect("Logout.action");%>
 <div class="container">
     <div class="header clearfix">
         <nav>
@@ -74,7 +73,9 @@
                 <%--<li role="presentation"><a href="ReadyToRegister.action">注册</a></li>--%>
 
                 <%--<% out.print(session.getAttribute("user"));%>--%>
-                <li role="presentation"><a href="Logout.action">登出</a></li>
+                <%-- 跳转到index.jsp页面 --%>
+                <li role="presentation"><a href="index.jsp"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 返回</a></li>
+                <li role="presentation"><a href="Logout.action"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 登出</a></li>
                 <% if(session.getAttribute("user")==null) response.sendRedirect("Logout.action");%>
             </ul>
             <h3 class="text-muted">EasyRecord</h3>

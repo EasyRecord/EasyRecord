@@ -64,6 +64,10 @@
             <result>/WEB-INF/jsp/associate.jsp</result>
         </action>
 
+        <action name="SearchAll" class="edu.hit.se.SearchAll">
+            <result>/WEB-INF/jsp/SearchAllResult.jsp</result>
+        </action>
+
 
     </package>
 

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="la2ex:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="struts2-archetype-starter.war">
+      <element id="artifact" artifact-name="la2ex:war exploded" />
+    </root>
+  </artifact>
+</component>
