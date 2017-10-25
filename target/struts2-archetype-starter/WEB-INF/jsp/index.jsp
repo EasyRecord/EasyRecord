@@ -30,7 +30,7 @@
     <meta charset="UTF-8">
     <title>个人信息采集</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="../css/index.css"/>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../bootstrap/js/jquery-1.12.0.min.js"></script>

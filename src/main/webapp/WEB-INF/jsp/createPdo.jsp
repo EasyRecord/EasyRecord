@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
     <title>创建PDO模型</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="../css/index.css"/>
     <link rel="stylesheet" href="../css/createPdo.css"/>
     <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
