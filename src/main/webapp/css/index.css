@@ -50,3 +50,6 @@ body {
 a{
     color: #46b8da;
 }
+.hide{
+    diplay: none;
+}

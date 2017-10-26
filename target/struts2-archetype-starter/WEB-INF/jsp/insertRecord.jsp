@@ -34,8 +34,8 @@
     <div class="header clearfix">
         <nav>
             <ul class="nav nav-pills pull-right">
-                <li role="presentation" class="active"><a href="#">新建</a></li>
-                <li role="presentation"><a href="#">添加</a></li>
+                <li role="presentation"><a href="#">新建</a></li>
+                <li role="presentation" class="active"><a href="#">添加</a></li>
                 <li role="presentation"><a href="#">查询</a></li>
                 <li role="presentation"><a href="#">上传</a></li>
                 <%-- 跳转到index.jsp页面 --%>
@@ -70,49 +70,49 @@
                     </select>
                 </div>
                 <div class="col-sm-2 choosePDO">
-                    <button type="submit" class="btn btn-info" id="getPropertys">提交</button>
+                    <button type="button" class="btn btn-info" id="getPropertys">提交</button>
                 </div>
             </div>
         </form>
         <hr class="center-hr" />
 
-        <div class="notes" id="getResult">
+        <div class="notes" id="notes">
             <h4><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 请先选择要插入的PDO记录所属的PDO名</h4>
         </div>
 
-        <form class="form-horizontal PDOform" method="post" action="InsertRecord.action">
+        <form class="form-horizontal PDOform" method="post" action="InsertRecord.action" id="Pdoform">
 
-                <div class="form-group">
-                    <label for="property0" class="col-sm-2 control-label">字段名0</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="property0" name="property[0]">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="property1" class="col-sm-2 control-label">字段名1</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="property1" name="property[0]">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="property2" class="col-sm-2 control-label">字段名2</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="property2" name="property[0]">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="property3" class="col-sm-2 control-label">字段名3</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="property3" name="property[0]">
-                    </div>
-                </div>
+                <%--<div class="form-group">--%>
+                    <%--<label for="property0" class="col-sm-2 control-label">字段名0</label>--%>
+                    <%--<div class="col-sm-8">--%>
+                        <%--<input type="text" class="form-control" id="property0" name="property[0]">--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<div class="form-group">--%>
+                    <%--<label for="property1" class="col-sm-2 control-label">字段名1</label>--%>
+                    <%--<div class="col-sm-8">--%>
+                        <%--<input type="text" class="form-control" id="property1" name="property[0]">--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<div class="form-group">--%>
+                    <%--<label for="property2" class="col-sm-2 control-label">字段名2</label>--%>
+                    <%--<div class="col-sm-8">--%>
+                        <%--<input type="text" class="form-control" id="property2" name="property[0]">--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<div class="form-group">--%>
+                    <%--<label for="property3" class="col-sm-2 control-label">字段名3</label>--%>
+                    <%--<div class="col-sm-8">--%>
+                        <%--<input type="text" class="form-control" id="property3" name="property[0]">--%>
+                    <%--</div>--%>
+                <%--</div>--%>
 
 
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-2">
-                    <button type="submit" class="btn btn-info">提交</button>
-                </div>
-            </div>
+            <%--<div class="form-group">--%>
+                <%--<div class="col-sm-offset-2 col-sm-2">--%>
+                    <%--<button type="submit" class="btn btn-info">提交</button>--%>
+                <%--</div>--%>
+            <%--</div>--%>
         </form>
     </div>
 
@@ -139,10 +139,15 @@
             if(request.readyState === 4){
                 if(request.status === 200){
                     var result = JSON.parse(request.responseText);
-                    for(var i = 0; i < result.pdoHeader.length; i ++){
-                        alert(result.pdoHeader[i]);
+                    document.getElementById("notes").className = "notes hide";
+                    var html = "";
+                    for(var i = 1; i < result.pdoHeader.length; i ++){
+                        //alert(result.pdoHeader[i]);
+                        html += "</div><div class='form-group'><label for='property" + (i - 1) + "' class='col-sm-2 control-label'>" + result.pdoHeader[i] + "</label><div class='col-sm-8'><input type='text' class='form-control' id='property" + (i - 1) + "' name='property[" + (i - 1) + "]'></div></div>";
+                        //alert(html);
                     }
-                    //document.getElementById("getResult").innerHTML = request.responseText;
+                    html += "<div class='form-group'><div class='col-sm-offset-2 col-sm-2'><button type='submit' class='btn btn-info'>提交</button></div></div>";
+                    document.getElementById("Pdoform").innerHTML = html;
                 }else{
                     alert("发生错误！" + request.status);
                 }
