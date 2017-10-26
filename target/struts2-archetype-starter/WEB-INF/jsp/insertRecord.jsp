@@ -36,7 +36,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>创建PDO模型</title>
+    <title>添加PDO记录</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="../css/index.css"/>
@@ -50,7 +50,10 @@
     <div class="header clearfix">
         <nav>
             <ul class="nav nav-pills pull-right">
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/zhaoyang
                 <li role="presentation"><a href="GoToGeneratePdo.action">新建</a></li>
                 <li role="presentation" class="active"><a href="GoToInsertRecord.action">添加</a></li>
                 <li role="presentation"><a href="GoToSearch.action">查询</a></li>
