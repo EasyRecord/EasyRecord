@@ -21,7 +21,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>创建PDO模型</title>
+    <title>添加PDO记录</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="../css/index.css"/>
@@ -34,10 +34,10 @@
     <div class="header clearfix">
         <nav>
             <ul class="nav nav-pills pull-right">
-                <li role="presentation"><a href="#">新建</a></li>
-                <li role="presentation" class="active"><a href="#">添加</a></li>
-                <li role="presentation"><a href="#">查询</a></li>
-                <li role="presentation"><a href="#">上传</a></li>
+                <li role="presentation"><a href="GoToGeneratePdo.action">新建</a></li>
+                <li role="presentation" class="active"><a href="GoToInsertRecord.action">添加</a></li>
+                <li role="presentation"><a href="GoToSearch.action">查询</a></li>
+                <li role="presentation"><a href="GoToImport.action">上传</a></li>
                 <%-- 跳转到index.jsp页面 --%>
                 <li role="presentation"><a href="index.jsp"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 返回</a></li>
                 <li role="presentation"><a href="Logout.action"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 登出</a></li>

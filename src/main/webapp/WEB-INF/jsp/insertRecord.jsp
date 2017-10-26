@@ -21,7 +21,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>创建PDO模型</title>
+    <title>添加PDO记录</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="../css/index.css"/>
