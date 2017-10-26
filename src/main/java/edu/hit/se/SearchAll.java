@@ -58,9 +58,11 @@ public class SearchAll extends ActionSupport {
 
     public String execute(){
         try {
-            HttpSession session = null;
-            session = ServletActionContext.getRequest().getSession();
-            String user=(String )session.getAttribute("user");
+//            HttpSession session = null;
+//            session = ServletActionContext.getRequest().getSession();
+//            String user=(String )session.getAttribute("user");
+
+            String user= "admin";
             String sql="select * from "+user+"_pdoName";
 
             MysqlConnector mysqlConnector=new MysqlConnector();
@@ -75,8 +77,10 @@ public class SearchAll extends ActionSupport {
             while (rs.next()){
                 pdoNames.add(rs.getString("names"));
             }
-            Vector<String > pdoHeader=new Vector<>();
+            System.out.println(pdoNames);
+            Vector<String > pdoHeader;
             for (int i=0;i<pdoNames.size();i++){
+                pdoHeader=new Vector<>();
                 sql="SHOW  columns from "+user+"_"+pdoNames.elementAt(i);
                 rs = statement.executeQuery(sql);
                 pdoHeader.clear();
@@ -85,16 +89,18 @@ public class SearchAll extends ActionSupport {
                 }
                 properties.add(pdoHeader);
             }
-            Vector<String >info=new Vector<>();
-            Vector<Vector<String>> infoOfOnePDO=new Vector<>();
+            System.out.println(properties);
+            Vector<String >info;
+            Vector<Vector<String>> infoOfOnePDO;
             for(int i=0;i<pdoNames.size();i++){
-                infoOfOnePDO.clear();
+                infoOfOnePDO=new Vector<>();
                 boolean first=true;
                 for (int j=0;j<properties.elementAt(i).size();j++){
-                    sql="SELECT * FROM "+user+"_"+pdoNames.elementAt(i)+" where "+properties.elementAt(i).elementAt(j)+"='"+keyWord+"'";
+                    sql="SELECT * FROM "+user+"_"+pdoNames.elementAt(i)+" where "+properties.elementAt(i).elementAt(j)+" LIKE binary '%"+keyWord+"%'";
+                    System.out.println(sql);
                     rs = statement.executeQuery(sql);
                     while (rs.next()){
-                        info.clear();
+                        info=new Vector<>();
                         if(first) {
                             pdoNameShot.add(pdoNames.elementAt(i));
                             propertiesShot.add(properties.elementAt(i));
@@ -103,11 +109,12 @@ public class SearchAll extends ActionSupport {
                         for(int k=0;k<properties.elementAt(i).size();k++){
                             info.add(rs.getString(properties.elementAt(i).elementAt(k)));
                         }
-                        if(!infoOfOnePDO.contains(info))
+                        if(info.size()>=1)
                             infoOfOnePDO.add(info);
                     }
                 }
-                infoShot.add(infoOfOnePDO);
+                if(infoOfOnePDO.size()>=1)
+                    infoShot.add(infoOfOnePDO);
             }
 
 

@@ -54,9 +54,9 @@ public class SearchRecord extends ActionSupport{
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");
             String sql="select * from "+user+"_"+pdoName+" where ";
-            sql+=property.elementAt(0)+" like '%"+filter.elementAt(0)+"%' ";
+            sql+=property.elementAt(0)+" like binary '%"+filter.elementAt(0)+"%' ";
             for (int i=1;i<property.size();i++){
-                sql+="AND "+property.elementAt(i)+" like '%"+filter.elementAt(i)+"%'";
+                sql+="AND "+property.elementAt(i)+" like binary '%"+filter.elementAt(i)+"%'";
             }
             System.out.println(sql);
             MysqlConnector mysqlConnector=new MysqlConnector();
