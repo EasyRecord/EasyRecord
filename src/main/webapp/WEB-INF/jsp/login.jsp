@@ -71,6 +71,7 @@
                 <label for="username" class="col-sm-2 control-label">用户名</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="username" placeholder="用户名" name="username">
+                    <span id="namespan"></span>
                 </div>
             </div>
 
@@ -114,5 +115,24 @@
 
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
+<script>
+    function checkUserName(){
+        if(document.getElementById("username").value==null
+            || document.getElementById("username").value==undefined
+            || document.getElementById("username").value==""){
+            document.getElementById("namespan").innerHTML="用户名不能为空";
+            document.getElementById("namespan").style.color="Red";
+            return false;
+        }
+        var request=new XMLHttpRequest();
+        request.open("GET","findisbn.action?ISBN="+ document.getElementById("username").value);
+        request.send();
+        requset.onreadystatechange=function(){
+            if(request.readyState===4 && request.status===200){
+
+            }
+        }
+    }
+</script>
 </body>
 </html>
