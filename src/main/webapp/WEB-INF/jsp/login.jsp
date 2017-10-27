@@ -52,7 +52,7 @@
         <nav>
             <ul class="nav nav-pills pull-right">
                 <!--<li role="presentation" class="active"><a href="#">Home</a></li>-->
-                <li role="presentation"><a href="#"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 返回</a></li>
+                <%--<li role="presentation"><a href="#"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 返回</a></li>--%>
             </ul>
             <h3 class="text-muted">EasyRecord</h3>
         </nav>
@@ -70,7 +70,7 @@
             <div class="form-group">
                 <label for="username" class="col-sm-2 control-label">用户名</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="username" placeholder="用户名" name="username">
+                    <input type="text" class="form-control" id="username" placeholder="用户名" name="username" onblur="checkUserName()">
                     <span id="namespan"></span>
                 </div>
             </div>
@@ -78,7 +78,8 @@
             <div class="form-group">
                 <label for="password" class="col-sm-2 control-label">密码</label>
                 <div class="col-sm-9">
-                    <input type="password" class="form-control" id="password" placeholder="密码" name="passwd">
+                    <input type="password" class="form-control" id="password" placeholder="密码" name="passwd" onblur="checkPassWord()">
+                    <span id="pwspan"></span>
                 </div>
 
             </div>
@@ -122,15 +123,32 @@
             || document.getElementById("username").value==""){
             document.getElementById("namespan").innerHTML="用户名不能为空";
             document.getElementById("namespan").style.color="Red";
+            document.getElementById("namespan").style.fontSize="90%";
+            document.getElementById("namespan").style.fontWeight="bold";
             return false;
+        }else{
+            document.getElementById("namespan").innerHTML="通过";
+            document.getElementById("namespan").style.color="Green";
+            document.getElementById("namespan").style.fontSize="90%";
+            document.getElementById("namespan").style.fontWeight="bold";
+            return true;
         }
-        var request=new XMLHttpRequest();
-        request.open("GET","findisbn.action?ISBN="+ document.getElementById("username").value);
-        request.send();
-        requset.onreadystatechange=function(){
-            if(request.readyState===4 && request.status===200){
-
-            }
+    }
+    function checkPassWord(){
+        if(document.getElementById("password").value==null
+            || document.getElementById("password").value==undefined
+            || document.getElementById("password").value==""){
+            document.getElementById("pwspan").innerHTML="密码不能为空";
+            document.getElementById("pwspan").style.color="Red";
+            document.getElementById("pwspan").style.fontSize="90%";
+            document.getElementById("pwspan").style.fontWeight="bold";
+            return false;
+        }else{
+            document.getElementById("pwspan").innerHTML="通过";
+            document.getElementById("pwspan").style.color="Green";
+            document.getElementById("pwspan").style.fontSize="90%";
+            document.getElementById("pwspan").style.fontWeight="bold";
+            return true;
         }
     }
 </script>

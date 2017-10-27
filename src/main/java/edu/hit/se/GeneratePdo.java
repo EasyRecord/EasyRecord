@@ -124,7 +124,7 @@ public class GeneratePdo extends ActionSupport{
             //创建数据表
             System.out.println(pdoName.toString());
             System.out.println(property.toString());
-            System.out.println(property.toString());
+            System.out.println(elementType.toString());
             HttpSession session = null;
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");

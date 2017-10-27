@@ -29,15 +29,14 @@
 <head>
     <meta charset="UTF-8">
     <title>个人信息采集</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css"/>
-    <link rel="stylesheet" href="css/index.css"/>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="bootstrap/js/jquery-1.12.0.min.js"></script>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="../css/index.css"/>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../bootstrap/js/jquery-1.12.0.min.js"></script>
 </head>
 <body>
 <%--<a href="index.jsp">测试</a>--%>
-<% if(session.getAttribute("user")==null) response.sendRedirect("Logout.action");%>
 <%--<% if(session.getAttribute("user")==null) response.sendRedirect("Logout.action");%>--%>
 <div class="container">
     <!-- navigation bar -->
@@ -51,8 +50,8 @@
 
 
                 <%--<% out.print(session.getAttribute("user"));%>--%>
-                <li role="presentation"><a href="Logout.action">登出</a></li>
-
+                <li role="presentation"><a href="Logout.action"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 登出</a></li>
+                <% if(session.getAttribute("user")==null) response.sendRedirect("Logout.action");%>
             </ul>
             <h3 class="text-muted">EasyRecord</h3>
         </nav>
@@ -120,7 +119,7 @@
     </footer>
 </div>
 
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="bootstrap/js/jquery-1.12.0.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../bootstrap/js/jquery-1.12.0.min.js"></script>
 </body>
 </html>

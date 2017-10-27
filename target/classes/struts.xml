@@ -11,6 +11,8 @@
 
         <default-action-ref name="Logout" />
 
+
+
         <action name="Login" class="edu.hit.se.Login">
             <result>/WEB-INF/jsp/index.jsp</result>
         </action>
@@ -27,16 +29,16 @@
             <result>/WEB-INF/jsp/login.jsp</result>
         </action>
 
-        <action name="GoToGeneratePdo" class="edu.hit.se.GetAllPdoName">
+        <action name="GoToGeneratePdo" class="edu.hit.se.GetAllPdoNames">
             <result>/WEB-INF/jsp/createPdo.jsp</result>
         </action>
-        <action name="GoToInsertRecord" class="edu.hit.se.GetAllPdoName">
+        <action name="GoToInsertRecord" class="edu.hit.se.GetAllPdoNames">
             <result>/WEB-INF/jsp/insertRecord.jsp</result>
         </action>
-        <action name="GoToSearch" class="edu.hit.se.GetAllPdoName">
+        <action name="GoToSearch" class="edu.hit.se.GetAllPdoNames">
             <result>/WEB-INF/jsp/search.jsp</result>
         </action>
-        <action name="GoToImport" class="edu.hit.se.GetAllPdoName">
+        <action name="GoToImport" class="edu.hit.se.GetAllPdoNames">
             <result>/WEB-INF/jsp/import.jsp</result>
         </action>
         
@@ -64,10 +66,17 @@
             <result>/WEB-INF/jsp/associate.jsp</result>
         </action>
 
+        <action name="SearchAll" class="edu.hit.se.SearchAll">
+            <result>/WEB-INF/jsp/SearchAllResult.jsp</result>
+        </action>
+
 
     </package>
 
     <package name="ajax" namespace="/" extends="json-default">
+        <action name="GetAllUserNames" class="edu.hit.se.GetAllUserNames">
+            <result name="success" type="json"></result>
+        </action>
         <action name="GetPdoHeader" class="edu.hit.se.GetPdoHeader">
             <result name="success" type="json"></result>
         </action>
