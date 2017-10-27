@@ -78,7 +78,7 @@
             <div class="form-group">
                 <label for="password" class="col-sm-2 control-label">密码</label>
                 <div class="col-sm-9">
-                    <input type="password" class="form-control" id="password" placeholder="密码" name="passwd" onblur="checkPassWord()">
+                    <input type="password" class="form-control" id="password" placeholder="密码" name="passwd">
                     <span id="pwspan"></span>
                 </div>
 
@@ -126,15 +126,39 @@
             document.getElementById("namespan").style.fontSize="90%";
             document.getElementById("namespan").style.fontWeight="bold";
             return false;
+            var request=new XMLHttpRequest();
+            request.open("GET","getAllUserNames.action?username="+ document.getElementById("username").value);
+            request.send();
+            requset.onreadystatechange=function(){
+                if(request.readyState===4 && request.status===200){
+                    var obj = JSON.parse(request.responseText);
+                    if(obj.state===""){
+                        //document.getElementById("namespan").innerHTML="通过";
+                        //document.getElementById("namespan").style.color="Green";
+                    }
+                    else if(obj.state===""){
+                        document.getElementById("namespan").innerHTML="该用户不存在，请检查您的输入";
+                        document.getElementById("namespan").style.color="Red";
+                        document.getElementById("namespan").style.fontSize="90%";
+                        document.getElementById("namespan").style.fontWeight="bold";
+                        return false;
+                    }
+                }
+            }
+
         }else{
-            document.getElementById("namespan").innerHTML="通过";
-            document.getElementById("namespan").style.color="Green";
-            document.getElementById("namespan").style.fontSize="90%";
-            document.getElementById("namespan").style.fontWeight="bold";
-            return true;
+            document.getElementById("namespan").innerHTML="";
+            //document.getElementById("namespan").innerHTML="通过";
+            //document.getElementById("namespan").style.color="Green";
+            //document.getElementById("namespan").style.fontSize="90%";
+            //document.getElementById("namespan").style.fontWeight="bold";
+            //return true;
         }
+        //document.getElementById("namespan").style.fontSize="90%";
+        //document.getElementById("namespan").style.fontWeight="bold";
+        return true;
     }
-    function checkPassWord(){
+    /*function checkPassWord(){
         if(document.getElementById("password").value==null
             || document.getElementById("password").value==undefined
             || document.getElementById("password").value==""){
@@ -143,14 +167,16 @@
             document.getElementById("pwspan").style.fontSize="90%";
             document.getElementById("pwspan").style.fontWeight="bold";
             return false;
-        }else{
-            document.getElementById("pwspan").innerHTML="通过";
-            document.getElementById("pwspan").style.color="Green";
-            document.getElementById("pwspan").style.fontSize="90%";
-            document.getElementById("pwspan").style.fontWeight="bold";
-            return true;
-        }
-    }
+        }*/
+        //else{
+            //document.getElementById("pwspan").innerHTML="通过";
+            //document.getElementById("pwspan").style.color="Green";
+            //document.getElementById("pwspan").style.fontSize="90%";
+            //document.getElementById("pwspan").style.fontWeight="bold";
+            //return true;
+        //}
+        //return true;
+    //}
 </script>
 </body>
 </html>
