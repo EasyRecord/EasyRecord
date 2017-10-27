@@ -118,6 +118,7 @@
 <script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
 <script>
     function checkUserName(){
+
         if(document.getElementById("username").value==null
             || document.getElementById("username").value==undefined
             || document.getElementById("username").value==""){
@@ -126,7 +127,8 @@
             document.getElementById("namespan").style.fontSize="90%";
             document.getElementById("namespan").style.fontWeight="bold";
             return false;
-        }else{
+        }
+        else{
             document.getElementById("namespan").innerHTML="通过";
             document.getElementById("namespan").style.color="Green";
             document.getElementById("namespan").style.fontSize="90%";
