@@ -12,7 +12,5 @@
     <title>Title</title>
 </head>
 <body>
-<s:debug></s:debug>
-详细信息
 </body>
 </html>

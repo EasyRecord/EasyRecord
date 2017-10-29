@@ -58,11 +58,11 @@ public class SearchAll extends ActionSupport {
 
     public String execute(){
         try {
-//            HttpSession session = null;
-//            session = ServletActionContext.getRequest().getSession();
-//            String user=(String )session.getAttribute("user");
+            HttpSession session = null;
+            session = ServletActionContext.getRequest().getSession();
+            String user=(String )session.getAttribute("user");
 
-            String user= "admin";
+//            String user= "admin"; //for test
             String sql="select * from "+user+"_pdoName";
 
             MysqlConnector mysqlConnector=new MysqlConnector();
@@ -109,12 +109,15 @@ public class SearchAll extends ActionSupport {
                         for(int k=0;k<properties.elementAt(i).size();k++){
                             info.add(rs.getString(properties.elementAt(i).elementAt(k)));
                         }
-                        if(info.size()>=1)
+                        if(info.size()>=1 && !infoOfOnePDO.contains(info))
                             infoOfOnePDO.add(info);
                     }
                 }
                 if(infoOfOnePDO.size()>=1)
                     infoShot.add(infoOfOnePDO);
+
+
+
             }
 
 
