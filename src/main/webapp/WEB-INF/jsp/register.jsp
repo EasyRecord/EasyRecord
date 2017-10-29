@@ -92,7 +92,7 @@
                 <div class="col-sm-offset-2 col-sm-4">
                     <button type="submit" class="btn btn-info login">注册</button>
                 </div>
-                <p class="col-sm-5 forget"><a href="login.jsp" class="pull-right">已有账号？直接登陆>></a></p>
+                <p class="col-sm-5 forget"><a href="Logout.action" class="pull-right">已有账号？直接登陆>></a></p>
                 <%-- 此处已有账号时是否应该跳转到登录页面 --%>
             </div>
         </form>
@@ -110,60 +110,71 @@
 <script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
 <script>
     function checkUserName(){
-        if(document.getElementById("username").value==null
-            || document.getElementById("username").value==undefined
-            || document.getElementById("username").value==""){
-            document.getElementById("namespan").innerHTML="用户名不能为空";
-            document.getElementById("namespan").style.color="Red";
-            document.getElementById("namespan").style.fontSize="90%";
-            document.getElementById("namespan").style.fontWeight="bold";
-            return false;
-            var request=new XMLHttpRequest();
-            request.open("GET","getAllUserNames.action?username="+ document.getElementById("username").value);
-            request.send();
-            requset.onreadystatechange=function(){
-                if(request.readyState===4 && request.status===200){
-                    var obj = JSON.parse(request.responseText);
-                    if(obj.state===""){
-                        document.getElementById("namespan").innerHTML="通过";
-                        document.getElementById("namespan").style.color="Green";
+//        alert(document.getElementById("username").value);
+
+        var request = new XMLHttpRequest();
+        request.open("POST", "GetAllUserNames.action");
+        var data = "";
+        var flag_username_used=false;
+        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        request.send(data);
+        request.onreadystatechange = function () {
+            if(request.readyState === 4){
+                if(request.status === 200){
+                    var result = JSON.parse(request.responseText);
+                    for(var i = 0; i < result.usernames.length; i ++){
+                        //alert(result.pdoHeader[i]);
+//                        html+=
+//                        alert(result.usernames[i]);
+                        if(document.getElementById("username").value===result.usernames[i]){
+                            flag_username_used=true;
+                        }
                     }
-                    else if(obj.state===""){
-                        document.getElementById("namespan").innerHTML="用户名已存在，请重新输入新的用户名";
-                        document.getElementById("namespan").style.color="Red";
-                        document.getElementById("namespan").style.fontSize="90%";
-                        document.getElementById("namespan").style.fontWeight="bold";
-                        return false;
-                    }
+
+                }else{
+                    alert("发生错误！" + request.status);
                 }
             }
-
-        }else{
-            //document.getElementById("namespan").innerHTML="";
-            document.getElementById("namespan").innerHTML="通过";
-            document.getElementById("namespan").style.color="Green";
-            //document.getElementById("namespan").style.fontSize="90%";
-            //document.getElementById("namespan").style.fontWeight="bold";
-            //return true;
+//            alert(flag_username_used);
+            if(document.getElementById("username").value==null
+                || document.getElementById("username").value==undefined
+                || document.getElementById("username").value==""){
+                document.getElementById("namespan").innerHTML="用户名不能为空";
+                document.getElementById("namespan").style.color="Red";
+                document.getElementById("namespan").style.fontSize="90%";
+                document.getElementById("namespan").style.fontWeight="bold";
+                return false;
+            }else if(flag_username_used){
+                document.getElementById("namespan").innerHTML="用户名已存在";
+                document.getElementById("namespan").style.color="Red";
+                document.getElementById("namespan").style.fontSize="90%";
+                document.getElementById("namespan").style.fontWeight="bold";
+                return false;
+            }
+            else{
+                document.getElementById("namespan").innerHTML="通过";
+                document.getElementById("namespan").style.color="Green";
+                document.getElementById("namespan").style.fontSize="90%";
+                document.getElementById("namespan").style.fontWeight="bold";
+                return true;
+            }
         }
-        document.getElementById("namespan").style.fontSize="90%";
-        document.getElementById("namespan").style.fontWeight="bold";
-        return true;
+
     }
-    function checkPassWord() {
-        if (document.getElementById("password").value == null
-            || document.getElementById("password").value == undefined
-            || document.getElementById("password").value == "") {
-            document.getElementById("pwspan").innerHTML = "密码不能为空";
-            document.getElementById("pwspan").style.color = "Red";
-            document.getElementById("pwspan").style.fontSize = "90%";
-            document.getElementById("pwspan").style.fontWeight = "bold";
+    function checkPassWord(){
+        if(document.getElementById("password").value==null
+            || document.getElementById("password").value==undefined
+            || document.getElementById("password").value==""){
+            document.getElementById("pwspan").innerHTML="密码不能为空";
+            document.getElementById("pwspan").style.color="Red";
+            document.getElementById("pwspan").style.fontSize="90%";
+            document.getElementById("pwspan").style.fontWeight="bold";
             return false;
-        } else {
-            document.getElementById("pwspan").innerHTML = "通过";
-            document.getElementById("pwspan").style.color = "Green";
-            document.getElementById("pwspan").style.fontSize = "90%";
-            document.getElementById("pwspan").style.fontWeight = "bold";
+        }else{
+            document.getElementById("pwspan").innerHTML="通过";
+            document.getElementById("pwspan").style.color="Green";
+            document.getElementById("pwspan").style.fontSize="90%";
+            document.getElementById("pwspan").style.fontWeight="bold";
             return true;
         }
     }
