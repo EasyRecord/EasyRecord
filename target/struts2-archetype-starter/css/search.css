@@ -31,3 +31,9 @@ p.col-sm-1{
 .second-menu a{
 	font-size: 12px;
 }
+.inputfile{
+	padding-top: 3px;
+}
+.importform{
+	margin-left: 80px;
+}
