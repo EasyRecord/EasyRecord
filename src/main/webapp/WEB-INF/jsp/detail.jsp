@@ -12,5 +12,6 @@
     <title>Title</title>
 </head>
 <body>
+<s:debug></s:debug>
 </body>
 </html>
