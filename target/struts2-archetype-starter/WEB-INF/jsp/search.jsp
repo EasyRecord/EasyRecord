@@ -53,7 +53,7 @@
                 <li role="presentation"><a href="GoToGeneratePdo.action">新建</a></li>
                 <li role="presentation"><a href="GoToInsertRecord.action">添加</a></li>
                 <li role="presentation" class="active"><a href="GoToSearch.action">查询</a></li>
-                <li role="presentation"><a href="GoToImport.action">上传</a></li>
+                <li role="presentation"><a href="GoToImport.action">导入</a></li>
                 <%-- 跳转到index.jsp页面 --%>
                 <li role="presentation"><a href="index.jsp"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 返回</a></li>
                 <li role="presentation"><a href="Logout.action"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 登出</a></li>
@@ -70,7 +70,7 @@
             <li role="presentation" class="second-menu" id="tosearchByAttr"><a href="#">按字段搜索</a></li>
         </ul>
         <h2>查找PDO记录</h2>
-        <h4><small>search PDO record</small></h4>
+        <h4><small>search PDO records</small></h4>
         <!--<p>
         <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
         </p>-->
@@ -186,7 +186,7 @@
                         html += "</div><div class='form-group'><label for='property" + (i - 1) + "' class='col-sm-2 control-label'>" + result.pdoHeader[i] + "</label><div class='col-sm-8'><input type='text' class='form-control' id='property" + (i - 1) + "' name='property[" + (i - 1) + "]'></div></div>";
                         //alert(html);
                     }
-                    html += "<div class='form-group'><div class='col-sm-offset-2 col-sm-2'><button type='submit' class='btn btn-info'>提交</button></div></div>";
+                    html += "<div class='form-group'><div class='col-sm-offset-2 col-sm-2'><button type='submit' class='btn btn-info'>搜索</button></div></div>";
                     document.getElementById("Pdoform").innerHTML = html;
                 }else{
                     alert("发生错误！" + request.status);

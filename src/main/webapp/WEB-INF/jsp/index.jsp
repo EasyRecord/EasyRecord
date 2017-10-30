@@ -43,11 +43,10 @@
     <div class="header clearfix">
         <nav>
             <ul class="nav nav-pills pull-right">
-                <!--<li role="presentation" class="active"><a href="#">Home</a></li>-->
-
-                <%--<li role="presentation"><a href="Login.action">登录</a></li>--%>
-                <%--<li role="presentation"><a href="Register.action">注册</a></li>--%>
-
+                <li role="presentation"><a href="GoToGeneratePdo.action">新建</a></li>
+                <li role="presentation"><a href="GoToInsertRecord.action">添加</a></li>
+                <li role="presentation"><a href="GoToSearch.action">查询</a></li>
+                <li role="presentation"><a href="GoToImport.action">导入</a></li>
 
                 <%--<% out.print(session.getAttribute("user"));%>--%>
                 <li role="presentation"><a href="Logout.action"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 登出</a></li>
@@ -74,7 +73,7 @@
                 <h1> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </h1>
             </div>
             <h2>创建PDO模型</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+            <p>Create PDO model</p>
 
             <p><a class="btn btn-default" href="GoToGeneratePdo.action" role="button">View details &raquo;</a></p>
         </div>
@@ -85,7 +84,7 @@
                 <h1> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </h1>
             </div>
             <h2>添加PDO记录</h2>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+            <p>Add PDO record</p>
 
             <p><a class="btn btn-default" href="GoToInsertRecord.action" role="button">View details &raquo;</a></p>
         </div>
@@ -96,7 +95,7 @@
                 <h1> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> </h1>
             </div>
             <h2>查找PDO记录</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p>search PDO records</p>
 
             <p><a class="btn btn-default" href="GoToSearch.action" role="button">View details &raquo;</a></p>
         </div>
@@ -107,7 +106,7 @@
                 <h1> <span class="glyphicon glyphicon-open" aria-hidden="true"></span> </h1>
             </div>
             <h2>文件导入</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p>Upload files</p>
 
             <p><a class="btn btn-default" href="GoToImport.action" role="button">View details &raquo;</a></p>
         </div>

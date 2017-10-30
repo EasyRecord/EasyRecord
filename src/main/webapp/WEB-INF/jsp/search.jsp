@@ -53,7 +53,7 @@
                 <li role="presentation"><a href="GoToGeneratePdo.action">新建</a></li>
                 <li role="presentation"><a href="GoToInsertRecord.action">添加</a></li>
                 <li role="presentation" class="active"><a href="GoToSearch.action">查询</a></li>
-                <li role="presentation"><a href="GoToImport.action">上传</a></li>
+                <li role="presentation"><a href="GoToImport.action">导入</a></li>
                 <%-- 跳转到index.jsp页面 --%>
                 <li role="presentation"><a href="index.jsp"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 返回</a></li>
                 <li role="presentation"><a href="Logout.action"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 登出</a></li>
@@ -70,7 +70,7 @@
             <li role="presentation" class="second-menu" id="tosearchByAttr"><a href="#">按字段搜索</a></li>
         </ul>
         <h2>查找PDO记录</h2>
-        <h4><small>search PDO record</small></h4>
+        <h4><small>search PDO records</small></h4>
         <!--<p>
         <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
         </p>-->
