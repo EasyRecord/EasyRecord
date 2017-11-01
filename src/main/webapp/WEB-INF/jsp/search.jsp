@@ -104,7 +104,7 @@
                     <h4><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 请先选择要插入的PDO记录所属的PDO名</h4>
                 </div>
 
-                <form class="form-horizontal PDOform" method="post" action="InsertRecord.action" id="Pdoform">
+                <form class="form-horizontal PDOform" method="post" action="SearchRecord.action" id="Pdoform">
                     <%--<div class="form-group">--%>
                         <%--<label for="property0" class="col-sm-2 control-label">字段名0</label>--%>
                         <%--<div class="col-sm-8">--%>
@@ -183,7 +183,8 @@
                     var html = "";
                     for(var i = 1; i < result.pdoHeader.length; i ++){
                         //alert(result.pdoHeader[i]);
-                        html += "</div><div class='form-group'><label for='property" + (i - 1) + "' class='col-sm-2 control-label'>" + result.pdoHeader[i] + "</label><div class='col-sm-8'><input type='text' class='form-control' id='property" + (i - 1) + "' name='property[" + (i - 1) + "]'></div></div>";
+                        html += "</div><div class='form-group'><label for='filter" + (i - 1) + "' class='col-sm-2 control-label'>" + result.pdoHeader[i] + "</label><div class='col-sm-8'><input type='text' class='form-control' id='filter" + (i - 1) + "' name='filter[" + (i - 1) + "]'/></div></div>";
+                        html += "<input type='text' class='form-control' style='display: none;' name='property[" + (i - 1) + "]' value='" + result.pdoHeader[i] + "'/>";
                         //alert(html);
                     }
                     html += "<div class='form-group'><div class='col-sm-offset-2 col-sm-2'><button type='submit' class='btn btn-info'>搜索</button></div></div>";

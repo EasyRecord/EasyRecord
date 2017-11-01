@@ -62,8 +62,8 @@
             <div role="tabpanel" class="tab-pane active importform">
                 <form class="search-form" method="post" action="Import.action">
                     <div class="form-group">
-                        <label for="exampleInputFile">上传的文件</label>
-                        <input type="file" id="exampleInputFile">
+                        <label for="exampleInputFile" class="import-box">上传的文件</label>
+                        <input type="file" id="exampleInputFile" class="import-box">
                         <p class="help-block">请选择excel表格进行上传（.xls文件）</p>
                     </div>
                     <!-- <div class="form-group">
@@ -71,7 +71,7 @@
                             <button type="submit" class="btn btn-info">提交</button>
                         </div>
                     </div> -->
-                    <button type="submit choosePDO" class="btn btn-info">提交</button>
+                    <button type="submit choosePDO" class="btn btn-info">上传</button>
                 </form>
             </div>
         </div>

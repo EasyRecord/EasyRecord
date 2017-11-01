@@ -143,7 +143,8 @@
                     var html = "";
                     for(var i = 1; i < result.pdoHeader.length; i ++){
                         //alert(result.pdoHeader[i]);
-                        html += "</div><div class='form-group'><label for='property" + (i - 1) + "' class='col-sm-2 control-label'>" + result.pdoHeader[i] + "</label><div class='col-sm-8'><input type='text' class='form-control' id='property" + (i - 1) + "' name='property[" + (i - 1) + "]'></div></div>";
+                        html += "</div><div class='form-group'><label for='info" + (i - 1) + "' class='col-sm-2 control-label'>" + result.pdoHeader[i] + "</label><div class='col-sm-8'><input type='text' class='form-control' id='info" + (i - 1) + "' name='info[" + (i - 1) + "]'></div></div>";
+                        html += "<input type='text' class='form-control' style='display: none;'  name='property[" + (i - 1) + "]' value='" + result.pdoHeader[i] + "'/>";
                         //alert(html);
                     }
                     html += "<div class='form-group'><div class='col-sm-offset-2 col-sm-2'><button type='submit' class='btn btn-info'>提交</button></div></div>";
