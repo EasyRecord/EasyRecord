@@ -39,7 +39,7 @@
                 <li role="presentation" class="active"><a href="GoToSearch.action">查询</a></li>
                 <li role="presentation"><a href="GoToImport.action">导入</a></li>
                 <%-- 跳转到index.jsp页面 --%>
-                <li role="presentation"><a href="index.jsp"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 返回</a></li>
+                <li role="presentation"><a href="BackToIndex.action"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 返回</a></li>
                 <li role="presentation"><a href="Logout.action"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 登出</a></li>
                 <% if(session.getAttribute("user")==null) response.sendRedirect("Logout.action");%>
             </ul>
@@ -82,11 +82,17 @@
                         <td><s:property /></td>
                     </s:iterator>
                     <td class="operation-box">
-                        <s:url var="refreshURL" action="ReadyToUpdateRecord">
+                        <s:url var="detailURL" action="GetRecordDetail">
                             <s:param name="pdoName"><s:property value="pdoName"/></s:param>
                             <s:param name="key"><s:property value="key"/></s:param>
                         </s:url>
-                        <s:a href="%{refreshURL}" class="operation" data-toggle="tooltip" data-placement="bottom" title="更新"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></s:a>
+                        <s:a href="%{detailURL}" class="operation">详情</s:a>
+
+                        <s:url var="updateURL" action="ReadyToUpdateRecord">
+                            <s:param name="pdoName"><s:property value="pdoName"/></s:param>
+                            <s:param name="key"><s:property value="key"/></s:param>
+                        </s:url>
+                        <s:a href="%{updateURL}" class="operation" data-toggle="tooltip" data-placement="bottom" title="更新"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></s:a>
 
                         <a href="#" class="operation" id="delete" data-toggle="tooltip" data-placement="bottom" title="删除"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
 

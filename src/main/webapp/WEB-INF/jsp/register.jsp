@@ -90,7 +90,7 @@
                 <div class="col-sm-offset-2 col-sm-4">
                     <button type="submit" class="btn btn-info login">注册</button>
                 </div>
-                <p class="col-sm-5 forget"><a href="login.jsp" class="pull-right">已有账号？直接登陆>></a></p>
+                <p class="col-sm-5 forget"><a href="ReadyToLogin.action" class="pull-right">已有账号？直接登陆>></a></p>
                 <%-- 此处已有账号时是否应该跳转到登录页面 --%>
             </div>
         </form>
