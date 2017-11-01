@@ -57,7 +57,7 @@
     </div>
 
     <div class="table-title">
-        <h3><s:property value="pdoName"></h3>
+        <h3><s:property value="pdoName"/></h3>
     </div>
 
     <div class="main-table">
@@ -76,25 +76,25 @@
             </tr>
             </thead>
 
-            <s:iterator value="recordInfos" status="st">
+            <s:iterator value="recordInfos" var="inRecordInfos">
                 <tr>
-                    <s:iterator value="top">
+                    <s:iterator value="inRecordInfos">
                         <td><s:property /></td>
                     </s:iterator>
                     <td class="operation-box">
-                        <s:url id="refreshURL" action="ReadyToUpdateRecord">
+                        <s:url var="refreshURL" action="ReadyToUpdateRecord">
                             <s:param name="pdoName"><s:property value="pdoName"/></s:param>
                             <s:param name="key"><s:property value="key"/></s:param>
                         </s:url>
-                        <a href="%{refreshURL}" class="operation" data-toggle="tooltip" data-placement="bottom" title="更新"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a>
+                        <s:a href="%{refreshURL}" class="operation" data-toggle="tooltip" data-placement="bottom" title="更新"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></s:a>
 
                         <a href="#" class="operation" id="delete" data-toggle="tooltip" data-placement="bottom" title="删除"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
 
-                        <s:url id="connectURL" action="Connect">
+                        <s:url var="connectURL" action="Connect">
                             <s:param name="pdoName"><s:property value="pdoName"/></s:param>
                             <s:param name="key"><s:property value="key"/></s:param>
                         </s:url>
-                        <a href="%{connectURL}" class="operation" data-toggle="tooltip" data-placement="bottom" title="建立关联"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></a>
+                        <s:a href="%{connectURL}" class="operation" data-toggle="tooltip" data-placement="bottom" title="建立关联"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></s:a>
                     </td>
                 </tr>
             </s:iterator>

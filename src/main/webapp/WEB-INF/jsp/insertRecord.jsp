@@ -147,6 +147,7 @@
                         html += "<input type='text' class='form-control' style='display: none;'  name='property[" + (i - 1) + "]' value='" + result.pdoHeader[i] + "'/>";
                         //alert(html);
                     }
+                    html += "<input type='text' class='form-control' style='display: none;' name='pdoName' value='" + document.getElementById("pdoName").value + "'/>";
                     html += "<div class='form-group'><div class='col-sm-offset-2 col-sm-2'><button type='submit' class='btn btn-info'>提交</button></div></div>";
                     document.getElementById("Pdoform").innerHTML = html;
                 }else{

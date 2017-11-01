@@ -13,7 +13,7 @@ public class SearchRecord extends ActionSupport{
     String pdoName;
     Vector<String> property=new Vector<>();
     Vector<String> filter=new Vector<>();
-    Vector<Vector<String>> recordInfos; //多条记录信息
+    Vector<Vector<String>> recordInfos = new Vector<Vector<String>>(); //多条记录信息
 
     public Vector<Vector<String>> getRecordInfos() {
         return recordInfos;
@@ -52,11 +52,12 @@ public class SearchRecord extends ActionSupport{
             HttpSession session = null;
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");
-            String sql="select * from "+user+"_"+pdoName+"where ";
+            String sql="select * from "+user+"_"+pdoName+" where ";
             sql+=property.elementAt(0)+"='"+filter.elementAt(0)+"' ";
             for (int i=1;i<property.size();i++){
                 sql+="AND "+property.elementAt(i)+"='"+filter.elementAt(i)+"'";
             }
+            System.out.println(sql);
 
             MysqlConnector mysqlConnector=new MysqlConnector();
 
@@ -76,7 +77,9 @@ public class SearchRecord extends ActionSupport{
 //            System.out.println(pdoHeader);
             rs.close();
             con.close();
-
+//            for(int i = 0; i < recordInfos.size(); i++) {
+//                System.out.println(recordInfos.elementAt(i).toString());
+//            }
         }
         catch (Exception e){
             e.printStackTrace();
