@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: qiusuo
@@ -11,9 +12,24 @@
     <title>Title</title>
 </head>
 <body>
-<form action="SearchAll.action">
-    <input name="keyWord">
-    <button type="submit">提交</button>
-</form>
+<s:debug></s:debug>
+<%--<form action="SearchAll.action">--%>
+    <%--<input name="keyWord">--%>
+    <%--<button type="submit">提交</button>--%>
+<%--</form>--%>
+<% int i=0;
+
+%>
+<%--<s:iterator value="a" var="ae">--%>
+    <%--<s:property value="a[%{'#b['}]"></s:property>--%>
+<%--</s:iterator>--%>
+<%--<s:iterator value="b" var="i">--%>
+    <%--<s:property value="a[0][0]"></s:property>--%>
+
+<%--</s:iterator>--%>
+<s:iterator value="b" var="be">
+    <s:property value="#be"></s:property>
+    <s:property value="a[0][#be]"></s:property>
+</s:iterator>
 </body>
 </html>

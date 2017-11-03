@@ -13,20 +13,26 @@ body {
 }
 .jumbotron{
     text-align: center;
-    margin: 0;
+    margin: 0 0 30px 0;
     /*background-color: #ffffff;*/
 }
 .jumbotron h2{
     font-size: 40px;
 }
 .div-circle{
-    background-color: #338bd4;
+    background-color: #5bc0de;
     width: 100px;
     height: 100px;
     border-radius: 50px;
     margin: 0 auto;
     text-align: center;
     padding-top: 30px;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+    background-color: #5bc0de;
+}
+a{
+    color: #46b8da;
 }
 .row{
     width: 90%;
@@ -44,12 +50,7 @@ body {
 .footer{
     bottom: 0;
 }
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
-    background-color: #5bc0de;
-}
-a{
-    color: #46b8da;
-}
+
 .hide{
     diplay: none;
 }

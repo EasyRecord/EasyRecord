@@ -23,279 +23,387 @@
     <table id="11" parent="2" name="Book"/>
     <table id="12" parent="7" name="admin_link"/>
     <table id="13" parent="7" name="admin_pdoName"/>
-    <table id="14" parent="7" name="admin_出行"/>
-    <table id="15" parent="7" name="admin_吃饭"/>
-    <table id="16" parent="7" name="admin_游玩"/>
-    <table id="17" parent="7" name="admin_聚餐"/>
-    <table id="18" parent="7" name="admin_购物"/>
-    <table id="19" parent="7" name="test_eat"/>
-    <table id="20" parent="7" name="test_link"/>
-    <table id="21" parent="7" name="test_pdoName"/>
-    <table id="22" parent="7" name="test_中文测试"/>
-    <table id="23" parent="8" name="userInfo"/>
-    <column id="24" parent="10" name="AuthorID">
+    <table id="14" parent="7" name="admin_上课"/>
+    <table id="15" parent="7" name="admin_出行"/>
+    <table id="16" parent="7" name="admin_吃饭"/>
+    <table id="17" parent="7" name="admin_实验"/>
+    <table id="18" parent="7" name="admin_游玩"/>
+    <table id="19" parent="7" name="admin_电子游戏"/>
+    <table id="20" parent="7" name="admin_考试"/>
+    <table id="21" parent="7" name="admin_聚餐"/>
+    <table id="22" parent="7" name="admin_购物"/>
+    <table id="23" parent="7" name="admin_运动"/>
+    <table id="24" parent="7" name="test_eat"/>
+    <table id="25" parent="7" name="test_link"/>
+    <table id="26" parent="7" name="test_pdoName"/>
+    <table id="27" parent="7" name="test_中文测试"/>
+    <table id="28" parent="8" name="userInfo"/>
+    <column id="29" parent="10" name="AuthorID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="10" name="Name">
+    <column id="30" parent="10" name="Name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="26" parent="10" name="Age">
+    <column id="31" parent="10" name="Age">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="27" parent="10" name="Country">
+    <column id="32" parent="10" name="Country">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="28" parent="10" name="PRIMARY">
+    <key id="33" parent="10" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>AuthorID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="29" parent="11" name="ISBN">
+    <column id="34" parent="11" name="ISBN">
       <Position>1</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="30" parent="11" name="Title">
+    <column id="35" parent="11" name="Title">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="31" parent="11" name="AuthorID">
+    <column id="36" parent="11" name="AuthorID">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="32" parent="11" name="Publisher">
+    <column id="37" parent="11" name="Publisher">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="33" parent="11" name="PublishDate">
+    <column id="38" parent="11" name="PublishDate">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="34" parent="11" name="Price">
+    <column id="39" parent="11" name="Price">
       <Position>6</Position>
       <DataType>decimal(10,2)|0</DataType>
     </column>
-    <index id="35" parent="11" name="AuthorID">
+    <index id="40" parent="11" name="AuthorID">
       <ColNames>AuthorID</ColNames>
     </index>
-    <key id="36" parent="11" name="PRIMARY">
+    <key id="41" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ISBN</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="37" parent="11" name="AuthorID">
+    <foreign-key id="42" parent="11" name="AuthorID">
       <ColNames>AuthorID</ColNames>
       <RefSchemaName>BookDB</RefSchemaName>
       <RefTableName>Author</RefTableName>
       <RefColNames>AuthorID</RefColNames>
     </foreign-key>
-    <column id="38" parent="12" name="generateTime">
+    <column id="43" parent="12" name="generateTime">
       <Position>1</Position>
       <DataType>timestamp(3)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
     </column>
-    <column id="39" parent="12" name="source">
+    <column id="44" parent="12" name="source">
       <Position>2</Position>
       <DataType>timestamp(3)|0</DataType>
     </column>
-    <column id="40" parent="12" name="target">
+    <column id="45" parent="12" name="target">
       <Position>3</Position>
       <DataType>timestamp(3)|0</DataType>
     </column>
-    <column id="41" parent="12" name="pdoNameTarget">
+    <column id="46" parent="12" name="pdoNameTarget">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="42" parent="12" name="PRIMARY">
+    <key id="47" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>generateTime</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="43" parent="13" name="names">
+    <column id="48" parent="13" name="names">
       <Position>1</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="44" parent="13" name="PRIMARY">
+    <key id="49" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>names</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="45" parent="14" name="generateTime">
+    <column id="50" parent="14" name="generateTime">
       <Position>1</Position>
       <DataType>timestamp(3)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
     </column>
-    <column id="46" parent="14" name="方式">
+    <column id="51" parent="14" name="时间">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <key id="47" parent="14" name="PRIMARY">
+    <key id="52" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>generateTime</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="48" parent="15" name="generateTime">
+    <column id="53" parent="15" name="generateTime">
       <Position>1</Position>
       <DataType>timestamp(3)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
     </column>
-    <column id="49" parent="15" name="时间">
+    <column id="54" parent="15" name="方式">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="50" parent="15" name="人数">
+    <key id="55" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>generateTime</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="56" parent="16" name="generateTime">
+      <Position>1</Position>
+      <DataType>timestamp(3)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
+    </column>
+    <column id="57" parent="16" name="时间">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="58" parent="16" name="人数">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <key id="51" parent="15" name="PRIMARY">
+    <key id="59" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>generateTime</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="52" parent="16" name="generateTime">
+    <column id="60" parent="17" name="generateTime">
       <Position>1</Position>
       <DataType>timestamp(3)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
     </column>
-    <column id="53" parent="16" name="时间">
+    <column id="61" parent="17" name="时间">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <key id="54" parent="16" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>generateTime</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="55" parent="17" name="generateTime">
-      <Position>1</Position>
-      <DataType>timestamp(3)|0</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
-    </column>
-    <column id="56" parent="17" name="时间">
-      <Position>2</Position>
-      <DataType>varchar(20)|0</DataType>
-    </column>
-    <column id="57" parent="17" name="人数">
+    <column id="62" parent="17" name="地点">
       <Position>3</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(10)|0</DataType>
     </column>
-    <key id="58" parent="17" name="PRIMARY">
+    <column id="63" parent="17" name="老师">
+      <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="64" parent="17" name="课程">
+      <Position>5</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="65" parent="17" name="题目">
+      <Position>6</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="66" parent="17" name="时长">
+      <Position>7</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <key id="67" parent="17" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>generateTime</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="59" parent="18" name="generateTime">
+    <column id="68" parent="18" name="generateTime">
       <Position>1</Position>
       <DataType>timestamp(3)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
     </column>
-    <column id="60" parent="18" name="地点">
+    <column id="69" parent="18" name="时间">
       <Position>2</Position>
-      <DataType>varchar(20)|0</DataType>
+      <DataType>varchar(10)|0</DataType>
     </column>
-    <key id="61" parent="18" name="PRIMARY">
+    <key id="70" parent="18" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>generateTime</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="62" parent="19" name="generateTime">
+    <column id="71" parent="19" name="generateTime">
       <Position>1</Position>
       <DataType>timestamp(3)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
     </column>
-    <column id="63" parent="19" name="place">
+    <column id="72" parent="19" name="游戏名">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="64" parent="19" name="time">
+    <key id="73" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>generateTime</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="74" parent="20" name="generateTime">
+      <Position>1</Position>
+      <DataType>timestamp(3)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
+    </column>
+    <column id="75" parent="20" name="时间">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <key id="76" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>generateTime</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="77" parent="21" name="generateTime">
+      <Position>1</Position>
+      <DataType>timestamp(3)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
+    </column>
+    <column id="78" parent="21" name="时间">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="79" parent="21" name="人数">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="80" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>generateTime</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="81" parent="22" name="generateTime">
+      <Position>1</Position>
+      <DataType>timestamp(3)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
+    </column>
+    <column id="82" parent="22" name="地点">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="83" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>generateTime</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="84" parent="23" name="generateTime">
+      <Position>1</Position>
+      <DataType>timestamp(3)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
+    </column>
+    <column id="85" parent="23" name="时间">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="86" parent="23" name="地点">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="87" parent="23" name="项目">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="88" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>generateTime</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="89" parent="24" name="generateTime">
+      <Position>1</Position>
+      <DataType>timestamp(3)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
+    </column>
+    <column id="90" parent="24" name="place">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="91" parent="24" name="time">
       <Position>3</Position>
       <DataType>timestamp(3)|0</DataType>
     </column>
-    <column id="65" parent="19" name="people">
+    <column id="92" parent="24" name="people">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="66" parent="19" name="expense">
+    <column id="93" parent="24" name="expense">
       <Position>5</Position>
       <DataType>double|0</DataType>
     </column>
-    <key id="67" parent="19" name="PRIMARY">
+    <key id="94" parent="24" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>generateTime</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="68" parent="20" name="generateTime">
+    <column id="95" parent="25" name="generateTime">
       <Position>1</Position>
       <DataType>timestamp(3)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
     </column>
-    <column id="69" parent="20" name="source">
+    <column id="96" parent="25" name="source">
       <Position>2</Position>
       <DataType>timestamp(3)|0</DataType>
     </column>
-    <column id="70" parent="20" name="target">
+    <column id="97" parent="25" name="target">
       <Position>3</Position>
       <DataType>timestamp(3)|0</DataType>
     </column>
-    <column id="71" parent="20" name="pdoNameTarget">
+    <column id="98" parent="25" name="pdoNameTarget">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="72" parent="20" name="PRIMARY">
+    <key id="99" parent="25" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>generateTime</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="73" parent="21" name="names">
+    <column id="100" parent="26" name="names">
       <Position>1</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="74" parent="21" name="PRIMARY">
+    <key id="101" parent="26" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>names</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="75" parent="22" name="generateTime">
+    <column id="102" parent="27" name="generateTime">
       <Position>1</Position>
       <DataType>timestamp(3)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
     </column>
-    <column id="76" parent="22" name="字段">
+    <column id="103" parent="27" name="字段">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="77" parent="22" name="PRIMARY">
+    <key id="104" parent="27" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>generateTime</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="78" parent="23" name="username">
+    <column id="105" parent="28" name="username">
       <Position>1</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="79" parent="23" name="passwd">
+    <column id="106" parent="28" name="passwd">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="80" parent="23" name="PRIMARY">
+    <key id="107" parent="28" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>username</ColNames>
       <Primary>1</Primary>

@@ -71,15 +71,15 @@
                 <label for="username" class="col-sm-2 control-label">用户名</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="username" placeholder="用户名" name="username" onblur="checkUserName()">
-                    <span id="namespan"></span>
+                    <div id="namespan"></div>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="password" class="col-sm-2 control-label">密码</label>
                 <div class="col-sm-9">
-                    <input type="password" class="form-control" id="password" placeholder="密码" name="passwd" onblur="checkPassWord()">
-                    <span id="pwspan"></span>
+                    <input type="password" class="form-control" id="password" placeholder="密码" name="passwd"onblur="checkPassWord()">
+                    <div id="pwspan"></div>
                 </div>
 
             </div>
@@ -130,6 +130,7 @@
             if(request.readyState === 4){
                 if(request.status === 200){
                     var result = JSON.parse(request.responseText);
+//                    alert(result);
                     for(var i = 0; i < result.usernames.length; i ++){
                         //alert(result.pdoHeader[i]);
 //                        html+=

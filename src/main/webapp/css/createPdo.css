@@ -20,8 +20,33 @@ p.col-sm-1{
 	margin: 50px 80px;
 }
 .center-hr{
-	margin: 50px;
+	margin: 45px;
 }
 .PDOform{
 	margin-top: 50px;
+}
+.success-mes{
+	width: 650px;
+	margin: 102px auto;
+}
+.mes{
+	margin-left: 90px;
+}
+.icon-ok{
+	color: #3ece3e;
+	font-size: 80px;
+}
+.icon-error{
+	color: #fd5656;
+	font-size: 80px;
+}
+.link-box{
+	margin-top: 50px;
+	margin-left: 90px;
+}
+.morelink{
+	margin-right: 20px;
+}
+a.morelink:hover, a.morelink:active{
+	color: #1299c1;
 }

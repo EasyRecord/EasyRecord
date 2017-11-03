@@ -70,7 +70,8 @@
                 <label for="username" class="col-sm-2 control-label">用户名</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="username" placeholder="用户名" name="username" onblur="checkUserName()">
-                    <span id="namespan"></span>
+                    <div id="namespan"></div>
+
                 </div>
             </div>
 
@@ -78,21 +79,22 @@
                 <label for="password" class="col-sm-2 control-label">密码</label>
                 <div class="col-sm-9">
                     <input type="password" class="form-control" id="password" placeholder="密码" name="passwd" onblur="checkPassWord()">
-                    <span id="pwspan"></span>
+                    <div id="pwspan"></div>
+
                 </div>
             </div>
             <%--<div class="form-group">--%>
-                <%--<label for="password-repeat" class="col-sm-2 control-label">重复密码</label>--%>
-                <%--<div class="col-sm-9">--%>
-                    <%--<input type="password" class="form-control" id="password-repeat" placeholder="重复密码" name="passwdRepeat">--%>
-                <%--</div>--%>
+            <%--<label for="password-repeat" class="col-sm-2 control-label">重复密码</label>--%>
+            <%--<div class="col-sm-9">--%>
+            <%--<input type="password" class="form-control" id="password-repeat" placeholder="重复密码" name="passwdRepeat">--%>
+            <%--</div>--%>
             <%--</div>--%>
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-4">
                     <button type="submit" class="btn btn-info login">注册</button>
                 </div>
-                <p class="col-sm-5 forget"><a href="Logout.action" class="pull-right">已有账号？直接登陆>></a></p>
+                <p class="col-sm-5 forget"><a href="ReadyToLogin.action" class="pull-right">已有账号？直接登陆>></a></p>
                 <%-- 此处已有账号时是否应该跳转到登录页面 --%>
             </div>
         </form>

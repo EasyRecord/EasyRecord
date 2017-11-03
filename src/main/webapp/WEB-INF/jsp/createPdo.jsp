@@ -15,7 +15,6 @@
 <s:debug></s:debug>
 新建PDO
 <form>
-
 </form>
 </body>
 </html> --%>
@@ -32,25 +31,21 @@
     <script type="text/javascript" src="../bootstrap/js/jquery-1.12.0.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-
             $("#addProperty").click(function(){
                 var count = $("#createPDOform").children(".form-group").length;
                 $("#createPDOform").children().children("p").remove();
-
                 $("#createPDOform").append("<div class='form-group' id='element" + count + "'>"
                     + "<label for='property" + count + "' class='col-sm-1 control-label'>字段名</label>"
                     + "<div class='col-sm-4'>"
                     + "<input type='text' class='form-control' id='property" + count + "' name='property[" + count + "]'></div>"
                     + "<label for='elementType" + count + "' class='col-sm-1 control-label'>字段类型</label>"
                     + "<div class='col-sm-2'><select class='form-control' name='elementType[" + count + "]' id='elementType" + count + "'>"
-                    + "<option value='varchar'>String</option><option value='int'>int</option>"
-                    + "<option value='float'>double</option><option value='datetime'>Timestamp</option></select></div>"
+                    + "<option value='String'>String</option><option value='int'>int</option>"
+                    + "<option value='double'>double</option><option value='Timestamp'>Timestamp</option></select></div>"
                     + "<label for='size" + count + "' class='col-sm-1 control-label'>字段长度</label>"
                     + "<div class='col-sm-2'><input type='text' class='form-control' id='size" + count + "' name='size[" + count + "]'></div>"
                     + "<p class='col-sm-1' id='" + count + "'><a href='#'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></p></div>");
-
             });
-
             $("#createPDOform").on("click", "p", function(){
                 var pvalue = $(this).attr('id');
                 $("#element" + pvalue).remove();
@@ -71,9 +66,9 @@
                 <li role="presentation" class="active"><a href="GoToGeneratePdo.action">新建</a></li>
                 <li role="presentation"><a href="GoToInsertRecord.action">添加</a></li>
                 <li role="presentation"><a href="GoToSearch.action">查询</a></li>
-                <li role="presentation"><a href="GoToImport.action">上传</a></li>
+                <li role="presentation"><a href="GoToImport.action">导入</a></li>
                 <%-- 跳转到index.jsp页面 --%>
-                <li role="presentation"><a href="index.jsp"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 返回</a></li>
+                <li role="presentation"><a href="BackToIndex.action"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 返回</a></li>
                 <li role="presentation"><a href="Logout.action"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 登出</a></li>
                 <% if(session.getAttribute("user")==null) response.sendRedirect("Logout.action");%>
             </ul>
