@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<html>--%>
 <%--<head>--%>
-    <%--<title>Title</title>--%>
+<%--<title>Title</title>--%>
 <%--</head>--%>
 <%--<body>--%>
 <%--<s:debug></s:debug>--%>
@@ -41,7 +41,6 @@
                 $("#searchByAttr").attr("class", "tab-pane");
                 $("#tosearchByAttr").attr("class","second-menu");
             });
-
         })
     </script>
 </head>
@@ -106,23 +105,23 @@
 
                 <form class="form-horizontal PDOform" method="post" action="SearchRecord.action" id="Pdoform">
                     <%--<div class="form-group">--%>
-                        <%--<label for="property0" class="col-sm-2 control-label">字段名0</label>--%>
-                        <%--<div class="col-sm-8">--%>
-                            <%--<input type="text" class="form-control" id="property0" name="property[0]">--%>
-                        <%--</div>--%>
+                    <%--<label for="property0" class="col-sm-2 control-label">字段名0</label>--%>
+                    <%--<div class="col-sm-8">--%>
+                    <%--<input type="text" class="form-control" id="property0" name="property[0]">--%>
+                    <%--</div>--%>
                     <%--</div>--%>
                     <%--<div class="form-group">--%>
-                        <%--<label for="property1" class="col-sm-2 control-label">字段名1</label>--%>
-                        <%--<div class="col-sm-8">--%>
-                            <%--<input type="text" class="form-control" id="property1" name="property[0]">--%>
-                        <%--</div>--%>
+                    <%--<label for="property1" class="col-sm-2 control-label">字段名1</label>--%>
+                    <%--<div class="col-sm-8">--%>
+                    <%--<input type="text" class="form-control" id="property1" name="property[0]">--%>
+                    <%--</div>--%>
                     <%--</div>--%>
 
-                        <%--<div class="form-group">--%>
-                            <%--<div class="col-sm-offset-2 col-sm-2">--%>
-                                <%--<button type="submit" class="btn btn-info">提交</button>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
+                    <%--<div class="form-group">--%>
+                    <%--<div class="col-sm-offset-2 col-sm-2">--%>
+                    <%--<button type="submit" class="btn btn-info">提交</button>--%>
+                    <%--</div>--%>
+                    <%--</div>--%>
                 </form>
             </div>
 
@@ -174,7 +173,6 @@
         var data = "pdoName=" + document.getElementById("pdoName-pdo").value;
         request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         request.send(data);
-
         request.onreadystatechange = function () {
             if(request.readyState === 4){
                 if(request.status === 200){

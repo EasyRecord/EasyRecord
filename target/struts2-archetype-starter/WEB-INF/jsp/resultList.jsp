@@ -1,3 +1,4 @@
+<%@ page import="java.util.Vector" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
@@ -60,6 +61,39 @@
         <h3><s:property value="pdoName"/></h3>
     </div>
 
+    <%--<div id="forms" class="main-table">--%>
+        <%--<% String pdoName=(String)request.getAttribute("pdoName");--%>
+            <%--Vector<String> property=(Vector<String>)request.getAttribute("property");--%>
+            <%--Vector<Vector<String>> recordInfos=(Vector<Vector<String>>)request.getAttribute("recordInfos");--%>
+<%--//            out.println(pdoName);--%>
+            <%--out.println("<table id=\"table\" class=\"table table-hover\">");--%>
+            <%--out.println("<thead><tr>");--%>
+            <%--for(int i = 0; i < property.size(); i++){--%>
+                <%--out.println("<th>" + property.elementAt(i) + "</th>");--%>
+            <%--}--%>
+            <%--out.println("<th>操作</th>");--%>
+            <%--out.println("</tr></thead>");--%>
+
+            <%--for(int j = 0; j < recordInfos.size(); j++){--%>
+                <%--System.out.println(recordInfos.elementAt(j).toString());--%>
+                <%--out.println("<tr>");--%>
+                <%--for(int k = 0; k < recordInfos.elementAt(0).size(); k++){--%>
+                    <%--out.println("<td>" + recordInfos.elementAt(j).elementAt(k) + "</td>");--%>
+                <%--}--%>
+                <%--out.println("<td class=\"operation-box\"><a href=\"GetRecordDetail.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\" class=\"operation\">详情</a>\n" +--%>
+                        <%--"<a href=\"DeleteRecord.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\" class=\"operation\" id=\"delete\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"删除\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></a>\n" +--%>
+                        <%--"<a href=\"ReadyToUpdateRecord.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\" class=\"operation\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"更新\"><span class=\"glyphicon glyphicon-refresh\" aria-hidden=\"true\"></span></a>\n" +--%>
+                        <%--"<a href=\"Connect.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\" class=\"operation\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"建立关联\"><span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span></a></td>");--%>
+                <%--out.println("</tr>");--%>
+<%--//                System.out.println("<td class=\"operation-box\"><a href=\"GetRecordDetail.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\" class=\"operation\">详情</a>\n" +--%>
+<%--//                        "<a href=\"DeleteRecord.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\" class=\"operation\" id=\"delete\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"删除\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></a>\n" +--%>
+<%--//                        "<a href=\"ReadyToUpdateRecord.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\" class=\"operation\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"更新\"><span class=\"glyphicon glyphicon-refresh\" aria-hidden=\"true\"></span></a>\n" +--%>
+<%--//                        "<a href=\"Connect.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\" class=\"operation\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"建立关联\"><span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span></a></td>");--%>
+            <%--}--%>
+            <%--out.println("</table>");--%>
+        <%--%>--%>
+    <%--</div>--%>
+
     <div class="main-table">
         <table class="table table-hover">
             <thead>
@@ -104,50 +138,50 @@
                     </td>
                 </tr>
             </s:iterator>
-
-
-            <%--<tr>--%>
-                <%--<td>字段1</td>--%>
-                <%--<td><a href="#">字段2</a></td>--%>
-                <%--<td>字段3</td>--%>
-                <%--<td class="operation-box">--%>
-                    <%--<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="更新"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a>--%>
-                    <%--<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="删除"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>--%>
-                    <%--<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="建立关联"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></a>--%>
-                <%--</td>--%>
-            <%--</tr>--%>
-            <%--<tr>--%>
-                <%--<td>字段1</td>--%>
-                <%--<td><a href="#">字段2</a></td>--%>
-                <%--<td>字段3</td>--%>
-                <%--<td class="operation-box">--%>
-                    <%--<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="更新"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a>--%>
-                    <%--<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="删除"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>--%>
-                    <%--<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="建立关联"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></a>--%>
-                <%--</td>--%>
-            <%--</tr>--%>
-            <%--<tr>--%>
-                <%--<td>字段1</td>--%>
-                <%--<td><a href="#">字段2</a></td>--%>
-                <%--<td>字段3</td>--%>
-                <%--<td class="operation-box">--%>
-                    <%--<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="更新"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a>--%>
-                    <%--<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="删除"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>--%>
-                    <%--<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="建立关联"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></a>--%>
-                <%--</td>--%>
-            <%--</tr>--%>
-            <%--<tr>--%>
-                <%--<td>字段1</td>--%>
-                <%--<td><a href="#">字段2</a></td>--%>
-                <%--<td>字段3</td>--%>
-                <%--<td class="operation-box">--%>
-                    <%--<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="更新"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a>--%>
-                    <%--<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="删除"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>--%>
-                    <%--<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="建立关联"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></a>--%>
-                <%--</td>--%>
-            <%--</tr>--%>
         </table>
     </div>
+
+
+            <%--&lt;%&ndash;<tr>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td>字段1</td>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td><a href="#">字段2</a></td>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td>字段3</td>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td class="operation-box">&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="更新"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="删除"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="建立关联"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></a>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;</td>&ndash;%&gt;--%>
+            <%--&lt;%&ndash;</tr>&ndash;%&gt;--%>
+            <%--&lt;%&ndash;<tr>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td>字段1</td>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td><a href="#">字段2</a></td>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td>字段3</td>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td class="operation-box">&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="更新"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="删除"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="建立关联"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></a>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;</td>&ndash;%&gt;--%>
+            <%--&lt;%&ndash;</tr>&ndash;%&gt;--%>
+            <%--&lt;%&ndash;<tr>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td>字段1</td>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td><a href="#">字段2</a></td>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td>字段3</td>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td class="operation-box">&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="更新"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="删除"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="建立关联"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></a>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;</td>&ndash;%&gt;--%>
+            <%--&lt;%&ndash;</tr>&ndash;%&gt;--%>
+            <%--&lt;%&ndash;<tr>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td>字段1</td>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td><a href="#">字段2</a></td>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td>字段3</td>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<td class="operation-box">&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="更新"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="删除"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<a href="#" class="operation" data-toggle="tooltip" data-placement="bottom" title="建立关联"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></a>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;</td>&ndash;%&gt;--%>
+            <%--&lt;%&ndash;</tr>&ndash;%&gt;--%>
 
 
 
@@ -159,5 +193,51 @@
 
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
+
+
+
+
+
+
+    <%--<s:debug></s:debug>--%>
+    <%--<div id="forms" class="main-table">--%>
+        <%--<% String pdoName=(String)request.getAttribute("pdoName");--%>
+            <%--Vector<String> property=(Vector<String>)request.getAttribute("property");--%>
+            <%--Vector<Vector<String>> recordInfos=(Vector<Vector<String>>)request.getAttribute("recordInfos");--%>
+            <%--out.println(pdoName);--%>
+            <%--out.println("<table id=\"table\" class=\"table table-striped table-bordered table-hover\">");--%>
+            <%--out.println("<thead><tr>");--%>
+            <%--for(int i = 0; i < property.size(); i++){--%>
+                <%--out.println("<th>" + property.elementAt(i) + "</th>");--%>
+            <%--}--%>
+            <%--out.println("<th>详情</th>\n" +--%>
+                        <%--"<th>删除</th>\n" +--%>
+                        <%--"<th>更新</th>\n" +--%>
+                        <%--"<th>建立关联</th>");--%>
+            <%--out.println("</tr></thead>");--%>
+
+            <%--for(int j = 0; j < recordInfos.size(); j++){--%>
+                <%--out.println("<tr>");--%>
+                <%--for(int k = 0; k < recordInfos.elementAt(0).size(); k++){--%>
+                    <%--out.println("<td>" + recordInfos.elementAt(j).elementAt(k) + "</td>");--%>
+                <%--}--%>
+                <%--out.println("<td><a href=\"GetRecordDetail.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\">详情</a></td>\n" +--%>
+                            <%--"<td><a href=\"DeleteRecord.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\">删除</a></td>\n" +--%>
+                            <%--"<td><a href=\"ReadyToUpdateRecord.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\">更新</a></td>\n" +--%>
+                            <%--"<td><a href=\"Connect.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\">建立关联</a></td>");--%>
+                <%--out.println("</tr>");--%>
+                <%--System.out.println("<td><a href=\"GetRecordDetail.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\">详情</a></td>\n" +--%>
+                        <%--"<td><a href=\"DeleteRecord.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\">删除</a></td>\n" +--%>
+                        <%--"<td><a href=\"ReadyToUpdateRecord.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\">更新</a></td>\n" +--%>
+                        <%--"<td><a href=\"Connect.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\">建立关联</a></td>");--%>
+            <%--}--%>
+            <%--out.println("</table>");--%>
+        <%--%>--%>
+    <%--</div>--%>
+
+
+
+
+
 </body>
 </html>

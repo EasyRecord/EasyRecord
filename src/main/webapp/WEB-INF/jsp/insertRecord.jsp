@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<html>--%>
 <%--<head>--%>
-    <%--<title>Title</title>--%>
+<%--<title>Title</title>--%>
 <%--</head>--%>
 <%--<body>--%>
 <%--<s:debug></s:debug>--%>
@@ -82,36 +82,36 @@
 
         <form class="form-horizontal PDOform" method="post" action="InsertRecord.action" id="Pdoform">
 
-                <%--<div class="form-group">--%>
-                    <%--<label for="property0" class="col-sm-2 control-label">字段名0</label>--%>
-                    <%--<div class="col-sm-8">--%>
-                        <%--<input type="text" class="form-control" id="property0" name="property[0]">--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-                <%--<div class="form-group">--%>
-                    <%--<label for="property1" class="col-sm-2 control-label">字段名1</label>--%>
-                    <%--<div class="col-sm-8">--%>
-                        <%--<input type="text" class="form-control" id="property1" name="property[0]">--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-                <%--<div class="form-group">--%>
-                    <%--<label for="property2" class="col-sm-2 control-label">字段名2</label>--%>
-                    <%--<div class="col-sm-8">--%>
-                        <%--<input type="text" class="form-control" id="property2" name="property[0]">--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-                <%--<div class="form-group">--%>
-                    <%--<label for="property3" class="col-sm-2 control-label">字段名3</label>--%>
-                    <%--<div class="col-sm-8">--%>
-                        <%--<input type="text" class="form-control" id="property3" name="property[0]">--%>
-                    <%--</div>--%>
-                <%--</div>--%>
+            <%--<div class="form-group">--%>
+            <%--<label for="property0" class="col-sm-2 control-label">字段名0</label>--%>
+            <%--<div class="col-sm-8">--%>
+            <%--<input type="text" class="form-control" id="property0" name="property[0]">--%>
+            <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="form-group">--%>
+            <%--<label for="property1" class="col-sm-2 control-label">字段名1</label>--%>
+            <%--<div class="col-sm-8">--%>
+            <%--<input type="text" class="form-control" id="property1" name="property[0]">--%>
+            <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="form-group">--%>
+            <%--<label for="property2" class="col-sm-2 control-label">字段名2</label>--%>
+            <%--<div class="col-sm-8">--%>
+            <%--<input type="text" class="form-control" id="property2" name="property[0]">--%>
+            <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="form-group">--%>
+            <%--<label for="property3" class="col-sm-2 control-label">字段名3</label>--%>
+            <%--<div class="col-sm-8">--%>
+            <%--<input type="text" class="form-control" id="property3" name="property[0]">--%>
+            <%--</div>--%>
+            <%--</div>--%>
 
 
             <%--<div class="form-group">--%>
-                <%--<div class="col-sm-offset-2 col-sm-2">--%>
-                    <%--<button type="submit" class="btn btn-info">提交</button>--%>
-                <%--</div>--%>
+            <%--<div class="col-sm-offset-2 col-sm-2">--%>
+            <%--<button type="submit" class="btn btn-info">提交</button>--%>
+            <%--</div>--%>
             <%--</div>--%>
         </form>
     </div>
@@ -134,7 +134,6 @@
         var data = "pdoName=" + document.getElementById("pdoName").value;
         request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         request.send(data);
-
         request.onreadystatechange = function () {
             if(request.readyState === 4){
                 if(request.status === 200){

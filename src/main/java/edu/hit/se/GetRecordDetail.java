@@ -14,12 +14,12 @@ public class GetRecordDetail extends ActionSupport{
     String key;
 
     String pdoName; //当前记录所属PDO的名称
-    Vector<String> property; //
-    Vector<String> info;
+    Vector<String> property=new Vector<>(); //
+    Vector<String> info=new Vector<>();
 
-    Vector<String> relatedPdoNames;
-    Vector<Vector<String>> relatedRecordProperties;
-    Vector<Vector<String>> relatedRecordInfos;
+    Vector<String> relatedPdoNames=new Vector<>();
+    Vector<Vector<String>> relatedRecordProperties=new Vector<>();
+    Vector<Vector<String>> relatedRecordInfos =new Vector();
 
     public String getKey() {
         return key;
@@ -79,10 +79,13 @@ public class GetRecordDetail extends ActionSupport{
 
     public String execute(){
         try {
+            System.out.println(pdoName);
+            System.out.println(key);
             HttpSession session = null;
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");
             String sql="SHOW  columns from "+user+"_"+pdoName;
+            System.out.println(sql);
             MysqlConnector mysqlConnector=new MysqlConnector();
 
 
@@ -99,6 +102,7 @@ public class GetRecordDetail extends ActionSupport{
 
 //            rs.close();
 //            statement = con.createStatement();
+            System.out.println(sql);
             rs = statement.executeQuery(sql);
 
             if (rs.next()){
@@ -106,6 +110,7 @@ public class GetRecordDetail extends ActionSupport{
                    info.add(rs.getString(property.elementAt(i)));
             }
             sql="select * from "+user+"_link WHERE source='"+key+"'";
+            System.out.println(sql);
             rs = statement.executeQuery(sql);
             Vector<String > targetPk=new Vector<>();
 //            Vector<String > pdoNameDestination=new Vector<>();
@@ -121,6 +126,7 @@ public class GetRecordDetail extends ActionSupport{
                 tempProperty.clear();
                 tempInfo.clear();
                 sql="SHOW  columns from "+user+"_"+relatedPdoNames.elementAt(i);
+                System.out.println(sql);
                 rs = statement.executeQuery(sql);
 
                 while (rs.next()){
@@ -128,6 +134,7 @@ public class GetRecordDetail extends ActionSupport{
                 }
                 relatedRecordProperties.add(tempProperty);
                 sql="SELECT * FROM "+user+"_"+relatedPdoNames.elementAt(i)+" WHERE generateTime='"+targetPk.elementAt(i)+"'";
+                System.out.println(sql);
                 rs = statement.executeQuery(sql);
                 if(rs.next()){
                    for(int j=0;j<tempProperty.size();j++){
