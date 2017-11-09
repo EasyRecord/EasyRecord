@@ -21,7 +21,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>查询结果</title>
+    <title>高级搜索结果</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="../css/index.css"/>

@@ -50,3 +50,12 @@ p.col-sm-1{
 a.morelink:hover, a.morelink:active{
 	color: #1299c1;
 }
+.main-table{
+	margin-right: 80px;
+	margin-left: 80px;
+	margin-bottom: 80px;
+	margin-top: 20px;
+}
+.table{
+	font-size: 14px;
+}

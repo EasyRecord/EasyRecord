@@ -11,11 +11,19 @@ p.col-sm-1{
 	margin-right: 80px;
 	margin-bottom: 30px;
 }
+.table-title-s{
+	margin-top: 80px;
+	margin-right: 80px;
+	margin-bottom: 30px;
+}
 .main-table{
 	margin-right: 80px;
 	margin-left: 80px;
 	margin-bottom: 80px;
 	margin-top: 20px;
+}
+.table{
+	font-size: 14px;
 }
 .operation-box{
 	width: 160px;

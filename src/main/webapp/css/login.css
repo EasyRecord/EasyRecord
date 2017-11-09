@@ -1,3 +1,20 @@
+.title{
+	margin-top: 40px;
+	padding-top: 30px;
+	height: 300px;
+	border-right: #d6d3d3 solid 1px;
+	text-align: center;
+}
+.icon-title{
+	color: #46b8da;
+}
+.icon-title span{
+	color: #46b8da;
+	font-size: 80px;
+}
+.form-title h2{
+	white-space: pre-wrap;
+}
 .form-title{
 	text-align: center;
 	margin-top: 60px;
@@ -6,7 +23,7 @@
 	white-space: pre-wrap;
 }
 .main-form{
-	margin: 60px 190px;
+	margin: 45px 30px;
 }
 .forget{
 	padding-top: 7px;

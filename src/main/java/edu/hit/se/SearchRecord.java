@@ -13,7 +13,7 @@ public class SearchRecord extends ActionSupport{
     String pdoName;
     Vector<String> property=new Vector<>();
     Vector<String> filter=new Vector<>();
-    Vector<Vector<String>> recordInfos = new Vector<>(); //多条记录信息
+    Vector<Vector<String>> recordInfos=new Vector<>(); //多条记录信息
 
     public Vector<Vector<String>> getRecordInfos() {
         return recordInfos;
@@ -49,9 +49,15 @@ public class SearchRecord extends ActionSupport{
 
     public String execute(){
         try {
+            System.out.println("in Search record");
             HttpSession session = null;
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");
+//            String sql="select * from "+user+"_"+pdoName+" where ";
+//            sql+=property.elementAt(0)+" like binary '%"+filter.elementAt(0)+"%' ";
+//            for (int i=1;i<property.size();i++){
+//                sql+="AND "+property.elementAt(i)+" like binary '%"+filter.elementAt(i)+"%'";
+//            }
             String sql="select * from "+user+"_"+pdoName;
             String tempSql = "";
             if(filter.elementAt(0) != null && filter.elementAt(0) != "") {
@@ -69,12 +75,7 @@ public class SearchRecord extends ActionSupport{
             if(tempSql != "") {
                 sql += " where " + tempSql;
             }
-//            sql+=property.elementAt(0)+" like binary '%"+filter.elementAt(0)+"%' ";
-//            for (int i=1;i<property.size();i++){
-//                sql+="AND "+property.elementAt(i)+" like binary '%"+filter.elementAt(i)+"%'";
-//            }
             System.out.println(sql);
-
             MysqlConnector mysqlConnector=new MysqlConnector();
 
             Connection con=mysqlConnector.solution("PDO");
@@ -85,17 +86,17 @@ public class SearchRecord extends ActionSupport{
             Vector<String > temp=new Vector<>();
             property.insertElementAt("generateTime",0);
             while (rs.next()){
-                temp.clear();
+                temp=new Vector<>();
                 for (int i=0;i<property.size();i++)
                     temp.add(rs.getString(property.elementAt(i)));
+                System.out.println(temp);
                 recordInfos.add(temp);
             }
+            System.out.println(recordInfos);
 //            System.out.println(pdoHeader);
             rs.close();
             con.close();
-            for(int i = 0; i < recordInfos.size(); i++) {
-                System.out.println(recordInfos.elementAt(i).toString());
-            }
+
         }
         catch (Exception e){
             e.printStackTrace();

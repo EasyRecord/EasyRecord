@@ -11,8 +11,8 @@ import java.util.Vector;
 
 public class GetAllRecord extends ActionSupport {
     String pdoName;
-    Vector<String> property;
-    Vector<Vector<String>> infos;
+    Vector<String> property=new Vector<>();
+    Vector<Vector<String>> infos=new Vector<>();
 
     public String getPdoName() {
         return pdoName;
@@ -43,7 +43,9 @@ public class GetAllRecord extends ActionSupport {
             HttpSession session = null;
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");
+//            String user="admin";
             String sql="SHOW  columns from "+user+"_"+pdoName;
+            System.out.println(sql);
             MysqlConnector mysqlConnector=new MysqlConnector();
 
 
@@ -64,7 +66,7 @@ public class GetAllRecord extends ActionSupport {
             rs = statement.executeQuery(sql);
             Vector<String > temp=new Vector<>();
             while (rs.next()){
-                temp.clear();
+                temp=new Vector<>();
                 for (int i=0;i<property.size();i++)
                     temp.add(rs.getString(property.elementAt(i)));
                 infos.add(temp);

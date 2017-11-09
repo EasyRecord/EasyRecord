@@ -106,8 +106,8 @@ public class GetRecordDetail extends ActionSupport{
             rs = statement.executeQuery(sql);
 
             if (rs.next()){
-               for (int i=0;i<property.size();i++)
-                   info.add(rs.getString(property.elementAt(i)));
+                for (int i=0;i<property.size();i++)
+                    info.add(rs.getString(property.elementAt(i)));
             }
             sql="select * from "+user+"_link WHERE source='"+key+"'";
             System.out.println(sql);
@@ -137,12 +137,15 @@ public class GetRecordDetail extends ActionSupport{
                 System.out.println(sql);
                 rs = statement.executeQuery(sql);
                 if(rs.next()){
-                   for(int j=0;j<tempProperty.size();j++){
-                       tempInfo.add(rs.getString(tempProperty.elementAt(j)));
-                   }
+                    for(int j=0;j<tempProperty.size();j++){
+                        tempInfo.add(rs.getString(tempProperty.elementAt(j)));
+                    }
                 }
                 relatedRecordInfos.add(tempInfo);
             }
+            System.out.println(relatedPdoNames);
+            System.out.println(relatedRecordProperties);
+            System.out.println(relatedRecordInfos);
 
             rs.close();
             con.close();

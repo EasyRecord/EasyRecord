@@ -61,6 +61,17 @@
     <div class="jumbotron">
         <h2>个人信息采集</h2>
         <p>Create your own personal records.</p>
+        <br/>
+        <form class="form-horizontal search-form" method="post" action="SearchAll">
+            <div class="form-group">
+                <div class="col-sm-5 col-sm-offset-3">
+                    <input type="text" class="form-control" placeholder="请输入要搜索的内容" name="keyWord">
+                </div>
+                <div class="col-sm-1">
+                    <button type="submit" class="btn btn-info" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                </div>
+            </div>
+        </form>
         <!--<p>
         <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
         </p>-->
