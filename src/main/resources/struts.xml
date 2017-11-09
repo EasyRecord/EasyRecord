@@ -77,6 +77,10 @@
         <result>/WEB-INF/jsp/test.jsp</result>
     </action>
 
+    <action name="Association" class="edu.hit.se.Association">
+        <result name="success">/WEB-INF/jsp/success.jsp</result>
+    </action>
+
     <action name="BackToIndex">
         <result>/WEB-INF/jsp/index.jsp</result>
     </action>
@@ -171,9 +175,9 @@
         <result name="success" type="json"></result>
     </action>
 
-    <action name="Association" class="edu.hit.se.Association">
-        <result name="success" type="json"></result>
-    </action>
+    <!--<action name="Association" class="edu.hit.se.Association">-->
+        <!--<result name="success" type="json"></result>-->
+    <!--</action>-->
 
 
 
