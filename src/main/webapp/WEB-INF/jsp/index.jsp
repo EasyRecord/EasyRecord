@@ -42,10 +42,17 @@
     <div class="header clearfix">
         <nav>
             <ul class="nav nav-pills pull-right">
+<%--<<<<<<< HEAD--%>
+                <%--&lt;%&ndash;<li role="presentation"><a href="GoToGeneratePdo.action">新建</a></li>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<li role="presentation"><a href="GoToInsertRecord.action">添加</a></li>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<li role="presentation"><a href="GoToSearch.action">查询</a></li>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<li role="presentation"><a href="GoToImport.action">导入</a></li>&ndash;%&gt;--%>
+<%--=======--%>
                 <%--<li role="presentation"><a href="GoToGeneratePdo.action">新建</a></li>--%>
                 <%--<li role="presentation"><a href="GoToInsertRecord.action">添加</a></li>--%>
                 <%--<li role="presentation"><a href="GoToSearch.action">查询</a></li>--%>
                 <%--<li role="presentation"><a href="GoToImport.action">导入</a></li>--%>
+<%-->>>>>>> origin/zhaoyang--%>
 
                 <%--<% out.print(session.getAttribute("user"));%>--%>
                 <li role="presentation"><a href="Logout.action"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 登出</a></li>

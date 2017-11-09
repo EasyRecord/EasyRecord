@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="EasyRecord" />
+        <module name="la2ex" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="EasyRecord" target="1.8" />
+      <module name="la2ex" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

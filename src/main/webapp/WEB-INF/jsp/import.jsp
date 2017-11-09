@@ -9,8 +9,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<html>--%>
 <%--<head>--%>
+<%--<<<<<<< HEAD--%>
 <%--<title>Title</title>--%>
-<%--</head>--%>
+<%--=======--%>
+    <%--&lt;%&ndash;<title>Title</title>&ndash;%&gt;--%>
+<%-->>>>>>> origin/zhaoyang--%>
+<%--&lt;%&ndash;</head>&ndash;%&gt;--%>
 <%--<body>--%>
 <%--<s:debug></s:debug>--%>
 <%--导入--%>
@@ -62,8 +66,13 @@
             <div role="tabpanel" class="tab-pane active importform">
                 <form class="search-form" method="post" action="Import.action">
                     <div class="form-group">
+<%--<<<<<<< HEAD--%>
                         <label for="upload" class="import-box">上传的文件</label>
                         <input type="file" id="upload" name="upload" class="import-box">
+<%--=======--%>
+                        <%--<label for="exampleInputFile" class="import-box">上传的文件</label>--%>
+                        <%--<input type="file" id="exampleInputFile" class="import-box">--%>
+<%-->>>>>>> origin/zhaoyang--%>
                         <p class="help-block">请选择excel表格进行上传（.xls文件）</p>
                     </div>
                     <!-- <div class="form-group">
@@ -71,7 +80,11 @@
                             <button type="submit" class="btn btn-info">提交</button>
                         </div>
                     </div> -->
+<%--<<<<<<< HEAD--%>
                     <input type="submit" class="btn btn-info">上传</input>
+<%--=======--%>
+                    <%--<button type="submit choosePDO" class="btn btn-info">上传</button>--%>
+<%-->>>>>>> origin/zhaoyang--%>
                 </form>
             </div>
         </div>

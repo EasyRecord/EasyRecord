@@ -3,6 +3,67 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
+<!--<<<<<<< HEAD-->
+<!--=======-->
+<!--<struts>-->
+
+    <!--<constant name="struts.enable.DynamicMethodInvocation" value="true"/>-->
+
+    <!--<package name="pages" namespace="/" extends="struts-default">-->
+
+        <!--<default-action-ref name="Logout" />-->
+
+
+
+        <!--<action name="Login" class="edu.hit.se.Login">-->
+            <!--<result>/WEB-INF/jsp/index.jsp</result>-->
+        <!--</action>-->
+
+        <!--<action name="Logout" class="edu.hit.se.Logout">-->
+            <!--<result>/WEB-INF/jsp/login.jsp</result>-->
+        <!--</action>-->
+
+        <!--<action name="ReadyToLogin">-->
+            <!--<result>/WEB-INF/jsp/login.jsp</result>-->
+        <!--</action>-->
+
+        <!--<action name="ReadyToRegister" >-->
+            <!--<result>/WEB-INF/jsp/register.jsp</result>-->
+        <!--</action>-->
+
+        <!--<action name="Register" class="edu.hit.se.Register">-->
+            <!--<result>/WEB-INF/jsp/login.jsp</result>-->
+        <!--</action>-->
+
+        <!--<action name="BackToIndex">-->
+            <!--<result>/WEB-INF/jsp/index.jsp</result>-->
+        <!--</action>-->
+
+        <!--<action name="GoToGeneratePdo" class="edu.hit.se.GetAllPdoNames">-->
+            <!--<result>/WEB-INF/jsp/createPdo.jsp</result>-->
+        <!--</action>-->
+        <!--<action name="GoToInsertRecord" class="edu.hit.se.GetAllPdoNames">-->
+            <!--<result>/WEB-INF/jsp/insertRecord.jsp</result>-->
+        <!--</action>-->
+        <!--<action name="GoToSearch" class="edu.hit.se.GetAllPdoNames">-->
+            <!--<result>/WEB-INF/jsp/search.jsp</result>-->
+        <!--</action>-->
+        <!--<action name="GoToImport" class="edu.hit.se.GetAllPdoNames">-->
+            <!--<result>/WEB-INF/jsp/import.jsp</result>-->
+        <!--</action>-->
+        <!---->
+        <!--<action name="GeneratePdo" class="edu.hit.se.GeneratePdo">-->
+            <!--<result>/WEB-INF/jsp/success.jsp</result>-->
+        <!--</action>-->
+
+        <!--<action name="InsertRecord" class="edu.hit.se.InsertRecord">-->
+            <!--<result>/WEB-INF/jsp/success.jsp</result>-->
+        <!--</action>-->
+
+        <!--<action name="SearchRecord" class="edu.hit.se.SearchRecord">-->
+            <!--<result>/WEB-INF/jsp/resultList.jsp</result>-->
+        <!--</action>-->
+<!--&gt;>>>>>> origin/zhaoyang-->
 
 <struts>
 

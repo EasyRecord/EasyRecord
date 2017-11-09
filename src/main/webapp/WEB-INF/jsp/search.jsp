@@ -68,7 +68,11 @@
             <%--<li role="presentation" class="second-menu active" id="tosearchByPDO"><a href="#">按PDO搜索</a></li>--%>
             <%--<li role="presentation" class="second-menu" id="tosearchByAttr"><a href="#">按字段搜索</a></li>--%>
         </ul>
+<%--<<<<<<< HEAD--%>
         <h2>按PDO查找</h2>
+<%--=======--%>
+        <%--<h2>查找PDO记录</h2>--%>
+<%-->>>>>>> origin/zhaoyang--%>
         <h4><small>search PDO records</small></h4>
         <!--<p>
         <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
