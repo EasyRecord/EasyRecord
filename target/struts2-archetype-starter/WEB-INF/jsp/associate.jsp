@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Title</title>
+    <title>建立关联</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="../css/index.css"/>

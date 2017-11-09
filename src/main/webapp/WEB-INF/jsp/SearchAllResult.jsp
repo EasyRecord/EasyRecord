@@ -72,10 +72,10 @@
                     for (int k = 0; k < infoShot.elementAt(i).elementAt(0).size(); k++) {
                         out.println("<td>" + infoShot.elementAt(i).elementAt(j).elementAt(k) + "</td>");
                     }
-                    out.println("<td class=\"operation-box\"><a href=\"GetRecordDetail.action?generateTime="+infoShot.elementAt(i).elementAt(j).elementAt(0)+"\" class=\"operation\">详情</a>\n" +
-                            "<a href=\"DeleteRecord.action?generateTime="+infoShot.elementAt(i).elementAt(j).elementAt(0)+"\" class=\"operation\" id=\"delete\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"删除\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></a>\n" +
-                            "<a href=\"ReadyToUpdateRecord.action?generateTime="+infoShot.elementAt(i).elementAt(j).elementAt(0)+"\" class=\"operation\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"更新\"><span class=\"glyphicon glyphicon-refresh\" aria-hidden=\"true\"></span></a>\n" +
-                            "<a href=\"Connect.action?generateTime="+infoShot.elementAt(i).elementAt(j).elementAt(0)+"\" class=\"operation\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"建立关联\"><span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span></a></td>");
+                    out.println("<td class=\"operation-box\"><a href=\"GetRecordDetail.action?pdoName="+pdoNameShot.elementAt(i)+"&key="+infoShot.elementAt(i).elementAt(j).elementAt(0)+"\" class=\"operation\">详情</a>\n" +
+                            "<a href=\"DeleteRecord.action?pdoName="+pdoNameShot.elementAt(i)+"&key="+infoShot.elementAt(i).elementAt(j).elementAt(0)+"\" class=\"operation\" id=\"delete\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"删除\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></a>\n" +
+                            "<a href=\"ReadyToUpdateRecord.action?pdoName="+pdoNameShot.elementAt(i)+"&key="+infoShot.elementAt(i).elementAt(j).elementAt(0)+"\" class=\"operation\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"更新\"><span class=\"glyphicon glyphicon-refresh\" aria-hidden=\"true\"></span></a>\n" +
+                            "<a href=\"Connect.action?pdoName="+pdoNameShot.elementAt(i)+"&key="+infoShot.elementAt(i).elementAt(j).elementAt(0)+"\" class=\"operation\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"建立关联\"><span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span></a></td>");
                     out.println("</tr>");
                 }
                 out.println("</table>\n");
