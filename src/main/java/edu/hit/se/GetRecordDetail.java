@@ -143,6 +143,9 @@ public class GetRecordDetail extends ActionSupport{
                 }
                 relatedRecordInfos.add(tempInfo);
             }
+            System.out.println(relatedPdoNames);
+            System.out.println(relatedRecordProperties);
+            System.out.println(relatedRecordInfos);
 
             rs.close();
             con.close();

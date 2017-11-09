@@ -29,7 +29,7 @@
         Vector<String> info = (Vector<String>)request.getAttribute("info");
 
         Vector<String> relatedPdoNames = (Vector<String>)request.getAttribute("relatedPdoNames");
-        Vector<Vector<String>> relatedRecordProperties = (Vector<Vector<String>>)request.getAttribute("relatedProperties");
+        Vector<Vector<String>> relatedRecordProperties = (Vector<Vector<String>>)request.getAttribute("relatedRecordProperties");
         Vector<Vector<String>> relatedRecordInfos = (Vector<Vector<String>>)request.getAttribute("relatedRecordInfos");
 
         out.println(pdoName);
@@ -45,18 +45,20 @@
             out.println("<td>" + info.elementAt(i) + "</td>");
         }
         out.println("</tr>");
-
+        System.out.println(relatedPdoNames.size());
         for (int i = 0; i < relatedPdoNames.size(); i++) {
             out.println(relatedPdoNames.elementAt(i) + "\n");
-            out.println("<table id=\"relatedTable\" class=\"table table-striped table-bordered table-hover \">");
+            out.println("<table id=\"relatedTable_"+i+"\" class=\"table table-striped table-bordered table-hover \">");
             out.println("<tr>");
+            System.out.println(i);
+            System.out.println(relatedRecordProperties);
             for (int j = 0; j < relatedRecordProperties.elementAt(i).size(); j++) {
-                out.println("<th>" + relatedRecordProperties.elementAt(i).elementAt(j) + "</th>");
+                out.println("<td>" + relatedRecordProperties.elementAt(i).elementAt(j) + "</td>");
             }
-            out.println("<th>详情</th>\n" +
-                        "<th>取消关联</th>");
+            out.println("<td>详情</td>" +
+                        "<td>取消关联</td>");
             out.println("</tr>");
-
+//
             for (int j = 0; j < relatedRecordInfos.size(); j++) {
                 out.println("<tr>");
                 for (int k = 0; k < relatedRecordInfos.elementAt(0).size(); k++) {
