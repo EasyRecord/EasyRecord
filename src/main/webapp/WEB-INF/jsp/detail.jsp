@@ -29,36 +29,43 @@
         Vector<String> info = (Vector<String>)request.getAttribute("info");
 
         Vector<String> relatedPdoNames = (Vector<String>)request.getAttribute("relatedPdoNames");
-        Vector<Vector<String>> relatedRecordProperties = (Vector<Vector<String>>)request.getAttribute("relatedProperties");
-        Vector<Vector<String>> relatedRecordInfos = (Vector<Vector<String>>)request.getAttribute("relatedRecordInfos");
+        Vector<Vector<String>> relatedRecordProperties = (Vector<Vector<String>>)request.getAttribute("relatedRecordProperties");
+        Vector<Vector<Vector<String>>> relatedRecordInfos = (Vector<Vector<Vector<String>>>)request.getAttribute("relatedRecordInfos");
 
         out.println(pdoName);
         out.println("<table id=\"table\" class=\"table table-striped table-bordered table-hover \">");
         out.println("<tr>");
         for(int i = 0; i < property.size(); i++) {
             out.println("<th>" + property.elementAt(i) + "</th>");
+
+        }
+        out.println("</tr>");
+        out.println("<tr>");
+        for(int i=0;i<info.size();i++){
             out.println("<td>" + info.elementAt(i) + "</td>");
         }
         out.println("</tr>");
-
+        System.out.println(relatedPdoNames.size());
         for (int i = 0; i < relatedPdoNames.size(); i++) {
             out.println(relatedPdoNames.elementAt(i) + "\n");
-            out.println("<table id=\"relatedTable\" class=\"table table-striped table-bordered table-hover \">");
+            out.println("<table id=\"relatedTable_"+i+"\" class=\"table table-striped table-bordered table-hover \">");
             out.println("<tr>");
+            System.out.println(i);
+            System.out.println(relatedRecordProperties);
             for (int j = 0; j < relatedRecordProperties.elementAt(i).size(); j++) {
-                out.println("<th>" + relatedRecordProperties.elementAt(i).elementAt(j) + "</th>");
+                out.println("<td>" + relatedRecordProperties.elementAt(i).elementAt(j) + "</td>");
             }
-            out.println("<th>详情</th>\n" +
-                        "<th>取消关联</th>");
+            out.println("<td>详情</td>" +
+                        "<td>取消关联</td>");
             out.println("</tr>");
 
-            for (int j = 0; j < relatedRecordInfos.size(); j++) {
+            for (int j = 0; j < relatedRecordInfos.elementAt(i).size(); j++) {
                 out.println("<tr>");
-                for (int k = 0; k < relatedRecordInfos.elementAt(0).size(); k++) {
-                    out.println("<td>" + relatedRecordInfos.elementAt(j).elementAt(k) + "</td>");
+                for (int k = 0; k < relatedRecordInfos.elementAt(i).elementAt(0).size(); k++) {
+                    out.println("<td>" + relatedRecordInfos.elementAt(i).elementAt(j).elementAt(k) + "</td>");
                 }
-                out.println("<td><a href=\"GetRecordDetail.action?pdoName="+relatedPdoNames.elementAt(j)+"&key="+relatedRecordInfos.elementAt(j).elementAt(0)+"\">详情</a></td>\n" +
-                            "<td><a href=\"Disassociation.action?key="+info.elementAt(0)+"&keyDestination="+relatedRecordInfos.elementAt(j).elementAt(0)+"\">取消关联</a></td>");
+                out.println("<td><a href=\"GetRecordDetail.action?pdoName="+relatedPdoNames.elementAt(i)+"&key="+relatedRecordInfos.elementAt(i).elementAt(j).elementAt(0)+"\">详情</a></td>\n" +
+                            "<td><a href=\"Disassociation.action?key="+info.elementAt(0)+"&keyDestination="+relatedRecordInfos.elementAt(i).elementAt(j).elementAt(0)+"\">取消关联</a></td>");
                 out.println("</tr>");
             }
             out.println("</table>\n");

@@ -2,12 +2,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%--<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">--%>
-<%--<head>--%>
-<%--<title>Index</title>--%>
-<%--<s:head />--%>
-<%--</head>--%>
-<%--<body>--%>
-<%--Success--%>
+<%--&lt;%&ndash;<head>&ndash;%&gt;--%>
+<%--<<<<<<< HEAD--%>
+<%--&lt;%&ndash;<title>Index</title>&ndash;%&gt;--%>
+<%--&lt;%&ndash;<s:head />&ndash;%&gt;--%>
+<%--&lt;%&ndash;</head>&ndash;%&gt;--%>
+<%--&lt;%&ndash;<body>&ndash;%&gt;--%>
+<%--&lt;%&ndash;Success&ndash;%&gt;--%>
+<%--=======--%>
+	<%--&lt;%&ndash;<title>Index</title>&ndash;%&gt;--%>
+	<%--&lt;%&ndash;<s:head />&ndash;%&gt;--%>
+<%--&lt;%&ndash;</head>&ndash;%&gt;--%>
+<%--&lt;%&ndash;<body>&ndash;%&gt;--%>
+	<%--&lt;%&ndash;Success&ndash;%&gt;--%>
+<%-->>>>>>> origin/zhaoyang--%>
 <%--</body>--%>
 <%--</html>--%>
 
@@ -41,7 +49,7 @@
 
 
 	<div class="success-mes">
-		<h1><span class="glyphicon glyphicon-ok icon-ok" aria-hidden="true"></span> 信息提交成功</h1>
+		<h1><span class="glyphicon glyphicon-ok icon-ok" aria-hidden="true"></span> 操作成功</h1>
 		<h3 class="mes"><small>Succeed to submit.</small></h3>
 		<div class="link-box">
 			<a href="BackToIndex.action" class="morelink"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 返回首页</a>
