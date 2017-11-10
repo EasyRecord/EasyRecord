@@ -30,7 +30,7 @@
 
         Vector<String> relatedPdoNames = (Vector<String>)request.getAttribute("relatedPdoNames");
         Vector<Vector<String>> relatedRecordProperties = (Vector<Vector<String>>)request.getAttribute("relatedRecordProperties");
-        Vector<Vector<String>> relatedRecordInfos = (Vector<Vector<String>>)request.getAttribute("relatedRecordInfos");
+        Vector<Vector<Vector<String>>> relatedRecordInfos = (Vector<Vector<Vector<String>>>)request.getAttribute("relatedRecordInfos");
 
         out.println(pdoName);
         out.println("<table id=\"table\" class=\"table table-striped table-bordered table-hover \">");
