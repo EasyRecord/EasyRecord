@@ -1,0 +1,51 @@
+label.col-sm-1{
+/*<<<<<<< HEAD*/
+    /*padding-left: 0;*/
+    /*padding-right: 0;*/
+/*}*/
+/*p.col-sm-1{*/
+    /*padding-top: 8px;*/
+/*}*/
+/*.table-title{*/
+    /*margin-top: 80px;*/
+    /*margin-left: 80px;*/
+    /*margin-right: 80px;*/
+    /*margin-bottom: 30px;*/
+/*}*/
+/*.main-table{*/
+    /*margin-right: 80px;*/
+    /*margin-left: 80px;*/
+    /*margin-bottom: 80px;*/
+    /*margin-top: 20px;*/
+/*}*/
+/*.operation-box{*/
+    /*width: 160px;*/
+/*}*/
+/*.operation{*/
+    /*margin-right: 15px;*/
+/*=======*/
+	padding-left: 0;
+	padding-right: 0;
+}
+p.col-sm-1{
+	padding-top: 8px;
+}
+.table-title{
+	margin-top: 80px;
+	margin-left: 80px;
+	margin-right: 80px;
+	margin-bottom: 30px;
+}
+.main-table{
+	margin-right: 80px;
+	margin-left: 80px;
+	margin-bottom: 80px;
+	margin-top: 20px;
+}
+.operation-box{
+	width: 160px;
+}
+.operation{
+	margin-right: 15px;
+/*>>>>>>> origin/zhaoyang*/
+}

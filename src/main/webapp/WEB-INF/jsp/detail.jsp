@@ -58,14 +58,14 @@
             out.println("<td>详情</td>" +
                         "<td>取消关联</td>");
             out.println("</tr>");
-//
-            for (int j = 0; j < relatedRecordInfos.size(); j++) {
+
+            for (int j = 0; j < relatedRecordInfos.elementAt(i).size(); j++) {
                 out.println("<tr>");
-                for (int k = 0; k < relatedRecordInfos.elementAt(0).size(); k++) {
-                    out.println("<td>" + relatedRecordInfos.elementAt(j).elementAt(k) + "</td>");
+                for (int k = 0; k < relatedRecordInfos.elementAt(i).elementAt(0).size(); k++) {
+                    out.println("<td>" + relatedRecordInfos.elementAt(i).elementAt(j).elementAt(k) + "</td>");
                 }
-                out.println("<td><a href=\"GetRecordDetail.action?pdoName="+relatedPdoNames.elementAt(j)+"&key="+relatedRecordInfos.elementAt(j).elementAt(0)+"\">详情</a></td>\n" +
-                            "<td><a href=\"Disassociation.action?key="+info.elementAt(0)+"&keyDestination="+relatedRecordInfos.elementAt(j).elementAt(0)+"\">取消关联</a></td>");
+                out.println("<td><a href=\"GetRecordDetail.action?pdoName="+relatedPdoNames.elementAt(i)+"&key="+relatedRecordInfos.elementAt(i).elementAt(j).elementAt(0)+"\">详情</a></td>\n" +
+                            "<td><a href=\"Disassociation.action?key="+info.elementAt(0)+"&keyDestination="+relatedRecordInfos.elementAt(i).elementAt(j).elementAt(0)+"\">取消关联</a></td>");
                 out.println("</tr>");
             }
             out.println("</table>\n");
