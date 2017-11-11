@@ -156,7 +156,7 @@
         <!--&lt;!&ndash;<result name="input">/WEB-INF/jsp/import.jsp</result>&ndash;&gt;-->
     <!--</action>-->
 
-    <action name="uploads" class="edu.hit.se.UploadAction" method="execute">
+    <action name="Import" class="edu.hit.se.Import" >
 
         <!-- 指定（限制）上传文件的类型，定义局部拦截器，修改默认拦截器的属性
             "fileUpload.maximumSize" ：限制上传最大的文件大小。
@@ -164,8 +164,9 @@
             "fileUpload.allowedExtensions"：允许上传文件的可扩展文件类型。 -->
         <interceptor-ref name="defaultStack">
             <param name="fileUpload.maximumSize">500000000</param>
-            <param name="fileUpload.allowedTypes">text/plain,application/vnd.ms-powerpoint</param>
-            <param name="fileUpload.allowedExtensions">.txt,.ppt</param>
+            <!--<param name="fileUpload.allowedTypes">text/plain,application/vnd.ms-powerpoint</param>-->
+            <!--<param name="fileUpload.allowedExtensions">.txt,.xls,.xlsx</param>-->
+            <param name="fileUpload.allowedExtensions">.xls,.xlsx</param>
         </interceptor-ref>
 
         <result>/WEB-INF/jsp/success.jsp</result>
