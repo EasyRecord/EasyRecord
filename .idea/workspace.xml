@@ -7,20 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8fec8e7a-9bc7-4dfa-86f5-3c2ceccf7378" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/hit/se/UpdateRecord.class" afterPath="$PROJECT_DIR$/target/classes/edu/hit/se/UpdateRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/struts2-archetype-starter.war" afterPath="$PROJECT_DIR$/target/struts2-archetype-starter.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/struts2-archetype-starter/WEB-INF/classes/edu/hit/se/UpdateRecord.class" afterPath="$PROJECT_DIR$/target/struts2-archetype-starter/WEB-INF/classes/edu/hit/se/UpdateRecord.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/error.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EasyRecord.iml" afterPath="$PROJECT_DIR$/EasyRecord.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/la2ex.iml" afterPath="$PROJECT_DIR$/la2ex.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/hit/se/UpdateRecord.java" afterPath="$PROJECT_DIR$/src/main/java/edu/hit/se/UpdateRecord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/struts.xml" afterPath="$PROJECT_DIR$/src/main/resources/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/success.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/success.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/update.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/update.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/struts.xml" afterPath="$PROJECT_DIR$/target/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/struts2-archetype-starter/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/target/struts2-archetype-starter/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/struts2-archetype-starter/WEB-INF/jsp/success.jsp" afterPath="$PROJECT_DIR$/target/struts2-archetype-starter/WEB-INF/jsp/success.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/struts2-archetype-starter/WEB-INF/jsp/update.jsp" afterPath="$PROJECT_DIR$/target/struts2-archetype-starter/WEB-INF/jsp/update.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/hit/se/UpdateRecord.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="214">
-              <caret line="52" column="36" lean-forward="true" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+              <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
               <folding>
                 <element signature="e#607#608#0" expanded="true" />
                 <element signature="e#638#639#0" expanded="true" />
@@ -53,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/hit/se/InsertRecord.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
-              <caret line="45" column="69" lean-forward="true" selection-start-line="45" selection-start-column="69" selection-end-line="45" selection-end-column="69" />
+              <caret line="45" column="69" lean-forward="false" selection-start-line="45" selection-start-column="69" selection-end-line="45" selection-end-column="69" />
               <folding>
                 <marker date="1510554769790" expanded="true" signature="1322:1368" ph="INSERT INTO missingValue_missingValue... " />
               </folding>
@@ -65,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/hit/se/SearchRecord.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
-              <caret line="60" column="57" lean-forward="true" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
+              <caret line="60" column="57" lean-forward="false" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
               <folding>
                 <marker date="1510558263465" expanded="true" signature="1774:1797" ph="select * fro... missingValue_missingValue" />
               </folding>
@@ -87,11 +75,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="update.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/update.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="72" column="60" lean-forward="true" selection-start-line="72" selection-start-column="60" selection-end-line="72" selection-end-column="60" />
+            <state relative-caret-position="38">
+              <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="error.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/error.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="error.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../EasyRecord-html/jsp/error.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -102,8 +110,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -135,6 +143,7 @@
         <option value="$MAVEN_REPOSITORY$/org/apache/struts/struts2-core/2.5.5/struts2-core-2.5.5.jar!/com/opensymphony/xwork2/ognl/OgnlUtil.class" />
         <option value="$PROJECT_DIR$/src/main/java/edu/hit/se/UpdateRecord.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/update.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/error.jsp" />
       </list>
     </option>
   </component>
@@ -234,37 +243,7 @@
               <item name="EasyRecord" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EasyRecord" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasyRecord" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="se" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EasyRecord" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasyRecord" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EasyRecord" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasyRecord" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EasyRecord" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EasyRecord" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EasyRecord" type="b2602c69:ProjectViewProjectNode" />
@@ -477,7 +456,7 @@
       <workItem from="1510555353133" duration="7067000" />
       <workItem from="1510563382250" duration="1788000" />
       <workItem from="1510571642563" duration="335000" />
-      <workItem from="1510586978131" duration="5956000" />
+      <workItem from="1510586978131" duration="6442000" />
     </task>
     <task id="LOCAL-00001" summary="合并分支并修改">
       <created>1510557057718</created>
@@ -500,11 +479,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510562011575</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="为更新页面添加样式">
+      <created>1510593208372</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1510593208372</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15146000" />
+    <option name="totallyTimeSpent" value="15632000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -552,7 +538,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="合并分支并修改" />
     <MESSAGE value="给查询列表以及详情添加样式" />
-    <option name="LAST_COMMIT_MESSAGE" value="给查询列表以及详情添加样式" />
+    <MESSAGE value="为更新页面添加样式" />
+    <option name="LAST_COMMIT_MESSAGE" value="为更新页面添加样式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -926,7 +913,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/hit/se/InsertRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
-          <caret line="45" column="69" lean-forward="true" selection-start-line="45" selection-start-column="69" selection-end-line="45" selection-end-column="69" />
+          <caret line="45" column="69" lean-forward="false" selection-start-line="45" selection-start-column="69" selection-end-line="45" selection-end-column="69" />
           <folding>
             <marker date="1510554769790" expanded="true" signature="1322:1368" ph="INSERT INTO missingValue_missingValue... " />
           </folding>
@@ -936,7 +923,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/hit/se/SearchRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
-          <caret line="60" column="57" lean-forward="true" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
+          <caret line="60" column="57" lean-forward="false" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
           <folding>
             <marker date="1510558263465" expanded="true" signature="1774:1797" ph="select * fro... missingValue_missingValue" />
           </folding>
@@ -958,7 +945,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/hit/se/UpdateRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
-          <caret line="52" column="36" lean-forward="true" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+          <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
           <folding>
             <element signature="e#607#608#0" expanded="true" />
             <element signature="e#638#639#0" expanded="true" />
@@ -967,10 +954,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../EasyRecord-html/jsp/error.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/update.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="72" column="60" lean-forward="true" selection-start-line="72" selection-start-column="60" selection-end-line="72" selection-end-column="60" />
+        <state relative-caret-position="38">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/error.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
           <folding />
         </state>
       </provider>
