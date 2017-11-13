@@ -11,7 +11,17 @@
 
         <default-action-ref name="Logout" />
 
+    <action name="TestOGNL" class="edu.hit.se.OGNL">
+        <result>/WEB-INF/jsp/test.jsp</result>
+    </action>
 
+    <action name="Association" class="edu.hit.se.Association">
+        <result name="success">/WEB-INF/jsp/success.jsp</result>
+    </action>
+
+    <action name="BackToIndex">
+        <result>/WEB-INF/jsp/index.jsp</result>
+    </action>
 
         <action name="Login" class="edu.hit.se.Login">
             <result>/WEB-INF/jsp/index.jsp</result>
@@ -31,10 +41,6 @@
 
         <action name="Register" class="edu.hit.se.Register">
             <result>/WEB-INF/jsp/login.jsp</result>
-        </action>
-
-        <action name="BackToIndex">
-            <result>/WEB-INF/jsp/index.jsp</result>
         </action>
 
         <action name="GoToGeneratePdo" class="edu.hit.se.GetAllPdoNames">
@@ -78,22 +84,51 @@
             <result>/WEB-INF/jsp/SearchAllResult.jsp</result>
         </action>
 
+    <action name="Disassociation" class="edu.hit.se.Disassociation">
+        <result name="success" >/WEB-INF/jsp/success.jsp</result>
+    </action>
+
+    <!--<action name="Import" class="edu.hit.se.Import" method="execute">-->
+        <!--&lt;!&ndash;<interceptor-ref name="defaultStack">&ndash;&gt;-->
+            <!--&lt;!&ndash;<param name="fileUpload.maximumSize">500000000</param>&ndash;&gt;-->
+            <!--&lt;!&ndash;<param name="fileUpload.allowedTypes">*</param>&ndash;&gt;-->
+            <!--&lt;!&ndash;<param name="fileUpload.allowedExtensions">.txt,.ppt,.xls,.xlsx</param>&ndash;&gt;-->
+        <!--&lt;!&ndash;</interceptor-ref>&ndash;&gt;-->
+        <!--<result name="success">/WEB-INF/jsp/index.jsp</result>-->
+        <!--&lt;!&ndash;<result name="input">/WEB-INF/jsp/import.jsp</result>&ndash;&gt;-->
+    <!--</action>-->
+
+    <action name="Import" class="edu.hit.se.Import" >
+
+        <!-- 指定（限制）上传文件的类型，定义局部拦截器，修改默认拦截器的属性
+            "fileUpload.maximumSize" ：限制上传最大的文件大小。
+            "fileUpload.allowedTypes"：允许上传文件的类型。
+            "fileUpload.allowedExtensions"：允许上传文件的可扩展文件类型。 -->
+        <interceptor-ref name="defaultStack">
+            <param name="fileUpload.maximumSize">500000000</param>
+            <!--<param name="fileUpload.allowedTypes">text/plain,application/vnd.ms-powerpoint</param>-->
+            <!--<param name="fileUpload.allowedExtensions">.txt,.xls,.xlsx</param>-->
+            <param name="fileUpload.allowedExtensions">.xls,.xlsx</param>
+        </interceptor-ref>
+
+        <result>/WEB-INF/jsp/success.jsp</result>
+        <!-- 出现错误自动会返回input结果，进入结果视图 -->
+        <result name="input" >/WEB-INF/jsp/index.jsp</result>
+    </action>
 
     </package>
 
-    <package name="ajax" namespace="/" extends="json-default">
-        <action name="GetAllUserNames" class="edu.hit.se.GetAllUserNames">
-            <result name="success" type="json"></result>
-        </action>
-        <action name="GetPdoHeader" class="edu.hit.se.GetPdoHeader">
-            <result name="success" type="json"></result>
-        </action>
-        <action name="DeleteRecord" class="edu.hit.se.DeleteRecord">
-            <result name="success" type="json"></result>
-        </action>
-        <action name="Disassociation" class="edu.hit.se.Disassociation">
-            <result name="success" type="json"></result>
-        </action>
+<package name="ajax" namespace="/" extends="json-default">
+    <action name="GetAllUserNames" class="edu.hit.se.GetAllUserNames">
+        <result name="success" type="json"></result>
+    </action>
+    <action name="GetPdoHeader" class="edu.hit.se.GetPdoHeader">
+        <result name="success" type="json"></result>
+    </action>
+    <action name="DeleteRecord" class="edu.hit.se.DeleteRecord">
+        <result name="success" type="json"></result>
+    </action>
+
 
         <action name="UpdateRecord" class="edu.hit.se.UpdateRecord">
             <result name="success" type="json"></result>
@@ -103,9 +138,9 @@
             <result name="success" type="json"></result>
         </action>
 
-        <action name="Association" class="edu.hit.se.Association">
-            <result name="success" type="json"></result>
-        </action>
+    <!--<action name="Association" class="edu.hit.se.Association">-->
+        <!--<result name="success" type="json"></result>-->
+    <!--</action>-->
 
         <action name="Import" class="edu.hit.se.Import">
             <result name="success" type="json"></result>
