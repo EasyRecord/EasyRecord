@@ -62,7 +62,7 @@
         <h2>个人信息采集</h2>
         <p>Create your own personal records.</p>
         <br/>
-        <form class="form-horizontal search-form" method="post" action="SearchAll">
+        <form class="form-horizontal search-form" method="post" action="SearchAll.action">
             <div class="form-group">
                 <div class="col-sm-5 col-sm-offset-3">
                     <input type="text" class="form-control" placeholder="请输入要搜索的内容" name="keyWord">
