@@ -61,7 +61,11 @@
                         "    </div>");
                 out.println("<table id=\"table-"+i+"0\" class=\"table table-hover\">");
                 out.println("<thead><tr>");
-                for (int j = 0; j < propertiesShot.elementAt(i).size(); j++) {
+                int size = 5;
+                if(propertiesShot.elementAt(i).size() < 5){
+                    size = propertiesShot.elementAt(i).size();
+                }
+                for (int j = 0; j < size; j++) {
                     out.println("<th>" + propertiesShot.elementAt(i).elementAt(j) + "</th>");
                 }
                 out.println("<th>操作</th>");
@@ -69,7 +73,7 @@
 
                 for (int j = 0; j < infoShot.elementAt(i).size(); j++) {
                     out.println("<tr>");
-                    for (int k = 0; k < infoShot.elementAt(i).elementAt(0).size(); k++) {
+                    for (int k = 0; k < size; k++) {
                         out.println("<td>" + infoShot.elementAt(i).elementAt(j).elementAt(k) + "</td>");
                     }
                     out.println("<td class=\"operation-box\"><a href=\"GetRecordDetail.action?pdoName="+pdoNameShot.elementAt(i)+"&key="+infoShot.elementAt(i).elementAt(j).elementAt(0)+"\" class=\"operation\">详情</a>\n" +

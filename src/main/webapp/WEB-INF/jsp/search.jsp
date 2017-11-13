@@ -64,11 +64,11 @@
     <hr/>
 
     <div>
-        <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="second-menu active" id="tosearchByPDO"><a href="#">高级搜索</a></li>
-            <li role="presentation" class="second-menu" id="tosearchByAttr"><a href="#">全局搜索</a></li>
-        </ul>
-        <h2>查找PDO记录</h2>
+        <%--<ul class="nav nav-pills pull-right">--%>
+            <%--<li role="presentation" class="second-menu active" id="tosearchByPDO"><a href="#">按PDO搜索</a></li>--%>
+            <%--<li role="presentation" class="second-menu" id="tosearchByAttr"><a href="#">按字段搜索</a></li>--%>
+        <%--</ul>--%>
+        <h2>查询PDO记录</h2>
         <h4><small>search PDO records</small></h4>
         <!--<p>
         <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
@@ -129,24 +129,24 @@
 
 
             <!-- 按字段搜索（时间，地点等） -->
-            <div role="tabpanel" class="tab-pane" id="searchByAttr">
-                <form class="form-horizontal search-form" method="post" action="SearchAll.action">
-                    <div class="form-group">
-                        <label for="pdoName-pdo" class="col-sm-2 control-label">搜索字段</label>
-                        <div class="col-sm-5 choosePDO">
-                            <input type="text" class="form-control" placeholder="请输入要搜索的内容" name="keyWord">
-                        </div>
-                        <div class="col-sm-2 choosePDO">
-                            <button type="submit" class="btn btn-info" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                        </div>
-                    </div>
-                </form>
-                <hr class="center-hr" />
+            <%--<div role="tabpanel" class="tab-pane" id="searchByAttr">--%>
+                <%--<form class="form-horizontal search-form" method="post" action="SearchAll.action">--%>
+                    <%--<div class="form-group">--%>
+                        <%--<label for="pdoName-pdo" class="col-sm-2 control-label">搜索字段</label>--%>
+                        <%--<div class="col-sm-5 choosePDO">--%>
+                            <%--<input type="text" class="form-control" placeholder="请输入要搜索的内容" name="keyWord">--%>
+                        <%--</div>--%>
+                        <%--<div class="col-sm-2 choosePDO">--%>
+                            <%--<button type="submit" class="btn btn-info" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</form>--%>
+                <%--<hr class="center-hr" />--%>
 
-                <div class="notes">
-                    <h4><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 请直接输入要搜索的字段</h4>
-                </div>
-            </div>
+                <%--<div class="notes">--%>
+                    <%--<h4><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 请直接输入要搜索的字段</h4>--%>
+                <%--</div>--%>
+            <%--</div>--%>
         </div>
 
 

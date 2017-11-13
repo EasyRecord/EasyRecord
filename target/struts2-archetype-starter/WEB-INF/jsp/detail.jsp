@@ -49,61 +49,74 @@
     </div>
 
     <div id="forms" class="main-table">
+
         <%
             String pdoName = (String)request.getAttribute("pdoName");
+            String key = (String)request.getAttribute("key");
             Vector<String> property = (Vector<String>)request.getAttribute("property");
             Vector<String> info = (Vector<String>)request.getAttribute("info");
+
             Vector<String> relatedPdoNames = (Vector<String>)request.getAttribute("relatedPdoNames");
             Vector<Vector<String>> relatedRecordProperties = (Vector<Vector<String>>)request.getAttribute("relatedRecordProperties");
-            Vector<Vector<String>> relatedRecordInfos = (Vector<Vector<String>>)request.getAttribute("relatedRecordInfos");
-//            out.println(pdoName);
+            Vector<Vector<Vector<String>>> relatedRecordInfos = (Vector<Vector<Vector<String>>>)request.getAttribute("relatedRecordInfos");
+
             out.println("<div class=\"table-title-s\">\n" +
                     "        <h3>" + pdoName + "</h3>\n" +
                     "    </div>");
-//            out.println("<table id=\"table\" class=\"table table-hover \">");
-//            out.println("<thead><tr>");
-//            for(int i = 0; i < property.size(); i++) {
-//                out.println("<th>" + property.elementAt(i) + "</th>");
-//            }
-//            out.println("</tr></thead>");
-//            out.println("<tr>");
-//            for(int i=0;i<info.size();i++){
-//                out.println("<td>" + info.elementAt(i) + "</td>");
-//            }
-//            out.println("</tr></table>");
             out.println("<div class=\"details\">");
             for(int i = 0; i < property.size(); i++) {
                 out.println("<p><strong>" + property.elementAt(i) + "</strong> : " + info.elementAt(i) + "</p>");
             }
             out.println("</div>");
-            System.out.println(relatedPdoNames.size());
+//            out.println("<table id=\"table\" class=\"table table-striped table-bordered table-hover \">");
+//            out.println("<tr>");
+//            for(int i = 0; i < property.size(); i++) {
+//                out.println("<th>" + property.elementAt(i) + "</th>");
+//
+//            }
+//            out.println("</tr>");
+//            out.println("<tr>");
+//            for(int i=0;i<info.size();i++){
+//                out.println("<td>" + info.elementAt(i) + "</td>");
+//            }
+//            out.println("</tr>");
 
-            out.println("<div class=\"table-title-s\">\n" +
-                    "        <h3>关联记录</h3>\n" +
-                    "    </div>");
-            for (int i = 0; i < relatedPdoNames.size(); i++) {
-                out.println("<h4>" + relatedPdoNames.elementAt(i) + "</h4>");
-                out.println("<table id=\"relatedTable_"+i+"\" class=\"table table-hover \">");
-                out.println("<thead><tr>");
-                System.out.println(i);
-                System.out.println(relatedRecordProperties);
-                for (int j = 0; j < relatedRecordProperties.elementAt(i).size(); j++) {
-                    out.println("<th>" + relatedRecordProperties.elementAt(i).elementAt(j) + "</th>");
-                }
-                out.println("<th>操作</th>");
-                out.println("</tr></thead>");
-    //
-                for (int j = 0; j < relatedRecordInfos.size(); j++) {
-                    out.println("<tr>");
-                    for (int k = 0; k < relatedRecordInfos.elementAt(0).size(); k++) {
-                        out.println("<td>" + relatedRecordInfos.elementAt(j).elementAt(k) + "</td>");
+            System.out.println(relatedPdoNames.size());
+            if(relatedPdoNames.size() != 0) {
+                out.println("<div class=\"table-title-s\">\n" +
+                        "        <h3>关联记录</h3>\n" +
+                        "    </div>");
+                for (int i = 0; i < relatedPdoNames.size(); i++) {
+                    out.println(relatedPdoNames.elementAt(i) + "\n");
+                    out.println("<table id=\"relatedTable_" + i + "\" class=\"table table-hover \">");
+                    out.println("<thead><tr>");
+                    System.out.println(i);
+                    System.out.println(relatedRecordProperties);
+                    for (int j = 0; j < relatedRecordProperties.elementAt(i).size(); j++) {
+                        out.println("<th>" + relatedRecordProperties.elementAt(i).elementAt(j) + "</th>");
                     }
-                    out.println("<td class=\"operation-box\"><a href=\"GetRecordDetail.action?pdoName="+relatedPdoNames.elementAt(j)+"&key="+relatedRecordInfos.elementAt(j).elementAt(0)+"\" class=\"operation\">详情</a>\n" +
-                            "<a href=\"Disassociation.action?key="+info.elementAt(0)+"&keyDestination="+relatedRecordInfos.elementAt(j).elementAt(0)+"\" class=\"operation\">取消关联</a></td>");
-                    out.println("</tr>");
+                    out.println("<th>操作</th>");
+                    out.println("</tr></thead>");
+
+                    for (int j = 0; j < relatedRecordInfos.elementAt(i).size(); j++) {
+                        out.println("<tr>");
+                        for (int k = 0; k < relatedRecordInfos.elementAt(i).elementAt(0).size(); k++) {
+                            out.println("<td>" + relatedRecordInfos.elementAt(i).elementAt(j).elementAt(k) + "</td>");
+                        }
+                        out.println("<td class=\"operation-box\"><a href=\"GetRecordDetail.action?pdoName=" + relatedPdoNames.elementAt(i) + "&key=" + relatedRecordInfos.elementAt(i).elementAt(j).elementAt(0) + "\" class=\"operation\">详情</a>\n" +
+                                "<a href=\"Disassociation.action?key=" + info.elementAt(0) + "&keyDestination=" + relatedRecordInfos.elementAt(i).elementAt(j).elementAt(0) + "\" class=\"operation\">取消关联</a></td>");
+                        out.println("</tr>");
+                    }
+                    out.println("</table>\n");
                 }
-                out.println("</table>\n");
+            }else{
+                out.println("<div class=\"table-title-s\">\n" +
+                        "        <h3>暂无关联记录</h3>\n" +
+                        "    </div>");
             }
+            out.println("<div class=\"details\">");
+            out.println("<p><a href=\"Connect.action?pdoName="+pdoName+"&key="+key+"\">点击此处建立新关联<a></p>");
+            out.println("</div>");
         %>
     </div>
 

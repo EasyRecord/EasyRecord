@@ -142,9 +142,7 @@
         <!--<result name="success" type="json"></result>-->
     <!--</action>-->
 
-        <action name="Import" class="edu.hit.se.Import">
-            <result name="success" type="json"></result>
-        </action>
+
 
     </package>
 
