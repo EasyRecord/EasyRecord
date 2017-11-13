@@ -51,7 +51,7 @@ public class Import extends ActionSupport {
 
         //获取要保存文件夹的物理路径(绝对路径)
 //        String realPath=ServletActionContext.getServletContext().getRealPath("E:\\upload");
-        String realPath="E:\\upload";
+        String realPath="/upload";
         System.out.println(realPath);
         File file = new File(realPath);
 
@@ -75,8 +75,8 @@ public class Import extends ActionSupport {
 
         DealWithExcelFile poi = new DealWithExcelFile();
         // List<List<String>> list = poi.read("d:/aaa.xls");
-        List<List<String>> list = poi.read("E:\\upload\\"+(getUploadImageFileName()));
-        System.out.println("E:\\upload\\"+(getUploadImageFileName()));
+        List<List<String>> list = poi.read("/upload/"+(getUploadImageFileName()));
+//        System.out.println("E:\\upload\\"+(getUploadImageFileName()));
         if (list != null) {
             boolean fisrt = true;
             for (int i = 1; i < list.size(); i++) {

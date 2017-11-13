@@ -39,12 +39,12 @@
 <head>
     <meta charset="UTF-8">
     <title>注册</title>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="../css/index.css"/>
-    <link rel="stylesheet" href="../css/login.css"/>
-    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../bootstrap/js/jquery-1.12.0.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/login.css"/>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -58,46 +58,94 @@
     </div>
     <hr/>
 
-    <div class="form-title">
-        <h2>注    册</h2>
-        <p>
-    </div>
+    <div class="row">
 
-    <div class="main-form">
+        <div class="col-sm-4 title">
+            <h3 class="icon-title"><span>E</span>asy<span>R</span>ecord</h3>
+            <br/>
+            <h3>个人数据采集</h3>
+            <h4><small>Create your own personal records.</small></h4>
+        </div>
 
-        <form class="form-horizontal" method="post" action="Register.action">
-            <div class="form-group">
-                <label for="username" class="col-sm-2 control-label">用户名</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="username" placeholder="用户名" name="username" onblur="checkUserName()">
-                    <div id="namespan"></div>
-
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="password" class="col-sm-2 control-label">密码</label>
-                <div class="col-sm-9">
-                    <input type="password" class="form-control" id="password" placeholder="密码" name="passwd" onblur="checkPassWord()">
-                    <div id="pwspan"></div>
-
-                </div>
-            </div>
+<%--<<<<<<< HEAD--%>
+        <%--<form class="form-horizontal" method="post" action="Register.action">--%>
             <%--<div class="form-group">--%>
-            <%--<label for="password-repeat" class="col-sm-2 control-label">重复密码</label>--%>
-            <%--<div class="col-sm-9">--%>
-            <%--<input type="password" class="form-control" id="password-repeat" placeholder="重复密码" name="passwdRepeat">--%>
-            <%--</div>--%>
+                <%--<label for="username" class="col-sm-2 control-label">用户名</label>--%>
+                <%--<div class="col-sm-9">--%>
+                    <%--<input type="text" class="form-control" id="username" placeholder="用户名" name="username" onblur="checkUserName()">--%>
+                    <%--<div id="namespan"></div>--%>
+
+                <%--</div>--%>
             <%--</div>--%>
 
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-4">
-                    <button type="submit" class="btn btn-info login">注册</button>
-                </div>
-                <p class="col-sm-5 forget"><a href="ReadyToLogin.action" class="pull-right">已有账号？直接登陆>></a></p>
-                <%-- 此处已有账号时是否应该跳转到登录页面 --%>
+            <%--<div class="form-group">--%>
+                <%--<label for="password" class="col-sm-2 control-label">密码</label>--%>
+                <%--<div class="col-sm-9">--%>
+                    <%--<input type="password" class="form-control" id="password" placeholder="密码" name="passwd" onblur="checkPassWord()">--%>
+                    <%--<div id="pwspan"></div>--%>
+
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--&lt;%&ndash;<div class="form-group">&ndash;%&gt;--%>
+            <%--&lt;%&ndash;<label for="password-repeat" class="col-sm-2 control-label">重复密码</label>&ndash;%&gt;--%>
+            <%--&lt;%&ndash;<div class="col-sm-9">&ndash;%&gt;--%>
+            <%--&lt;%&ndash;<input type="password" class="form-control" id="password-repeat" placeholder="重复密码" name="passwdRepeat">&ndash;%&gt;--%>
+            <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+            <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+
+            <%--<div class="form-group">--%>
+                <%--<div class="col-sm-offset-2 col-sm-4">--%>
+                    <%--<button type="submit" class="btn btn-info login">注册</button>--%>
+                <%--</div>--%>
+                <%--<p class="col-sm-5 forget"><a href="ReadyToLogin.action" class="pull-right">已有账号？直接登陆>></a></p>--%>
+                <%--&lt;%&ndash; 此处已有账号时是否应该跳转到登录页面 &ndash;%&gt;--%>
+<%--=======--%>
+        <div class="col-sm-8">
+
+            <div class="form-title">
+                <h2>注    册</h2>
+                <p>
             </div>
-        </form>
+
+            <div class="main-form">
+
+                <form class="form-horizontal" method="post" action="Register.action">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">用户名</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="username" placeholder="用户名" name="username" onblur="checkUserName()">
+                            <span id="namespan"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">密码</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="password" placeholder="密码" name="passwd" onblur="checkPassWord()">
+                            <span id="pwspan"></span>
+                        </div>
+                    </div>
+                    <%--<div class="form-group">--%>
+                        <%--<label for="password-repeat" class="col-sm-2 control-label">重复密码</label>--%>
+                        <%--<div class="col-sm-9">--%>
+                            <%--<input type="password" class="form-control" id="password-repeat" placeholder="重复密码" name="passwdRepeat">--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-4">
+                            <button type="submit" class="btn btn-info login">注册</button>
+                        </div>
+                        <p class="col-sm-5 forget"><a href="ReadyToLogin.action" class="pull-right">已有账号？直接登陆>></a></p>
+                        <%-- 此处已有账号时是否应该跳转到登录页面 --%>
+                    </div>
+                </form>
+<%-->>>>>>> origin/zhaoyang--%>
+            </div>
+
+
+        </div>
+
     </div>
 
 
@@ -108,8 +156,8 @@
     </footer>
 </div>
 
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
 <script>
     function checkUserName(){
 //        alert(document.getElementById("username").value);

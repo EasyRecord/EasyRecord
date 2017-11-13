@@ -21,12 +21,12 @@
 <head>
     <meta charset="UTF-8">
     <title>查找PDO记录</title>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="../css/index.css"/>
-    <link rel="stylesheet" href="../css/search.css"/>
-    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../bootstrap/js/jquery-1.12.0.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/search.css"/>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $("#tosearchByAttr").click(function(){
@@ -64,14 +64,22 @@
     <hr/>
 
     <div>
-        <ul class="nav nav-pills pull-right">
+<%--<<<<<<< HEAD--%>
+        <%--<ul class="nav nav-pills pull-right">--%>
+            <%--&lt;%&ndash;<li role="presentation" class="second-menu active" id="tosearchByPDO"><a href="#">按PDO搜索</a></li>&ndash;%&gt;--%>
+            <%--&lt;%&ndash;<li role="presentation" class="second-menu" id="tosearchByAttr"><a href="#">按字段搜索</a></li>&ndash;%&gt;--%>
+        <%--</ul>--%>
+<%--&lt;%&ndash;<<<<<<< HEAD&ndash;%&gt;--%>
+        <%--<h2>按PDO查找</h2>--%>
+<%--&lt;%&ndash;=======&ndash;%&gt;--%>
+        <%--&lt;%&ndash;<h2>查找PDO记录</h2>&ndash;%&gt;--%>
+<%--&lt;%&ndash;>>>>>>> origin/zhaoyang&ndash;%&gt;--%>
+<%--=======--%>
+        <%--<ul class="nav nav-pills pull-right">--%>
             <%--<li role="presentation" class="second-menu active" id="tosearchByPDO"><a href="#">按PDO搜索</a></li>--%>
             <%--<li role="presentation" class="second-menu" id="tosearchByAttr"><a href="#">按字段搜索</a></li>--%>
-        </ul>
-<%--<<<<<<< HEAD--%>
-        <h2>按PDO查找</h2>
-<%--=======--%>
-        <%--<h2>查找PDO记录</h2>--%>
+        <%--</ul>--%>
+        <h2>查询PDO记录</h2>
 <%-->>>>>>> origin/zhaoyang--%>
         <h4><small>search PDO records</small></h4>
         <!--<p>
@@ -104,7 +112,7 @@
                 <hr class="center-hr" />
 
                 <div class="notes" id="notes">
-                    <h4><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 请先选择要插入的PDO记录所属的PDO名</h4>
+                    <h4><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 请先选择要查找的PDO记录所属的PDO名</h4>
                 </div>
 
                 <form class="form-horizontal PDOform" method="post" action="SearchRecord.action" id="Pdoform">
@@ -136,24 +144,40 @@
             <%--<div role="tabpanel" class="tab-pane" id="searchByAttr">--%>
                 <%--<form class="form-horizontal search-form" method="post" action="SearchAll.action">--%>
                     <%--<div class="form-group">--%>
-                        <%--<div class="col-sm-offset-1 col-sm-2">--%>
-                            <%--<select class="form-control" name="" id="pdoName-attr">--%>
-                                <%--<option value="全部">全部</option>--%>
-                                <%--<option value="时间">时间</option>--%>
-                                <%--<option value="地点">地点</option>--%>
-                                <%--<option value="人数">人数</option>--%>
-                            <%--</select>--%>
-                        <%--</div>--%>
-                        <%--<div class="col-sm-5 choosePDO">--%>
-                            <%--<input type="text" class="form-control" placeholder="请输入要搜索的内容" name="">--%>
+<%--<<<<<<< HEAD--%>
+                        <%--&lt;%&ndash;<div class="col-sm-offset-1 col-sm-2">&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;<select class="form-control" name="" id="pdoName-attr">&ndash;%&gt;--%>
+                                <%--&lt;%&ndash;<option value="全部">全部</option>&ndash;%&gt;--%>
+                                <%--&lt;%&ndash;<option value="时间">时间</option>&ndash;%&gt;--%>
+                                <%--&lt;%&ndash;<option value="地点">地点</option>&ndash;%&gt;--%>
+                                <%--&lt;%&ndash;<option value="人数">人数</option>&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;</select>&ndash;%&gt;--%>
+                        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+                        <%--&lt;%&ndash;<div class="col-sm-5 choosePDO">&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;<input type="text" class="form-control" placeholder="请输入要搜索的内容" name="">&ndash;%&gt;--%>
+<%--=======--%>
+                        <%--&lt;%&ndash;<label for="pdoName-pdo" class="col-sm-2 control-label">搜索字段</label>&ndash;%&gt;--%>
+                        <%--&lt;%&ndash;<div class="col-sm-5 choosePDO">&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;<input type="text" class="form-control" placeholder="请输入要搜索的内容" name="keyWord">&ndash;%&gt;--%>
+<%-->>>>>>> origin/zhaoyang--%>
                         <%--</div>--%>
                         <%--<div class="col-sm-2 choosePDO">--%>
                             <%--<button type="submit" class="btn btn-info" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>--%>
                         <%--</div>--%>
                     <%--</div>--%>
                 <%--</form>--%>
+<%--<<<<<<< HEAD--%>
+            <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+<%--=======--%>
+                <%--<hr class="center-hr" />--%>
+
+                <%--<div class="notes">--%>
+                    <%--<h4><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 请直接输入要搜索的字段</h4>--%>
+                <%--</div>--%>
             <%--</div>--%>
-        <%--</div>--%>
+        </div>
+<%-->>>>>>> origin/zhaoyang--%>
 
 
 
@@ -167,8 +191,8 @@
     </footer>
 </div>
 
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
 <script>
     document.getElementById("getPropertys").onclick = function () {
         //发送Ajax请求并处理

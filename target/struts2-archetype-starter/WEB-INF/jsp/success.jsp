@@ -24,12 +24,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>提交成功</title>
-	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
-	<link rel="stylesheet" href="../css/index.css"/>
-	<link rel="stylesheet" href="../css/createPdo.css"/>
-	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../bootstrap/js/jquery-1.12.0.min.js"></script>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"/>
+	<link rel="stylesheet" href="css/index.css"/>
+	<link rel="stylesheet" href="css/createPdo.css"/>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -53,7 +53,7 @@
 		<h3 class="mes"><small>Succeed to submit.</small></h3>
 		<div class="link-box">
 			<a href="BackToIndex.action" class="morelink"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 返回首页</a>
-			<a href="GoToInsertRecord.action" class="morelink"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 继续添加记录</a>
+			<%--<a href="GoToInsertRecord.action" class="morelink"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 继续添加记录</a>--%>
 		</div>
 	</div>
 
@@ -65,7 +65,7 @@
 	</footer>
 </div>
 
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
 </body>
 </html>

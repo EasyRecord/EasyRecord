@@ -39,12 +39,12 @@
 <head>
     <meta charset="UTF-8">
     <title>登录</title>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="../css/index.css"/>
-    <link rel="stylesheet" href="../css/login.css"/>
-    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../bootstrap/js/jquery-1.12.0.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/login.css"/>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -59,51 +59,84 @@
     </div>
     <hr/>
 
-    <div class="form-title">
-        <h2>登    录</h2>
-        <p>
-    </div>
+    <div class="row">
 
-    <div class="main-form">
+        <div class="col-sm-4 title">
+            <h3 class="icon-title"><span>E</span>asy<span>R</span>ecord</h3>
+            <br/>
+            <h3>个人数据采集</h3>
+            <h4><small>Create your own personal records.</small></h4>
+        </div>
 
-        <form class="form-horizontal" method="post" action="Login.action">
-            <div class="form-group">
-                <label for="username" class="col-sm-2 control-label">用户名</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="username" placeholder="用户名" name="username" onblur="checkUserName()">
-                    <div id="namespan"></div>
-                </div>
+        <div class="col-sm-8">
+
+<%--<<<<<<< HEAD--%>
+        <%--<form class="form-horizontal" method="post" action="Login.action">--%>
+            <%--<div class="form-group">--%>
+                <%--<label for="username" class="col-sm-2 control-label">用户名</label>--%>
+                <%--<div class="col-sm-9">--%>
+                    <%--<input type="text" class="form-control" id="username" placeholder="用户名" name="username" onblur="checkUserName()">--%>
+                    <%--<div id="namespan"></div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+
+            <%--<div class="form-group">--%>
+                <%--<label for="password" class="col-sm-2 control-label">密码</label>--%>
+                <%--<div class="col-sm-9">--%>
+                    <%--<input type="password" class="form-control" id="password" placeholder="密码" name="passwd"onblur="checkPassWord()">--%>
+                    <%--<div id="pwspan"></div>--%>
+                <%--</div>--%>
+<%--=======--%>
+            <div class="form-title">
+                <h2>登    录</h2>
+                <p>
             </div>
 
-            <div class="form-group">
-                <label for="password" class="col-sm-2 control-label">密码</label>
-                <div class="col-sm-9">
-                    <input type="password" class="form-control" id="password" placeholder="密码" name="passwd"onblur="checkPassWord()">
-                    <div id="pwspan"></div>
-                </div>
+            <div class="main-form">
+<%-->>>>>>> origin/zhaoyang--%>
 
-            </div>
-
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-3">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> 记住密码
-                        </label>
+                <form class="form-horizontal" method="post" action="Login.action">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">用户名</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="username" placeholder="用户名" name="username" onblur="checkUserName()">
+                            <span id="namespan"></span>
+                        </div>
                     </div>
-                </div>
-                <p class="col-sm-6 forget"><a href="#" class="pull-right">忘记密码</a></p>
+
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">密码</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="password" placeholder="密码" name="passwd" onblur="checkPassWord()">
+                            <span id="pwspan"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-3">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> 记住密码
+                                </label>
+                            </div>
+                        </div>
+                        <p class="col-sm-6 forget"><a href="#" class="pull-right">忘记密码</a></p>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-4">
+                            <button type="submit" class="btn btn-info login">登录</button>
+                        </div>
+                        <div class="col-sm-offset-1 col-sm-4">
+                            <a href="ReadyToRegister.action" type="button" class="btn btn-default login">注册</a>
+                        </div>
+                    </div>
+                </form>
             </div>
 
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-4">
-                    <button type="submit" class="btn btn-info login">登录</button>
-                </div>
-                <div class="col-sm-offset-1 col-sm-4">
-                    <a href="ReadyToRegister.action" type="button" class="btn btn-default login">注册</a>
-                </div>
-            </div>
-        </form>
+
+        </div>
     </div>
 
 
@@ -114,8 +147,8 @@
     </footer>
 </div>
 
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
 <script>
     function checkUserName(){
 //        alert(document.getElementById("username").value);

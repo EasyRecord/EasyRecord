@@ -25,13 +25,13 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>查询结果</title>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="../css/index.css"/>
-    <link rel="stylesheet" href="../css/table.css"/>
-    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../bootstrap/js/jquery-1.12.0.min.js"></script>
+    <title>高级搜索结果</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/table.css"/>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
 
 </head>
 <body>
@@ -198,7 +198,11 @@
 //            out.println(pdoName);
             out.println("<table id=\"table\" class=\"table table-hover\">");
             out.println("<thead><tr>");
-            for(int i = 0; i < property.size(); i++){
+            int size = 5;
+            if(property.size() < 5){
+                size = property.size();
+            }
+            for(int i = 0; i < size; i++){
                 out.println("<th>" + property.elementAt(i) + "</th>");
             }
             out.println("<th>操作</th>");
@@ -207,7 +211,7 @@
             for(int j = 0; j < recordInfos.size(); j++){
                 System.out.println(recordInfos.elementAt(j).toString());
                 out.println("<tr>");
-                for(int k = 0; k < recordInfos.elementAt(0).size(); k++){
+                for(int k = 0; k < size; k++){
                     out.println("<td>" + recordInfos.elementAt(j).elementAt(k) + "</td>");
                 }
                 out.println("<td class=\"operation-box\"><a href=\"GetRecordDetail.action?pdoName="+pdoName+"&key="+recordInfos.elementAt(j).elementAt(0)+"\" class=\"operation\">详情</a>\n" +
@@ -279,8 +283,7 @@
     </footer>
 </div>
 
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
-
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
 </body>
 </html>

@@ -4,8 +4,29 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <!--<<<<<<< HEAD-->
+<!--&lt;!&ndash;<<<<<<< HEAD&ndash;&gt;-->
+<!--&lt;!&ndash;=======&ndash;&gt;-->
+<!--&lt;!&ndash;<struts>&ndash;&gt;-->
 <!--=======-->
-<!--<struts>-->
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+
+    <package name="pages" namespace="/" extends="struts-default">
+        <default-action-ref name="Logout" />
+
+    <!--<action name="TestOGNL" class="edu.hit.se.OGNL">-->
+        <!--<result>/WEB-INF/jsp/test.jsp</result>-->
+    <!--</action>-->
+
+    <action name="Association" class="edu.hit.se.Association">
+        <result name="success">/WEB-INF/jsp/success.jsp</result>
+    </action>
+
+    <action name="BackToIndex">
+        <result>/WEB-INF/jsp/index.jsp</result>
+    </action>
+<!--&gt;>>>>>> origin/zhaoyang-->
 
     <!--<constant name="struts.enable.DynamicMethodInvocation" value="true"/>-->
 
@@ -15,75 +36,70 @@
 
 
 
-        <!--<action name="Login" class="edu.hit.se.Login">-->
-            <!--<result>/WEB-INF/jsp/index.jsp</result>-->
-        <!--</action>-->
+<!--<<<<<<< HEAD-->
+        <!--&lt;!&ndash;<action name="Login" class="edu.hit.se.Login">&ndash;&gt;-->
+            <!--&lt;!&ndash;<result>/WEB-INF/jsp/index.jsp</result>&ndash;&gt;-->
+        <!--&lt;!&ndash;</action>&ndash;&gt;-->
 
-        <!--<action name="Logout" class="edu.hit.se.Logout">-->
-            <!--<result>/WEB-INF/jsp/login.jsp</result>-->
-        <!--</action>-->
-
-        <!--<action name="ReadyToLogin">-->
-            <!--<result>/WEB-INF/jsp/login.jsp</result>-->
-        <!--</action>-->
-
-        <!--<action name="ReadyToRegister" >-->
-            <!--<result>/WEB-INF/jsp/register.jsp</result>-->
-        <!--</action>-->
-
-        <!--<action name="Register" class="edu.hit.se.Register">-->
-            <!--<result>/WEB-INF/jsp/login.jsp</result>-->
-        <!--</action>-->
-
-        <!--<action name="BackToIndex">-->
-            <!--<result>/WEB-INF/jsp/index.jsp</result>-->
-        <!--</action>-->
-
-        <!--<action name="GoToGeneratePdo" class="edu.hit.se.GetAllPdoNames">-->
-            <!--<result>/WEB-INF/jsp/createPdo.jsp</result>-->
-        <!--</action>-->
-        <!--<action name="GoToInsertRecord" class="edu.hit.se.GetAllPdoNames">-->
-            <!--<result>/WEB-INF/jsp/insertRecord.jsp</result>-->
-        <!--</action>-->
-        <!--<action name="GoToSearch" class="edu.hit.se.GetAllPdoNames">-->
-            <!--<result>/WEB-INF/jsp/search.jsp</result>-->
-        <!--</action>-->
-        <!--<action name="GoToImport" class="edu.hit.se.GetAllPdoNames">-->
-            <!--<result>/WEB-INF/jsp/import.jsp</result>-->
-        <!--</action>-->
-        <!---->
-        <!--<action name="GeneratePdo" class="edu.hit.se.GeneratePdo">-->
-            <!--<result>/WEB-INF/jsp/success.jsp</result>-->
-        <!--</action>-->
-
-        <!--<action name="InsertRecord" class="edu.hit.se.InsertRecord">-->
-            <!--<result>/WEB-INF/jsp/success.jsp</result>-->
-        <!--</action>-->
-
-        <!--<action name="SearchRecord" class="edu.hit.se.SearchRecord">-->
-            <!--<result>/WEB-INF/jsp/resultList.jsp</result>-->
-        <!--</action>-->
+        <!--&lt;!&ndash;<action name="Logout" class="edu.hit.se.Logout">&ndash;&gt;-->
+            <!--&lt;!&ndash;<result>/WEB-INF/jsp/login.jsp</result>&ndash;&gt;-->
+        <!--&lt;!&ndash;</action>&ndash;&gt;-->
+<!--=======-->
+        <action name="GoToGeneratePdo" class="edu.hit.se.GetAllPdoNames">
+            <result>/WEB-INF/jsp/createPdo.jsp</result>
+        </action>
+        <action name="GoToInsertRecord" class="edu.hit.se.GetAllPdoNames">
+            <result>/WEB-INF/jsp/insertRecord.jsp</result>
+        </action>
+        <action name="GoToSearch" class="edu.hit.se.GetAllPdoNames">
+            <result>/WEB-INF/jsp/search.jsp</result>
+        </action>
+        <action name="GoToImport" class="edu.hit.se.GetAllPdoNames">
+            <result>/WEB-INF/jsp/import.jsp</result>
+        </action>
+        
+        <action name="GeneratePdo" class="edu.hit.se.GeneratePdo">
+            <result>/WEB-INF/jsp/success.jsp</result>
+        </action>
 <!--&gt;>>>>>> origin/zhaoyang-->
 
-<struts>
+        <action name="ReadyToLogin">
+            <result>/WEB-INF/jsp/login.jsp</result>
+        </action>
 
-<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+        <action name="ReadyToRegister" >
+            <result>/WEB-INF/jsp/register.jsp</result>
+        </action>
 
-<package name="pages" namespace="/" extends="struts-default">
+        <action name="Register" class="edu.hit.se.Register">
+            <result>/WEB-INF/jsp/login.jsp</result>
+        </action>
 
-    <default-action-ref name="Logout" />
 
-    <action name="TestOGNL" class="edu.hit.se.OGNL">
-        <result>/WEB-INF/jsp/test.jsp</result>
-    </action>
+        <action name="InsertRecord" class="edu.hit.se.InsertRecord">
+            <result>/WEB-INF/jsp/success.jsp</result>
+        </action>
+
+<!--<<<<<<< HEAD-->
+        <!--&lt;!&ndash;<action name="SearchRecord" class="edu.hit.se.SearchRecord">&ndash;&gt;-->
+            <!--&lt;!&ndash;<result>/WEB-INF/jsp/resultList.jsp</result>&ndash;&gt;-->
+        <!--&lt;!&ndash;</action>&ndash;&gt;-->
+<!--&lt;!&ndash;&gt;>>>>>> origin/zhaoyang&ndash;&gt;-->
+
+<!--<struts>-->
+
+<!--<constant name="struts.enable.DynamicMethodInvocation" value="true"/>-->
+
+<!--<package name="pages" namespace="/" extends="struts-default">-->
+
+    <!--<default-action-ref name="Logout" />-->
+
+
 
     <action name="Association" class="edu.hit.se.Association">
         <result name="success">/WEB-INF/jsp/success.jsp</result>
     </action>
 
-    <action name="BackToIndex">
-        <result>/WEB-INF/jsp/index.jsp</result>
-    </action>
 
     <action name="Login" class="edu.hit.se.Login">
         <result>/WEB-INF/jsp/index.jsp</result>
@@ -101,26 +117,6 @@
         <result>/WEB-INF/jsp/login.jsp</result>
     </action>
 
-    <action name="GoToGeneratePdo" class="edu.hit.se.GetAllPdoNames">
-        <result>/WEB-INF/jsp/createPdo.jsp</result>
-    </action>
-    <action name="GoToInsertRecord" class="edu.hit.se.GetAllPdoNames">
-        <result>/WEB-INF/jsp/insertRecord.jsp</result>
-    </action>
-    <action name="GoToSearch" class="edu.hit.se.GetAllPdoNames">
-        <result>/WEB-INF/jsp/search.jsp</result>
-    </action>
-    <action name="GoToImport" class="edu.hit.se.GetAllPdoNames">
-        <result>/WEB-INF/jsp/import.jsp</result>
-    </action>
-
-    <action name="GeneratePdo" class="edu.hit.se.GeneratePdo">
-        <result>/WEB-INF/jsp/index.jsp</result>
-    </action>
-
-    <action name="InsertRecord" class="edu.hit.se.InsertRecord">
-        <result>/WEB-INF/jsp/index.jsp</result>
-    </action>
 
     <action name="SearchRecord" class="edu.hit.se.SearchRecord">
         <result>/WEB-INF/jsp/resultList.jsp</result>
@@ -146,15 +142,15 @@
         <result name="success" >/WEB-INF/jsp/success.jsp</result>
     </action>
 
-    <!--<action name="Import" class="edu.hit.se.Import" method="execute">-->
-        <!--&lt;!&ndash;<interceptor-ref name="defaultStack">&ndash;&gt;-->
-            <!--&lt;!&ndash;<param name="fileUpload.maximumSize">500000000</param>&ndash;&gt;-->
-            <!--&lt;!&ndash;<param name="fileUpload.allowedTypes">*</param>&ndash;&gt;-->
-            <!--&lt;!&ndash;<param name="fileUpload.allowedExtensions">.txt,.ppt,.xls,.xlsx</param>&ndash;&gt;-->
-        <!--&lt;!&ndash;</interceptor-ref>&ndash;&gt;-->
-        <!--<result name="success">/WEB-INF/jsp/index.jsp</result>-->
-        <!--&lt;!&ndash;<result name="input">/WEB-INF/jsp/import.jsp</result>&ndash;&gt;-->
-    <!--</action>-->
+    <!--&lt;!&ndash;<action name="Import" class="edu.hit.se.Import" method="execute">&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;<interceptor-ref name="defaultStack">&ndash;&gt;&ndash;&gt;-->
+            <!--&lt;!&ndash;&lt;!&ndash;<param name="fileUpload.maximumSize">500000000</param>&ndash;&gt;&ndash;&gt;-->
+            <!--&lt;!&ndash;&lt;!&ndash;<param name="fileUpload.allowedTypes">*</param>&ndash;&gt;&ndash;&gt;-->
+            <!--&lt;!&ndash;&lt;!&ndash;<param name="fileUpload.allowedExtensions">.txt,.ppt,.xls,.xlsx</param>&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;</interceptor-ref>&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;<result name="success">/WEB-INF/jsp/index.jsp</result>&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;<result name="input">/WEB-INF/jsp/import.jsp</result>&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;</action>&ndash;&gt;-->
 
     <action name="Import" class="edu.hit.se.Import" >
 
@@ -174,7 +170,63 @@
         <result name="input" >/WEB-INF/jsp/index.jsp</result>
     </action>
 
-</package>
+<!--</package>-->
+
+<!--<package name="ajax" namespace="/" extends="json-default">-->
+    <!--<action name="GetAllUserNames" class="edu.hit.se.GetAllUserNames">-->
+        <!--<result name="success" type="json"></result>-->
+    <!--</action>-->
+    <!--<action name="GetPdoHeader" class="edu.hit.se.GetPdoHeader">-->
+        <!--<result name="success" type="json"></result>-->
+    <!--</action>-->
+    <!--<action name="DeleteRecord" class="edu.hit.se.DeleteRecord">-->
+        <!--<result name="success" type="json"></result>-->
+    <!--</action>-->
+
+
+    <!--<action name="UpdateRecord" class="edu.hit.se.UpdateRecord">-->
+        <!--<result name="success" type="json"></result>-->
+    <!--</action>-->
+
+    <!--<action name="GetAllRecord" class="edu.hit.se.GetAllRecord">-->
+        <!--<result name="success" type="json"></result>-->
+    <!--</action>-->
+
+<!--=======-->
+    <action name="Disassociation" class="edu.hit.se.Disassociation">
+        <result name="success" >/WEB-INF/jsp/success.jsp</result>
+    </action>
+
+        <action name="DeleteRecord" class="edu.hit.se.DeleteRecord">
+            <result name="success">/WEB-INF/jsp/success.jsp</result>
+        </action>
+
+    <!--<action name="Import" class="edu.hit.se.Import" method="execute">-->
+        <!--&lt;!&ndash;<interceptor-ref name="defaultStack">&ndash;&gt;-->
+            <!--&lt;!&ndash;<param name="fileUpload.maximumSize">500000000</param>&ndash;&gt;-->
+            <!--&lt;!&ndash;<param name="fileUpload.allowedTypes">*</param>&ndash;&gt;-->
+            <!--&lt;!&ndash;<param name="fileUpload.allowedExtensions">.txt,.ppt,.xls,.xlsx</param>&ndash;&gt;-->
+        <!--&lt;!&ndash;</interceptor-ref>&ndash;&gt;-->
+        <!--<result name="success">/WEB-INF/jsp/index.jsp</result>-->
+        <!--&lt;!&ndash;<result name="input">/WEB-INF/jsp/import.jsp</result>&ndash;&gt;-->
+    <!--</action>-->
+
+    <action name="Import" class="edu.hit.se.Import" >
+
+
+        <interceptor-ref name="defaultStack">
+            <param name="fileUpload.maximumSize">500000000</param>
+            <!--<param name="fileUpload.allowedTypes">text/plain,application/vnd.ms-powerpoint</param>-->
+            <!--<param name="fileUpload.allowedExtensions">.txt,.xls,.xlsx</param>-->
+            <param name="fileUpload.allowedExtensions">.xls,.xlsx</param>
+        </interceptor-ref>
+
+        <result>/WEB-INF/jsp/success.jsp</result>
+        <!-- 出现错误自动会返回input结果，进入结果视图 -->
+        <result name="input" >/WEB-INF/jsp/index.jsp</result>
+    </action>
+
+    </package>
 
 <package name="ajax" namespace="/" extends="json-default">
     <action name="GetAllUserNames" class="edu.hit.se.GetAllUserNames">
@@ -183,25 +235,18 @@
     <action name="GetPdoHeader" class="edu.hit.se.GetPdoHeader">
         <result name="success" type="json"></result>
     </action>
-    <action name="DeleteRecord" class="edu.hit.se.DeleteRecord">
-        <result name="success" type="json"></result>
-    </action>
-
-
-    <action name="UpdateRecord" class="edu.hit.se.UpdateRecord">
-        <result name="success" type="json"></result>
-    </action>
-
-    <action name="GetAllRecord" class="edu.hit.se.GetAllRecord">
-        <result name="success" type="json"></result>
-    </action>
-
-    <!--<action name="Association" class="edu.hit.se.Association">-->
-        <!--<result name="success" type="json"></result>-->
-    <!--</action>-->
 
 
 
-</package>
+        <action name="UpdateRecord" class="edu.hit.se.UpdateRecord">
+            <result name="success" type="json"></result>
+        </action>
+
+        <action name="GetAllRecord" class="edu.hit.se.GetAllRecord">
+            <result name="success" type="json"></result>
+        </action>
+
+
+    </package>
 
 </struts>

@@ -53,8 +53,21 @@ public class SearchRecord extends ActionSupport{
             HttpSession session = null;
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");
+//<<<<<<< HEAD
             String sql="select * from "+user+"_"+pdoName+" where ";
             sql+=property.elementAt(0)+" like binary '%"+filter.elementAt(0)+"%' ";
+//=======
+//            String sql="select * from "+user+"_"+pdoName+" where ";
+//            sql+=property.elementAt(0)+" like binary '%"+filter.elementAt(0)+"%' ";
+//            for (int i=1;i<property.size();i++){
+//                sql+="AND "+property.elementAt(i)+" like binary '%"+filter.elementAt(i)+"%'";
+//            }
+//            String sql="select * from "+user+"_"+pdoName;
+//            String tempSql = "";
+//            if(filter.elementAt(0) != null && filter.elementAt(0) != "") {
+//                tempSql+=property.elementAt(0)+"='"+filter.elementAt(0)+"' ";
+//            }
+////>>>>>>> origin/zhaoyang
             for (int i=1;i<property.size();i++){
                 sql+="AND "+property.elementAt(i)+" like binary '%"+filter.elementAt(i)+"%'";
             }
