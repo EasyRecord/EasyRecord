@@ -49,7 +49,7 @@ public class UpdateRecord extends ActionSupport {
             for (int i=2;i<property.size();i++){
                 sql+=", "+property.elementAt(i)+" ='"+inofo.elementAt(i)+"'";
             }
-            sql+=" WHERE generateTime="+inofo.elementAt(0);
+            sql+=" WHERE generateTime='"+inofo.elementAt(0)+"'";
             System.out.println(sql);
             MysqlConnector mysqlConnector=new MysqlConnector();
 

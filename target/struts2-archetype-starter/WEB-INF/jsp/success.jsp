@@ -45,7 +45,7 @@
 		<h3 class="mes"><small>Succeed to submit.</small></h3>
 		<div class="link-box">
 			<a href="BackToIndex.action" class="morelink"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 返回首页</a>
-			<a href="GoToInsertRecord.action" class="morelink"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 继续添加记录</a>
+			<%--<a href="GoToInsertRecord.action" class="morelink"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 继续添加记录</a>--%>
 		</div>
 	</div>
 

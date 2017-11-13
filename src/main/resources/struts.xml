@@ -76,6 +76,10 @@
             <result>/WEB-INF/jsp/update.jsp</result>
         </action>
 
+        <action name="UpdateRecord" class="edu.hit.se.UpdateRecord">
+            <result name="success">/WEB-INF/jsp/success.jsp</result>
+        </action>
+
         <action name="Connect" class="edu.hit.se.Connect">
             <result>/WEB-INF/jsp/associate.jsp</result>
         </action>
@@ -130,9 +134,9 @@
     </action>
 
 
-        <action name="UpdateRecord" class="edu.hit.se.UpdateRecord">
-            <result name="success" type="json"></result>
-        </action>
+        <!--<action name="UpdateRecord" class="edu.hit.se.UpdateRecord">-->
+            <!--<result name="success" type="json"></result>-->
+        <!--</action>-->
 
         <action name="GetAllRecord" class="edu.hit.se.GetAllRecord">
             <result name="success" type="json"></result>
