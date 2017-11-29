@@ -9,6 +9,7 @@ import org.apache.struts2.ServletActionContext;
 import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 //import java.sql.ResultSet;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Vector;
 
@@ -18,6 +19,7 @@ public class GeneratePdo extends ActionSupport{
     Vector<String > property=new Vector<String >();
     Vector<String > elementType= new Vector<String>();
     Vector<Integer> size=new Vector<Integer>();
+
 
     String pdoName="";
 
@@ -98,7 +100,11 @@ public class GeneratePdo extends ActionSupport{
             System.out.println(sql);
             statement.executeUpdate(sql);
 
+
+
+
             con.close();
+
 
         }
         catch (Exception e){

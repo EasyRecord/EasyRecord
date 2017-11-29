@@ -59,6 +59,9 @@
     </script>
 </head>
 <body>
+<s:debug>
+
+</s:debug>
 <div class="container">
     <div class="header clearfix">
         <nav>

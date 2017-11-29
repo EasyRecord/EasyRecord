@@ -45,6 +45,8 @@ public class DeleteRecord extends ActionSupport{
             int rs = statement.executeUpdate(sql);
             sql="DELETE FROM "+user+"_link"+" WHERE source='"+key+"'";
             rs = statement.executeUpdate(sql);
+            sql="DELETE FROM "+user+"_link"+" WHERE target='"+key+"'";
+            rs = statement.executeUpdate(sql);
             con.close();
         }
         catch (Exception e){
