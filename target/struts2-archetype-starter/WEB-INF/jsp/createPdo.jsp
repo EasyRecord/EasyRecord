@@ -60,6 +60,17 @@
                         + "<span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></p>");
                 }
             });
+
+            $("#publicPDO").click(function(){
+                $(this).attr("class", "second-menu active");
+                $("#privatePDO").attr("class","second-menu");
+                $("#content-list").animate({left:"-900px"}, "slow");
+            });
+            $("#privatePDO").click(function(){
+                $(this).attr("class", "second-menu active");
+                $("#publicPDO").attr("class","second-menu");
+                $("#content-list").animate({left:"0px"}, "slow");
+            });
         });
     </script>
 </head>
@@ -82,7 +93,12 @@
     </div>
     <hr/>
 
+
     <div >
+        <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="second-menu active" id="privatePDO"><a href="#">自定义PDO模型</a></li>
+            <li role="presentation" class="second-menu" id="publicPDO"><a href="#">公共PDO模型</a></li>
+        </ul>
         <h2>创建PDO模型</h2>
         <h4><small>Create PDO model</small></h4>
         <!--<p>
@@ -91,54 +107,96 @@
     </div>
 
     <div class="main-form">
-        <form class="form-horizontal" method="post" action="GeneratePdo.action">
-            <div class="form-group">
-                <label for="pdoName" class="col-sm-1 control-label">PDO名</label>
-                <div class="col-sm-10">
 
-                    <input type="text" class="form-control" id="pdoName" placeholder="PDO名" name="pdoName">
-                </div>
-            </div>
+        <div class="tab-content">
 
-            <div id="createPDOform">
-                <div class="form-group">
-                    <label for="property0" class="col-sm-1 control-label">字段名</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="property0" name="property[0]">
+            <ul id="content-list">
+                <li><!-- 自定义PDO字段 -->
+                    <form class="form-horizontal" method="post" action="GeneratePdo.action">
+                        <div class="form-group">
+                            <label for="pdoName" class="col-sm-1 control-label">PDO名</label>
+                            <div class="col-sm-10">
+
+                                <input type="text" class="form-control" id="pdoName" placeholder="PDO名" name="pdoName">
+                            </div>
+                        </div>
+
+                        <div id="createPDOform">
+                            <div class="form-group">
+                                <label for="property0" class="col-sm-1 control-label">字段名</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="property0" name="property[0]">
+                                </div>
+                                <label for="elementType0" class="col-sm-1 control-label">字段类型</label>
+                                <div class="col-sm-2">
+                                    <select class="form-control" name="elementType[0]" id="elementType0">
+                                        <option value="String">String</option>
+                                        <option value="int">int</option>
+                                        <option value="double">double</option>
+                                        <option value="Timestamp">Timestamp</option>
+                                    </select>
+                                </div>
+                                <label for="size0" class="col-sm-1 control-label">字段长度</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="size0" name="size[0]">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                              <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                              </div>
+                            </div>
+                        </div> -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-1 col-sm-1">
+                                <button type="submit" class="btn btn-info">提交</button>
+                            </div>
+                            <div class="col-sm-8">
+                                <button type="button" class="btn btn-default" id="addProperty">添加字段</button>
+                            </div>
+                        </div>
+                    </form>
+                </li>
+
+
+                <li><!--公共PDO字段-->
+                    <div class="row">
+                        <div class="pdo-public col-sm-4 col-sm-offset-1">
+                            <div class="pdo-title">
+                                <h4>聚餐</h4>
+                            </div>
+                            <div class="tag">
+                                <span class="label label-info">时间</span>
+                                <span class="label label-success">地点</span>
+                                <span class="label label-warning">人数</span>
+                                <span class="label label-danger">花费</span>
+                            </div>
+
+                            <s:a href="AddPublicPdo.action?publicpdoName=聚餐" class="btn btn-default add" role="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 添加</s:a>
+                        </div>
+
+
+                        <div class="pdo-public col-sm-4 col-sm-offset-1">
+                            <div class="pdo-title">
+                                <h4>运动</h4>
+                            </div>
+                            <div class="tag">
+                                <span class="label label-info">时间</span>
+                                <span class="label label-success">地点</span>
+                                <span class="label label-warning">项目</span>
+                            </div>
+                            <s:a href="AddPublicPdo.action?publicpdoName=运动" class="btn btn-default add" role="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 添加</s:a>
+                        </div>
                     </div>
-                    <label for="elementType0" class="col-sm-1 control-label">字段类型</label>
-                    <div class="col-sm-2">
-                        <select class="form-control" name="elementType[0]" id="elementType0">
-                            <option value="String">String</option>
-                            <option value="int">int</option>
-                            <option value="double">double</option>
-                            <option value="Timestamp">Timestamp</option>
-                        </select>
-                    </div>
-                    <label for="size0" class="col-sm-1 control-label">字段长度</label>
-                    <div class="col-sm-2">
-                        <input type="text" class="form-control" id="size0" name="size[0]">
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> Remember me
-                    </label>
-                  </div>
-                </div>
-            </div> -->
-            <div class="form-group">
-                <div class="col-sm-offset-1 col-sm-1">
-                    <button type="submit" class="btn btn-info">提交</button>
-                </div>
-                <div class="col-sm-8">
-                    <button type="button" class="btn btn-default" id="addProperty">添加字段</button>
-                </div>
-            </div>
-        </form>
+                </li>
+
+
+            </ul>
+        </div>
     </div>
 
 

@@ -88,9 +88,13 @@
             <result>/WEB-INF/jsp/SearchAllResult.jsp</result>
         </action>
 
-    <action name="Disassociation" class="edu.hit.se.Disassociation">
-        <result name="success" >/WEB-INF/jsp/success.jsp</result>
-    </action>
+        <action name="Disassociation" class="edu.hit.se.Disassociation">
+            <result name="success" >/WEB-INF/jsp/success.jsp</result>
+        </action>
+
+        <action name="AddPublicPdo" class="edu.hit.se.AddPublicPdo">
+            <result>/WEB-INF/jsp/success.jsp</result>
+        </action>
 
     <!--<action name="Import" class="edu.hit.se.Import" method="execute">-->
         <!--&lt;!&ndash;<interceptor-ref name="defaultStack">&ndash;&gt;-->

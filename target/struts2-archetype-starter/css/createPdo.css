@@ -59,3 +59,48 @@ a.morelink:hover, a.morelink:active{
 .table{
 	font-size: 14px;
 }
+.second-menu a{
+	font-size: 12px;
+}
+.tab-content{
+	min-height: 155px;
+	overflow: hidden;
+}
+#content-list{
+	position: relative;
+	left: 0;
+	top: 0;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	width: 2000px;
+	height: 150px;
+}
+#content-list li{
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 900px;
+}
+.pdo-public{
+	height: 150px;
+	border: #d8d7d7 solid 1px;
+	border-radius: 20px;
+	margin-top: 20px;
+}
+.pdo-title{
+	margin-left: 30px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.tag{
+	margin-left: 40px;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+.tag span{
+	font-weight: normal;
+}
+.add{
+	margin-left: 150px;
+}

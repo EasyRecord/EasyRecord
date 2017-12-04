@@ -17,8 +17,10 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="../css/index.css"/>
     <link rel="stylesheet" href="../css/createPdo.css"/>
-    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/flatpickr.min.css">
     <script type="text/javascript" src="../bootstrap/js/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/flatpickr.js"></script>
 </head>
 <body>
 <div class="container">
@@ -77,9 +79,17 @@
                     for (int i=1;i<property.size();i++){
                         out.println("<div style=\"display: none\"><input name=\"property["+i+"]\" value=\""+property.elementAt(i)+"\"></div>");
                         out.println("<div class=\"form-group\">");
-                        out.println("<label for=\"property"+i+"\" class=\"col-sm-2 control-label\">"+property.elementAt(i)+"</label>");
+                        String pro = property.elementAt(i);
+                        System.out.println(pro);
+                        out.println("<label for=\"property"+i+"\" class=\"col-sm-2 control-label\">"+pro+"</label>");
                         out.println("<div class=\"col-sm-8\">");
-                        out.println("<input type=\"text\" class=\"form-control\" id=\"property"+i+"\" name=\"inofo["+i+"]\" value=\""+info.elementAt(i)+"\">");
+                        if(pro == "日期"){
+                            out.println("<input type=\"text\" class=\"calendar form-control\" id=\"property"+i+"\" name=\"inofo["+i+"]\" value=\""+info.elementAt(i)+"\">");
+                        }else if(pro == "时间"){
+                            out.println("<input type=\"text\" class=\"calendar form-control\" id=\"property"+i+"\" data-enable-time=\"true\" data-time_24hr=\"true\" name=\"inofo["+i+"]\" value=\""+info.elementAt(i)+"\">");
+                        }else{
+                            out.println("<input type=\"text\" class=\"form-control\" id=\"property"+i+"\" name=\"inofo["+i+"]\" value=\""+info.elementAt(i)+"\">");
+                        }
                         out.println("</div></div>");
 
 //                        out.println("<div style=\"display: none\"><td style=\"display: none\"><input name=\"property[i]\" style=\"display: none\"></td></div>");
@@ -110,7 +120,8 @@
         </footer>
 </div>
 
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../bootstrap/js/jquery-1.12.0.min.js"></script>
+<script>
+    document.getElementsByClassName("calendar").flatpickr();
+</script>
 </body>
 </html>
