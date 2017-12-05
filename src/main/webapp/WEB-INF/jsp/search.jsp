@@ -25,8 +25,10 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="css/index.css"/>
     <link rel="stylesheet" href="css/search.css"/>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/flatpickr.min.css">
     <script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/flatpickr.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $("#tosearchByAttr").click(function(){
@@ -64,23 +66,11 @@
     <hr/>
 
     <div>
-<%--<<<<<<< HEAD--%>
         <%--<ul class="nav nav-pills pull-right">--%>
-            <%--&lt;%&ndash;<li role="presentation" class="second-menu active" id="tosearchByPDO"><a href="#">按PDO搜索</a></li>&ndash;%&gt;--%>
-            <%--&lt;%&ndash;<li role="presentation" class="second-menu" id="tosearchByAttr"><a href="#">按字段搜索</a></li>&ndash;%&gt;--%>
-        <%--</ul>--%>
-<%--&lt;%&ndash;<<<<<<< HEAD&ndash;%&gt;--%>
-        <%--<h2>按PDO查找</h2>--%>
-<%--&lt;%&ndash;=======&ndash;%&gt;--%>
-        <%--&lt;%&ndash;<h2>查找PDO记录</h2>&ndash;%&gt;--%>
-<%--&lt;%&ndash;>>>>>>> origin/zhaoyang&ndash;%&gt;--%>
-<%--=======--%>
-        <%--<ul class="nav nav-pills pull-right">--%>
-            <%--<li role="presentation" class="second-menu active" id="tosearchByPDO"><a href="#">按PDO搜索</a></li>--%>
-            <%--<li role="presentation" class="second-menu" id="tosearchByAttr"><a href="#">按字段搜索</a></li>--%>
+        <%--<li role="presentation" class="second-menu active" id="tosearchByPDO"><a href="#">按PDO搜索</a></li>--%>
+        <%--<li role="presentation" class="second-menu" id="tosearchByAttr"><a href="#">按字段搜索</a></li>--%>
         <%--</ul>--%>
         <h2>查询PDO记录</h2>
-<%-->>>>>>> origin/zhaoyang--%>
         <h4><small>search PDO records</small></h4>
         <!--<p>
         <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
@@ -142,42 +132,24 @@
 
             <!-- 按字段搜索（时间，地点等） -->
             <%--<div role="tabpanel" class="tab-pane" id="searchByAttr">--%>
-                <%--<form class="form-horizontal search-form" method="post" action="SearchAll.action">--%>
-                    <%--<div class="form-group">--%>
-<%--<<<<<<< HEAD--%>
-                        <%--&lt;%&ndash;<div class="col-sm-offset-1 col-sm-2">&ndash;%&gt;--%>
-                            <%--&lt;%&ndash;<select class="form-control" name="" id="pdoName-attr">&ndash;%&gt;--%>
-                                <%--&lt;%&ndash;<option value="全部">全部</option>&ndash;%&gt;--%>
-                                <%--&lt;%&ndash;<option value="时间">时间</option>&ndash;%&gt;--%>
-                                <%--&lt;%&ndash;<option value="地点">地点</option>&ndash;%&gt;--%>
-                                <%--&lt;%&ndash;<option value="人数">人数</option>&ndash;%&gt;--%>
-                            <%--&lt;%&ndash;</select>&ndash;%&gt;--%>
-                        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-                        <%--&lt;%&ndash;<div class="col-sm-5 choosePDO">&ndash;%&gt;--%>
-                            <%--&lt;%&ndash;<input type="text" class="form-control" placeholder="请输入要搜索的内容" name="">&ndash;%&gt;--%>
-<%--=======--%>
-                        <%--&lt;%&ndash;<label for="pdoName-pdo" class="col-sm-2 control-label">搜索字段</label>&ndash;%&gt;--%>
-                        <%--&lt;%&ndash;<div class="col-sm-5 choosePDO">&ndash;%&gt;--%>
-                            <%--&lt;%&ndash;<input type="text" class="form-control" placeholder="请输入要搜索的内容" name="keyWord">&ndash;%&gt;--%>
-<%-->>>>>>> origin/zhaoyang--%>
-                        <%--</div>--%>
-                        <%--<div class="col-sm-2 choosePDO">--%>
-                            <%--<button type="submit" class="btn btn-info" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
-                <%--</form>--%>
-<%--<<<<<<< HEAD--%>
-            <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-<%--=======--%>
-                <%--<hr class="center-hr" />--%>
+            <%--<form class="form-horizontal search-form" method="post" action="SearchAll.action">--%>
+            <%--<div class="form-group">--%>
+            <%--<label for="pdoName-pdo" class="col-sm-2 control-label">搜索字段</label>--%>
+            <%--<div class="col-sm-5 choosePDO">--%>
+            <%--<input type="text" class="form-control" placeholder="请输入要搜索的内容" name="keyWord">--%>
+            <%--</div>--%>
+            <%--<div class="col-sm-2 choosePDO">--%>
+            <%--<button type="submit" class="btn btn-info" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>--%>
+            <%--</div>--%>
+            <%--</div>--%>
+            <%--</form>--%>
+            <%--<hr class="center-hr" />--%>
 
-                <%--<div class="notes">--%>
-                    <%--<h4><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 请直接输入要搜索的字段</h4>--%>
-                <%--</div>--%>
+            <%--<div class="notes">--%>
+            <%--<h4><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 请直接输入要搜索的字段</h4>--%>
+            <%--</div>--%>
             <%--</div>--%>
         </div>
-<%-->>>>>>> origin/zhaoyang--%>
 
 
 
@@ -191,8 +163,6 @@
     </footer>
 </div>
 
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
 <script>
     document.getElementById("getPropertys").onclick = function () {
         //发送Ajax请求并处理
@@ -209,13 +179,20 @@
                     var html = "";
                     for(var i = 1; i < result.pdoHeader.length; i ++){
                         //alert(result.pdoHeader[i]);
-                        html += "</div><div class='form-group'><label for='filter" + (i - 1) + "' class='col-sm-2 control-label'>" + result.pdoHeader[i] + "</label><div class='col-sm-8'><input type='text' class='form-control' id='filter" + (i - 1) + "' name='filter[" + (i - 1) + "]'/></div></div>";
+                        if(result.pdoHeader[i] == "日期"){
+                            html += "</div><div class='form-group'><label for='info" + (i - 1) + "' class='col-sm-2 control-label'>" + result.pdoHeader[i] + "</label><div class='col-sm-8'><input type='text' class='calendar form-control' id='info" + (i - 1) + "' name='info[" + (i - 1) + "]' placeholder='请选择日期'></div></div>";
+                        }else if(result.pdoHeader[i] == "时间"){
+                            html += "</div><div class='form-group'><label for='info" + (i - 1) + "' class='col-sm-2 control-label'>" + result.pdoHeader[i] + "</label><div class='col-sm-8'><input type='text' class='calendar form-control' id='info" + (i - 1) + "' data-enable-time='true' data-time_24hr='true' name='info[" + (i - 1) + "]' placeholder='请选择时间'></div></div>";
+                        }else{
+                            html += "</div><div class='form-group'><label for='info" + (i - 1) + "' class='col-sm-2 control-label'>" + result.pdoHeader[i] + "</label><div class='col-sm-8'><input type='text' class='form-control' id='info" + (i - 1) + "' name='info[" + (i - 1) + "]'></div></div>";
+                        }
                         html += "<input type='text' class='form-control' style='display: none;' name='property[" + (i - 1) + "]' value='" + result.pdoHeader[i] + "'/>";
                         //alert(html);
                     }
                     html += "<input type='text' class='form-control' style='display: none;' name='pdoName' value='" + document.getElementById("pdoName-pdo").value + "'/>";
                     html += "<div class='form-group'><div class='col-sm-offset-2 col-sm-2'><button type='submit' class='btn btn-info'>搜索</button></div></div>";
                     document.getElementById("Pdoform").innerHTML = html;
+                    document.getElementsByClassName("calendar").flatpickr();
                 }else{
                     alert("发生错误！" + request.status);
                 }

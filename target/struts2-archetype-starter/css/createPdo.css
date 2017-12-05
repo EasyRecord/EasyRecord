@@ -1,61 +1,211 @@
 label.col-sm-1{
+
 	padding-left: 0;
+
 	padding-right: 0;
+
 }
+
 p.col-sm-1{
+
 	padding-top: 8px;
+
 }
+
 .main-form{
+
 	margin-top: 80px;
+
 	margin-bottom: 90px;
+
 }
+
 .btn{
+
 	margin-top: 3px;
+
 	margin-bottom: 3px;
+
 }
+
 .choosePDO .btn{
+
 	margin: 0;
+
 }
+
 .notes{
+
 	margin: 50px 80px;
+
 }
+
 .center-hr{
+
 	margin: 45px;
+
 }
+
 .PDOform{
+
 	margin-top: 50px;
+
 }
+
 .success-mes{
+
 	width: 650px;
+
 	margin: 102px auto;
+
 }
+
 .mes{
+
 	margin-left: 90px;
+
 }
+
 .icon-ok{
+
 	color: #3ece3e;
+
 	font-size: 80px;
+
 }
+
 .icon-error{
+
 	color: #fd5656;
+
 	font-size: 80px;
+
 }
+
 .link-box{
+
 	margin-top: 50px;
+
 	margin-left: 90px;
+
 }
+
 .morelink{
+
 	margin-right: 20px;
+
 }
+
 a.morelink:hover, a.morelink:active{
+
 	color: #1299c1;
+
 }
+
 .main-table{
+
 	margin-right: 80px;
+
 	margin-left: 80px;
+
 	margin-bottom: 80px;
+
 	margin-top: 20px;
+
 }
+
 .table{
+
 	font-size: 14px;
+
+}
+
+.second-menu a{
+
+	font-size: 12px;
+
+}
+
+.tab-content{
+
+	min-height: 155px;
+
+	overflow: hidden;
+
+}
+
+#content-list{
+
+	position: relative;
+
+	left: 0;
+
+	top: 0;
+
+	list-style-type: none;
+
+	padding: 0;
+
+	margin: 0;
+
+	width: 2000px;
+
+	height: 150px;
+
+}
+
+#content-list li{
+
+	float: left;
+
+	margin: 0;
+
+	padding: 0;
+
+	width: 900px;
+
+}
+
+.pdo-public{
+
+	height: 150px;
+
+	border: #d8d7d7 solid 1px;
+
+	border-radius: 20px;
+
+	margin-top: 20px;
+
+}
+
+.pdo-title{
+
+	margin-left: 30px;
+
+	margin-top: 20px;
+
+	margin-bottom: 10px;
+
+}
+
+.tag{
+
+	margin-left: 40px;
+
+	margin-bottom: 20px;
+
+	margin-top: 10px;
+
+}
+
+.tag span{
+
+	font-weight: normal;
+
+}
+
+.add{
+
+	margin-left: 150px;
+
 }
