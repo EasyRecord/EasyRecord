@@ -130,10 +130,10 @@
                                 <label for="elementType0" class="col-sm-1 control-label">字段类型</label>
                                 <div class="col-sm-2">
                                     <select class="form-control" name="elementType[0]" id="elementType0">
-                                        <option value="String">String</option>
-                                        <option value="int">int</option>
-                                        <option value="double">double</option>
-                                        <option value="Timestamp">Timestamp</option>
+                                        <option value="String">字符串</option>
+                                        <option value="int">整数</option>
+                                        <option value="double">实数</option>
+                                        <option value="Timestamp">时间</option>
                                     </select>
                                 </div>
                                 <label for="size0" class="col-sm-1 control-label">字段长度</label>

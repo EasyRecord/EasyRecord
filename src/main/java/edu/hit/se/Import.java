@@ -7,6 +7,7 @@ import org.apache.struts2.ServletActionContext;
 import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.List;
@@ -45,37 +46,39 @@ public class Import extends ActionSupport {
 
     public String execute() {
 
-        System.out.println("fileName:"+this.getUploadImageFileName());
-        System.out.println("contentType:"+this.getUploadImageContentType());
-        System.out.println("File:"+this.getUploadImage());
+        System.out.println("fileName:" + this.getUploadImageFileName());
+        System.out.println("contentType:" + this.getUploadImageContentType());
+        System.out.println("File:" + this.getUploadImage());
 
         //获取要保存文件夹的物理路径(绝对路径)
 //        String realPath=ServletActionContext.getServletContext().getRealPath("E:\\upload");
-        String realPath="/upload";
+        String realPath = "/upload";
+//        String realPath = "E:";
         System.out.println(realPath);
         File file = new File(realPath);
 
         //测试此抽象路径名表示的文件或目录是否存在。若不存在，创建此抽象路径名指定的目录，包括所有必需但不存在的父目录。
-        if(!file.exists())file.mkdirs();
+        if (!file.exists()) file.mkdirs();
 
         try {
             //保存文件
-            FileUtils.copyFile(uploadImage, new File(file,uploadImageFileName));
+            FileUtils.copyFile(uploadImage, new File(file, uploadImageFileName));
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 //        return SUCCESS;
-        String pdoName=getUploadImageFileName().split("\\.")[0];
+        String pdoName = getUploadImageFileName().split("\\.")[0];
 
-        Vector<String > property=new Vector<>();
+        Vector<String> property = new Vector<>();
         HttpSession session = null;
         session = ServletActionContext.getRequest().getSession();
         String user = (String) session.getAttribute("user");
 
         DealWithExcelFile poi = new DealWithExcelFile();
         // List<List<String>> list = poi.read("d:/aaa.xls");
-        List<List<String>> list = poi.read("/upload/"+(getUploadImageFileName()));
+        List<List<String>> list = poi.read("/upload/" + (getUploadImageFileName()));
+//        List<List<String>> list = poi.read("E:\\" + (getUploadImageFileName()));
 //        System.out.println("E:\\upload\\"+(getUploadImageFileName()));
         if (list != null) {
             boolean fisrt = true;
@@ -90,15 +93,7 @@ public class Import extends ActionSupport {
                         property.add(cellList.get(j));
                     }
                     try {
-
-                        String sql = "CREATE TABLE " + user + "_" + pdoName + " (\r\n`generateTime` Timestamp(3) NOT NULL,\r\n";
-                        for (int j = 0; j < property.size(); j++) {
-//                System.out.println("In");
-
-                            sql += "`" + property.elementAt(j) + "` VARCHAR(" + "255" + ") NULL,\r\n";
-
-                        }
-                        sql += "PRIMARY KEY (`generateTime`));";
+                        String sql = "SELECT * FROM " + user + "_pdoName WHERE NAMES ='" + pdoName + "'";
                         System.out.println(sql);
 
                         MysqlConnector mysqlConnector = new MysqlConnector();
@@ -108,12 +103,32 @@ public class Import extends ActionSupport {
                         Statement statement = null;
 
                         statement = con.createStatement();
-                        statement.executeUpdate(sql);
+                        ResultSet r = statement.executeQuery(sql);
+                        if (!r.next()) {
+                            sql = "CREATE TABLE " + user + "_" + pdoName + " (\r\n`generateTime` Timestamp(3) NOT NULL,\r\n";
+                            for (int j = 0; j < property.size(); j++) {
+//                System.out.println("In");
 
-                        sql = "INSERT INTO " + user + "_pdoName (names) VALUES ('" + pdoName + "')";
-                        System.out.println(sql);
-                        statement.executeUpdate(sql);
+                                sql += "`" + property.elementAt(j) + "` VARCHAR(" + "255" + ") NULL,\r\n";
 
+                            }
+                            sql += "PRIMARY KEY (`generateTime`));";
+                            System.out.println(sql);
+
+                            mysqlConnector = new MysqlConnector();
+
+
+                            con = mysqlConnector.solution("PDO");
+
+                            statement = con.createStatement();
+                            statement.executeUpdate(sql);
+
+                            sql = "INSERT INTO " + user + "_pdoName (names) VALUES ('" + pdoName + "')";
+                            System.out.println(sql);
+                            statement.executeUpdate(sql);
+
+                            con.close();
+                        }
                         con.close();
 
                     } catch (Exception e) {
@@ -127,19 +142,11 @@ public class Import extends ActionSupport {
 //                        System.out.print("    " + cellList.get(j));
                     }
                     try {
-
-                        Timestamp now = new Timestamp((new java.util.Date()).getTime());
-//                        System.out.println(property);
-//                        System.out.println(info);
-                        String sql = "INSERT INTO " + user + "_" + pdoName + " (generateTime";
-                        for (int j = 0; j < property.size(); j++) {
-                            sql += "," + property.elementAt(j) + "";
+                        String sql = "select * from " + user + "_" + pdoName + " where ";
+                        sql += property.elementAt(0) + "='" + info.elementAt(0) + "'";
+                        for (int k = 1; k < property.size(); k++) {
+                            sql += "AND " + property.elementAt(k) + " = '" + info.elementAt(k) + "'";
                         }
-                        sql += ") VALUES ('" + now + "'";
-                        for (int j = 0; j < info.size(); j++) {
-                            sql += ",'" + info.elementAt(j) + "'";
-                        }
-                        sql += ")";
                         System.out.println(sql);
                         MysqlConnector mysqlConnector = new MysqlConnector();
 
@@ -147,9 +154,32 @@ public class Import extends ActionSupport {
                         Statement statement = null;
 
                         statement = con.createStatement();
-                        int rs = statement.executeUpdate(sql);
+                        ResultSet rs = statement.executeQuery(sql);
+                        if (!rs.next()) {
+                            Timestamp now = new Timestamp((new java.util.Date()).getTime());
+//                        System.out.println(property);
+//                        System.out.println(info);
+                            sql = "INSERT INTO " + user + "_" + pdoName + " (generateTime";
+                            for (int j = 0; j < property.size(); j++) {
+                                sql += "," + property.elementAt(j) + "";
+                            }
+                            sql += ") VALUES ('" + now + "'";
+                            for (int j = 0; j < info.size(); j++) {
+                                sql += ",'" + info.elementAt(j) + "'";
+                            }
+                            sql += ")";
+                            System.out.println(sql);
+                            mysqlConnector = new MysqlConnector();
 
+                            con = mysqlConnector.solution("PDO");
+
+                            statement = con.createStatement();
+                            int bs = statement.executeUpdate(sql);
+
+                            con.close();
+                        }
                         con.close();
+
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
