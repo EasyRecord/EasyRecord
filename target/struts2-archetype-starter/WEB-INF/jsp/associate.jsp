@@ -11,30 +11,46 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Title</title>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="../css/index.css"/>
-    <link rel="stylesheet" href="../css/createPdo.css"/>
-    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../bootstrap/js/jquery-1.12.0.min.js"></script>
+<%--<<<<<<< HEAD--%>
+    <%--<title>Title</title>--%>
+<%--=======--%>
+    <title>建立关联</title>
+<%-->>>>>>> origin/zhaoyang--%>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/createPdo.css"/>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
 </head>
 <body>
-<s:debug></s:debug>
+<%--<<<<<<< HEAD--%>
+<%--<s:debug></s:debug>--%>
+<%--=======--%>
+<%-->>>>>>> origin/zhaoyang--%>
 <% String key=(String)request.getAttribute("key"); %>
 <div class="container">
     <div class="header clearfix">
         <nav>
             <ul class="nav nav-pills pull-right">
                 <li role="presentation"><a href="GoToGeneratePdo.action">新建</a></li>
-                <li role="presentation" class="active"><a href="GoToInsertRecord.action">添加</a></li>
+<%--<<<<<<< HEAD--%>
+                <%--<li role="presentation" class="active"><a href="GoToInsertRecord.action">添加</a></li>--%>
+                <%--<li role="presentation"><a href="GoToSearch.action">查询</a></li>--%>
+                <%--<li role="presentation"><a href="GoToImport.action">导入</a></li>--%>
+                <%--&lt;%&ndash; 跳转到index.jsp页面 &ndash;%&gt;--%>
+                <%--<li role="presentation"><a href="BackToIndex.action"><span class="glyphicon glyphicon-share-alt"--%>
+                                                                           <%--aria-hidden="true"></span> 返回</a></li>--%>
+                <%--<li role="presentation"><a href="Logout.action"><span class="glyphicon glyphicon-log-out"--%>
+                                                                      <%--aria-hidden="true"></span> 登出</a></li>--%>
+<%--=======--%>
+                <li role="presentation"><a href="GoToInsertRecord.action">添加</a></li>
                 <li role="presentation"><a href="GoToSearch.action">查询</a></li>
                 <li role="presentation"><a href="GoToImport.action">导入</a></li>
                 <%-- 跳转到index.jsp页面 --%>
-                <li role="presentation"><a href="BackToIndex.action"><span class="glyphicon glyphicon-share-alt"
-                                                                           aria-hidden="true"></span> 返回</a></li>
-                <li role="presentation"><a href="Logout.action"><span class="glyphicon glyphicon-log-out"
-                                                                      aria-hidden="true"></span> 登出</a></li>
+                <li role="presentation"><a href="BackToIndex.action"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 返回</a></li>
+                <li role="presentation"><a href="Logout.action"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 登出</a></li>
+<%-->>>>>>> origin/zhaoyang--%>
                 <% if (session.getAttribute("user") == null) response.sendRedirect("Logout.action");%>
             </ul>
             <h3 class="text-muted">EasyRecord</h3>
@@ -76,10 +92,19 @@
             <h4><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 选择PDO名称</h4>
         </div>
 
-        <table class="table table-hover table-stripe" action="InsertRecord.action" id="recordList">
+<%--<<<<<<< HEAD--%>
+        <%--<table class="table table-hover table-stripe" action="InsertRecord.action" id="recordList">--%>
 
 
-        </table>
+        <%--</table>--%>
+<%--=======--%>
+        <div class="main-table">
+            <table class="table table-hover" action="InsertRecord.action" id="recordList">
+
+
+            </table>
+        </div>
+<%-->>>>>>> origin/zhaoyang--%>
     </div>
 
 
@@ -93,8 +118,8 @@
     </footer>
 </div>
 
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
 <script>
     document.getElementById("getPropertys").onclick = function () {
         //发送Ajax请求并处理
@@ -108,14 +133,25 @@
                 if (request.status === 200) {
                     var result = JSON.parse(request.responseText);
                     document.getElementById("notes").className = "notes hide";
-                    var html = "<tr>";
+//<<<<<<< HEAD
+//                    var html = "<tr>";
+////                    alert(result.infos[0][0]);
+//                    for (var i = 0; i < result.property.length; i++) {
+//                        //alert(result.pdoHeader[i]);
+//                        html += "<td>" + result.property[i] + "</td>";
+//                    }
+//                    html += "<td>关联</td>";
+//                    html += "</tr>";
+//=======
+                    var html = "<thead><tr>";
 //                    alert(result.infos[0][0]);
                     for (var i = 0; i < result.property.length; i++) {
                         //alert(result.pdoHeader[i]);
-                        html += "<td>" + result.property[i] + "</td>";
+                        html += "<th>" + result.property[i] + "</th>";
                     }
-                    html += "<td>关联</td>";
-                    html += "</tr>";
+                    html += "<th>操作</th>";
+                    html += "</tr></thead>";
+//>>>>>>> origin/zhaoyang
                     for (var i = 0; i < result.infos.length; i++) {
                         html += "<tr>";
                         for (var j = 0; j < result.property.length; j++) {
@@ -123,11 +159,18 @@
                                 result.infos[i][j] +
                                 "</td>";
                         }
-                        alert(document.getElementById("pdoName").value);
+<%--<<<<<<< HEAD--%>
+                        <%--alert(document.getElementById("pdoName").value);--%>
+                        <%--html +="<td><a href='Association.action?key=<%=key%>&keyDestination="+result.infos[i][0]+"&pdoNameDestination="+document.getElementById("pdoName").value+"'>关联</a></td>";--%>
+<%--//                    html+="<td><a href=\"Association.action?key="+document.getElementById("pdoName").value+"&keyDestination="+result.info[i][0]+"&pdoNameDestination="+document.getElementById("pdoName").value+"\">关联</a></td>";--%>
+                            <%--html += "</tr>";--%>
+
+<%--=======--%>
+//                        alert(document.getElementById("pdoName").value);
                         html +="<td><a href='Association.action?key=<%=key%>&keyDestination="+result.infos[i][0]+"&pdoNameDestination="+document.getElementById("pdoName").value+"'>关联</a></td>";
 //                    html+="<td><a href=\"Association.action?key="+document.getElementById("pdoName").value+"&keyDestination="+result.info[i][0]+"&pdoNameDestination="+document.getElementById("pdoName").value+"\">关联</a></td>";
-                            html += "</tr>";
-
+                        html += "</tr>";
+//>>>>>>> origin/zhaoyang
                     }
 //                    alert(html);
                     document.getElementById("recordList").innerHTML = html;
@@ -137,10 +180,17 @@
             }
         }
     }
-
-
+//<<<<<<< HEAD
+//
+//
+//=======
+//>>>>>>> origin/zhaoyang
 </script>
 </body>
 
 
+<%--<<<<<<< HEAD--%>
+<%--</html>--%>
+<%--=======--%>
 </html>
+<%-->>>>>>> origin/zhaoyang--%>

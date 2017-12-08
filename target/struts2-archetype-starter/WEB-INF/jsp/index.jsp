@@ -28,11 +28,11 @@
 <head>
     <meta charset="UTF-8">
     <title>个人信息采集</title>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="../css/index.css"/>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../bootstrap/js/jquery-1.12.0.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/jquery-1.12.0.min.js"></script>
 </head>
 <body>
 <%--<a href="index.jsp">测试</a>--%>
@@ -67,6 +67,17 @@
     <div class="jumbotron">
         <h2>个人信息采集</h2>
         <p>Create your own personal records.</p>
+        <br/>
+        <form class="form-horizontal search-form" method="post" action="SearchAll.action">
+            <div class="form-group">
+                <div class="col-sm-5 col-sm-offset-3">
+                    <input type="text" class="form-control" placeholder="请输入要搜索的内容" name="keyWord">
+                </div>
+                <div class="col-sm-1">
+                    <button type="submit" class="btn btn-info" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                </div>
+            </div>
+        </form>
         <!--<p>
         <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
         </p>-->
@@ -124,7 +135,7 @@
     </footer>
 </div>
 
-<script src="../bootstrap/js/bootstrap.min.js"></script>
-<script src="../bootstrap/js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
 </body>
 </html>

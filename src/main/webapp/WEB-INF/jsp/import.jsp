@@ -25,12 +25,12 @@
 <head>
     <meta charset="UTF-8">
     <title>导入文件</title>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="../css/index.css"/>
-    <link rel="stylesheet" href="../css/search.css"/>
-    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../bootstrap/js/jquery-1.12.0.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/search.css"/>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -64,28 +64,34 @@
         <div class="tab-content">
 
             <div role="tabpanel" class="tab-pane active importform">
-                <form class="search-form" method="post" action="Import.action">
-                    <div class="form-group">
-<%--<<<<<<< HEAD--%>
-                        <label for="upload" class="import-box">上传的文件</label>
-                        <input type="file" id="upload" name="upload" class="import-box">
-<%--=======--%>
-                        <%--<label for="exampleInputFile" class="import-box">上传的文件</label>--%>
-                        <%--<input type="file" id="exampleInputFile" class="import-box">--%>
-<%-->>>>>>> origin/zhaoyang--%>
-                        <p class="help-block">请选择excel表格进行上传（.xls文件）</p>
-                    </div>
-                    <!-- <div class="form-group">
-                        <div class="col-sm-2 choosePDO">
-                            <button type="submit" class="btn btn-info">提交</button>
-                        </div>
-                    </div> -->
-<%--<<<<<<< HEAD--%>
-                    <input type="submit" class="btn btn-info">上传</input>
-<%--=======--%>
-                    <%--<button type="submit choosePDO" class="btn btn-info">上传</button>--%>
-<%-->>>>>>> origin/zhaoyang--%>
-                </form>
+                <s:form class="search-form" action="Import.action" method="post" enctype="multipart/form-data">
+                    <s:file class="import-box" name="uploadImage"  />
+                    <s:submit class="btn btn-info" value="上传" />
+                </s:form>
+
+
+                <%--<form class="search-form" method="post" action="Import.action">--%>
+                    <%--<div class="form-group">--%>
+<%--&lt;%&ndash;<<<<<<< HEAD&ndash;%&gt;--%>
+                        <%--<label for="uploadImage" class="import-box">上传的文件</label>--%>
+                        <%--<input type="file" id="uploadImage" name="uploadImage" class="import-box">--%>
+<%--&lt;%&ndash;=======&ndash;%&gt;--%>
+                        <%--&lt;%&ndash;<label for="exampleInputFile" class="import-box">上传的文件</label>&ndash;%&gt;--%>
+                        <%--&lt;%&ndash;<input type="file" id="exampleInputFile" class="import-box">&ndash;%&gt;--%>
+<%--&lt;%&ndash;>>>>>>> origin/zhaoyang&ndash;%&gt;--%>
+                        <%--<p class="help-block">请选择excel表格进行上传（.xls文件）</p>--%>
+                    <%--</div>--%>
+                    <%--<!-- <div class="form-group">--%>
+                        <%--<div class="col-sm-2 choosePDO">--%>
+                            <%--<button type="submit" class="btn btn-info">提交</button>--%>
+                        <%--</div>--%>
+                    <%--</div> -->--%>
+<%--&lt;%&ndash;<<<<<<< HEAD&ndash;%&gt;--%>
+                    <%--<button type="submit" class="btn btn-info">上传</input>--%>
+<%--&lt;%&ndash;=======&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<button type="submit choosePDO" class="btn btn-info">上传</button>&ndash;%&gt;--%>
+<%--&lt;%&ndash;>>>>>>> origin/zhaoyang&ndash;%&gt;--%>
+                <%--</form>--%>
             </div>
         </div>
 
@@ -101,7 +107,7 @@
     </footer>
 </div>
 
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
 </body>
 </html>
