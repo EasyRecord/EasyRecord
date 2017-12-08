@@ -231,7 +231,7 @@
     function checkRegister() {
         var a=checkUserName();
         var b=checkPassWord();
-        return (a===true)&&(b===true)
+        return (a===true)&&(b===true);
     }
 </script>
 </body>
