@@ -109,7 +109,7 @@
 
             <div class="main-form">
 
-                <form class="form-horizontal" method="post" action="Register.action" onsubmit="return checkRegister()">
+                <form class="form-horizontal" method="post" action="Register.action">
                     <div class="form-group">
                         <label for="username" class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-9">
@@ -227,11 +227,6 @@
             document.getElementById("pwspan").style.fontWeight="bold";
             return true;
         }
-    }
-    function checkRegister() {
-        var a=checkUserName();
-        var b=checkPassWord();
-        return (a===true)&&(b===true);
     }
 </script>
 </body>

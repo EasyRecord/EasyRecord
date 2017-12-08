@@ -8,27 +8,27 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<html>--%>
 <%--<head>--%>
-<%--<title>Login</title>--%>
+    <%--<title>Login</title>--%>
 <%--</head>--%>
 <%--<body>--%>
 <%--<h1>这是登陆页面</h1>--%>
 <%--<form action="Login.action" method="post">--%>
-<%--<div class="form-group">--%>
-<%--<label for="username">UserName</label>--%>
-<%--<input class="form-control" id="username" name="username" type="text" placeholder="Username">--%>
-<%--</div>--%>
-<%--<div class="form-group">--%>
-<%--<label for="passwd">Password</label>--%>
-<%--<input class="form-control" id="passwd" name="passwd" type="password" placeholder="Password">--%>
-<%--</div>--%>
-<%--<!--<div class="form-group">-->--%>
-<%--<!--<div class="form-check">-->--%>
-<%--<!--<label class="form-check-label">-->--%>
-<%--<!--<input class="form-check-input" type="checkbox"> Remember Password</label>-->--%>
-<%--<!--</div>-->--%>
-<%--<!--</div>-->--%>
-<%--<!--<a class="btn btn-primary btn-block" href="index.jsp">Login</a>-->--%>
-<%--<button class="btn btn-primary btn-block" type="submit">Login</button>--%>
+    <%--<div class="form-group">--%>
+        <%--<label for="username">UserName</label>--%>
+        <%--<input class="form-control" id="username" name="username" type="text" placeholder="Username">--%>
+    <%--</div>--%>
+    <%--<div class="form-group">--%>
+        <%--<label for="passwd">Password</label>--%>
+        <%--<input class="form-control" id="passwd" name="passwd" type="password" placeholder="Password">--%>
+    <%--</div>--%>
+    <%--<!--<div class="form-group">-->--%>
+    <%--<!--<div class="form-check">-->--%>
+    <%--<!--<label class="form-check-label">-->--%>
+    <%--<!--<input class="form-check-input" type="checkbox"> Remember Password</label>-->--%>
+    <%--<!--</div>-->--%>
+    <%--<!--</div>-->--%>
+    <%--<!--<a class="btn btn-primary btn-block" href="index.jsp">Login</a>-->--%>
+    <%--<button class="btn btn-primary btn-block" type="submit">Login</button>--%>
 <%--</form>--%>
 <%--<a href="ReadyToRegister.action">注册</a>--%>
 <%--</body>--%>
@@ -70,30 +70,30 @@
 
         <div class="col-sm-8">
 
-            <%--<<<<<<< HEAD--%>
-            <%--<form class="form-horizontal" method="post" action="Login.action">--%>
+<%--<<<<<<< HEAD--%>
+        <%--<form class="form-horizontal" method="post" action="Login.action">--%>
             <%--<div class="form-group">--%>
-            <%--<label for="username" class="col-sm-2 control-label">用户名</label>--%>
-            <%--<div class="col-sm-9">--%>
-            <%--<input type="text" class="form-control" id="username" placeholder="用户名" name="username" onblur="checkUserName()">--%>
-            <%--<div id="namespan"></div>--%>
-            <%--</div>--%>
+                <%--<label for="username" class="col-sm-2 control-label">用户名</label>--%>
+                <%--<div class="col-sm-9">--%>
+                    <%--<input type="text" class="form-control" id="username" placeholder="用户名" name="username" onblur="checkUserName()">--%>
+                    <%--<div id="namespan"></div>--%>
+                <%--</div>--%>
             <%--</div>--%>
 
             <%--<div class="form-group">--%>
-            <%--<label for="password" class="col-sm-2 control-label">密码</label>--%>
-            <%--<div class="col-sm-9">--%>
-            <%--<input type="password" class="form-control" id="password" placeholder="密码" name="passwd"onblur="checkPassWord()">--%>
-            <%--<div id="pwspan"></div>--%>
-            <%--</div>--%>
-            <%--=======--%>
+                <%--<label for="password" class="col-sm-2 control-label">密码</label>--%>
+                <%--<div class="col-sm-9">--%>
+                    <%--<input type="password" class="form-control" id="password" placeholder="密码" name="passwd"onblur="checkPassWord()">--%>
+                    <%--<div id="pwspan"></div>--%>
+                <%--</div>--%>
+<%--=======--%>
             <div class="form-title">
                 <h2>登    录</h2>
                 <p>
             </div>
 
             <div class="main-form">
-                <%-->>>>>>> origin/zhaoyang--%>
+<%-->>>>>>> origin/zhaoyang--%>
 
                 <form class="form-horizontal" method="post" action="Login.action" onsubmit="return checkLogin()">
                     <div class="form-group">
