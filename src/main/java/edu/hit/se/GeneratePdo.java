@@ -80,8 +80,9 @@ public class GeneratePdo extends ActionSupport{
 
                 }
                 else if(elementType.elementAt(i).equals("String")){
-                    sql+="`"+property.elementAt(i)+"` VARCHAR("+size.elementAt(i)+") NULL,\r\n";
-
+                    if(size.elementAt(i)!=null)
+                        sql+="`"+property.elementAt(i)+"` VARCHAR("+size.elementAt(i)+") NULL,\r\n";
+                    else sql+="`"+property.elementAt(i)+"` VARCHAR(255"+") NULL,\r\n";
                 }
             }
             sql+="PRIMARY KEY (`generateTime`));";

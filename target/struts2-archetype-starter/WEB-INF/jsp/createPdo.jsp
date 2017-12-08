@@ -31,9 +31,9 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function(){
+        $(document).ready(function () {
 
-            $("#addProperty").click(function(){
+            $("#addProperty").click(function () {
                 var count = $("#createPDOform").children(".form-group").length;
                 $("#createPDOform").children().children("p").remove();
 
@@ -51,25 +51,25 @@
 
             });
 
-            $("#createPDOform").on("click", "p", function(){
+            $("#createPDOform").on("click", "p", function () {
                 var pvalue = $(this).attr('id');
                 $("#element" + pvalue).remove();
                 var count = $("#createPDOform").children(".form-group").length;
-                if(count != 1){
+                if (count != 1) {
                     $("#createPDOform").children(":last").append("<p class='col-sm-1' id='" + (count - 1) + "'><a href='#'>"
                         + "<span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></p>");
                 }
             });
 
-            $("#publicPDO").click(function(){
+            $("#publicPDO").click(function () {
                 $(this).attr("class", "second-menu active");
-                $("#privatePDO").attr("class","second-menu");
-                $("#content-list").animate({left:"-900px"}, "slow");
+                $("#privatePDO").attr("class", "second-menu");
+                $("#content-list").animate({left: "-900px"}, "slow");
             });
-            $("#privatePDO").click(function(){
+            $("#privatePDO").click(function () {
                 $(this).attr("class", "second-menu active");
-                $("#publicPDO").attr("class","second-menu");
-                $("#content-list").animate({left:"0px"}, "slow");
+                $("#publicPDO").attr("class", "second-menu");
+                $("#content-list").animate({left: "0px"}, "slow");
             });
         });
     </script>
@@ -84,9 +84,11 @@
                 <li role="presentation"><a href="GoToSearch.action">查询</a></li>
                 <li role="presentation"><a href="GoToImport.action">导入</a></li>
                 <%-- 跳转到index.jsp页面 --%>
-                <li role="presentation"><a href="BackToIndex.action"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 返回</a></li>
-                <li role="presentation"><a href="Logout.action"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 登出</a></li>
-                <% if(session.getAttribute("user")==null) response.sendRedirect("Logout.action");%>
+                <li role="presentation"><a href="BackToIndex.action"><span class="glyphicon glyphicon-share-alt"
+                                                                           aria-hidden="true"></span> 返回</a></li>
+                <li role="presentation"><a href="Logout.action"><span class="glyphicon glyphicon-log-out"
+                                                                      aria-hidden="true"></span> 登出</a></li>
+                <% if (session.getAttribute("user") == null) response.sendRedirect("Logout.action");%>
             </ul>
             <h3 class="text-muted">EasyRecord</h3>
         </nav>
@@ -94,13 +96,15 @@
     <hr/>
 
 
-    <div >
+    <div>
         <ul class="nav nav-pills pull-right">
             <li role="presentation" class="second-menu active" id="privatePDO"><a href="#">自定义PDO模型</a></li>
             <li role="presentation" class="second-menu" id="publicPDO"><a href="#">公共PDO模型</a></li>
         </ul>
         <h2>创建PDO模型</h2>
-        <h4><small>Create PDO model</small></h4>
+        <h4>
+            <small>Create PDO model</small>
+        </h4>
         <!--<p>
         <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
         </p>-->
@@ -112,7 +116,7 @@
 
             <ul id="content-list">
                 <li><!-- 自定义PDO字段 -->
-                    <form class="form-horizontal" method="post" action="GeneratePdo.action">
+                    <form class="form-horizontal" method="post" action="GeneratePdo.action" onsubmit="return checkName()">
                         <div class="form-group">
                             <label for="pdoName" class="col-sm-1 control-label">PDO名</label>
                             <div class="col-sm-10">
@@ -130,10 +134,10 @@
                                 <label for="elementType0" class="col-sm-1 control-label">字段类型</label>
                                 <div class="col-sm-2">
                                     <select class="form-control" name="elementType[0]" id="elementType0">
-                                        <option value="String">String</option>
-                                        <option value="int">int</option>
-                                        <option value="double">double</option>
-                                        <option value="Timestamp">Timestamp</option>
+                                        <option value="String">字符串</option>
+                                        <option value="int">整数</option>
+                                        <option value="double">实数</option>
+                                        <option value="Timestamp">时间</option>
                                     </select>
                                 </div>
                                 <label for="size0" class="col-sm-1 control-label">字段长度</label>
@@ -176,7 +180,9 @@
                                 <span class="label label-danger">花费</span>
                             </div>
 
-                            <s:a href="AddPublicPdo.action?publicpdoName=聚餐" class="btn btn-default add" role="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 添加</s:a>
+                            <s:a href="AddPublicPdo.action?publicpdoName=聚餐" class="btn btn-default add"
+                                 role="button"><span class="glyphicon glyphicon-plus"
+                                                     aria-hidden="true"></span> 添加</s:a>
                         </div>
 
 
@@ -189,7 +195,9 @@
                                 <span class="label label-success">地点</span>
                                 <span class="label label-warning">项目</span>
                             </div>
-                            <s:a href="AddPublicPdo.action?publicpdoName=运动" class="btn btn-default add" role="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 添加</s:a>
+                            <s:a href="AddPublicPdo.action?publicpdoName=运动" class="btn btn-default add"
+                                 role="button"><span class="glyphicon glyphicon-plus"
+                                                     aria-hidden="true"></span> 添加</s:a>
                         </div>
                     </div>
                 </li>
@@ -199,8 +207,35 @@
         </div>
     </div>
 
+    <input type="hidden" id="pdoNames" value='<s:property value="pdoNames"/>'/>
+    <script>
 
 
+        function checkName() {
+
+            var pdoNames = document.getElementById("pdoNames").value.slice(1, -1);
+            //        alert(pdoNames);
+            pdoNames = pdoNames.split(',');
+            //        alert(pdoNames);
+            //        alert(pdoNames.length);
+            //        alert(pdoNames[0]);
+
+            var flag = false;
+            for (var i = 0; i < pdoNames.length; i++) {
+                if (document.getElementById("pdoName").value === pdoNames[i])
+                    flag = true;
+            }
+            if (flag === true) {
+                alert("pdo名称已存在");
+//                document.getElementById("filespan").innerHTML = "文件名与已存在的pdo名称冲突";
+//                document.getElementById("filespan").style.color = "Red";
+//                document.getElementById("filespan").style.fontSize = "90%";
+//                document.getElementById("filespan").style.fontWeight = "bold";
+                return false;
+            }
+            return true;
+        }
+    </script>
     <footer class="footer" id="footer">
         <hr/>
         <p id="pp">&copy; 2017 EasyRecord</p>
