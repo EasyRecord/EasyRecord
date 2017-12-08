@@ -95,7 +95,7 @@
             <div class="main-form">
 <%-->>>>>>> origin/zhaoyang--%>
 
-                <form class="form-horizontal" method="post" action="Login.action">
+                <form class="form-horizontal" method="post" action="Login.action" onsubmit="return checkLogin()">
                     <div class="form-group">
                         <label for="username" class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-9">
@@ -121,12 +121,12 @@
                                 </label>
                             </div>
                         </div>
-                        <p class="col-sm-6 forget"><a href="#" class="pull-right">忘记密码</a></p>
+                        <%--<p class="col-sm-6 forget"><a href="#" class="pull-right">忘记密码</a></p>--%>
                     </div>
 
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-4">
-                            <button type="submit" class="btn btn-info login">登录</button>
+                            <button type="submit"   class="btn btn-info login">登录</button>
                         </div>
                         <div class="col-sm-offset-1 col-sm-4">
                             <a href="ReadyToRegister.action" type="button" class="btn btn-default login">注册</a>
@@ -200,8 +200,9 @@
                 document.getElementById("namespan").style.fontWeight="bold";
                 return false;
             }
+            return true;
         }
-
+        return true;
     }
     function checkPassWord(){
         if(document.getElementById("password").value==null
@@ -219,6 +220,16 @@
             document.getElementById("pwspan").style.fontWeight="bold";
             return true;
         }
+    }
+    function checkLogin() {
+//        return true;
+        var a=checkUserName();
+        var b=checkPassWord();
+//        alert(a);
+//        alert(b);
+//        alert((a===true)&&(b===true));
+
+        return (a===true)&&(b===true);
     }
 </script>
 </body>

@@ -59,6 +59,9 @@
             <result name="success">/WEB-INF/jsp/success.jsp</result>
         </action>
 
+        <action name="Help">
+            <result>/WEB-INF/jsp/help.jsp</result>
+        </action>
 
         <action name="Login" class="edu.hit.se.Login">
             <result>/WEB-INF/jsp/index.jsp</result>
