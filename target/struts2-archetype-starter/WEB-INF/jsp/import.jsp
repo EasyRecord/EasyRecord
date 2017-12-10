@@ -33,9 +33,9 @@
     <script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
 </head>
 <body>
-<s:debug>
+<%--<s:debug>--%>
 
-</s:debug>
+<%--</s:debug>--%>
 <div class="container">
     <div class="header clearfix">
         <nav>
