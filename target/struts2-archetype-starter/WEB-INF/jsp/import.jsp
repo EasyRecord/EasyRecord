@@ -72,7 +72,7 @@
         <div class="tab-content">
 
             <div role="tabpanel" class="tab-pane active importform">
-                <s:form class="search-form" action="Import.action" method="post" enctype="multipart/form-data">
+                <s:form class="search-form" action="Import.action" method="post" enctype="multipart/form-data" onsubmit="return checkName()">
                     <s:file class="import-box" name="uploadImage" id="upload"/>
                     <s:submit class="btn btn-info" value="上传" />
                 </s:form>
@@ -114,35 +114,52 @@
 </div>
 <%--<script>--%>
 
-
-    <%--function checkName() {--%>
-        <%--var obj = document.getElementById("upload");--%>
+<script>
+    function checkName() {
+//        return false;
+        var obj = document.getElementById("upload");
+//        alert(obj.value);
+        if(obj.value =="") {
+            alert("请先选择Excel文件！");
+            return false;
+        }
+//        var len = obj.files.length;
+//        var fileName = obj.files[0].name;
+//        alert(fileName);
+        //fileName=fileName.split('.').slice(0,-1).join('.');
+        //if(len === 0 || fileName === "") return false;
+        //else return true;
+        return true;
+    }
+</script>
+<%--function checkName() {--%>
+<%--var obj = document.getElementById("upload");--%>
 <%--//        var len = obj.files.length;--%>
-        <%--var fileName = obj.files[0].name;--%>
-        <%--fileName=fileName.split('.').slice(0,-1).join('.');--%>
-        <%--alert(fileName);--%>
+<%--var fileName = obj.files[0].name;--%>
+<%--fileName=fileName.split('.').slice(0,-1).join('.');--%>
+<%--alert(fileName);--%>
 <%--//        alert(document.getElementById("pdoNames").value);--%>
-        <%--var pdoNames=document.getElementById("pdoNames").value.slice(1,-1);--%>
+<%--var pdoNames=document.getElementById("pdoNames").value.slice(1,-1);--%>
 <%--//        alert(pdoNames);--%>
-        <%--pdoNames=pdoNames.split(',');--%>
+<%--pdoNames=pdoNames.split(',');--%>
 <%--//        alert(pdoNames);--%>
 <%--//        alert(pdoNames.length);--%>
 <%--//        alert(pdoNames[0]);--%>
 
-        <%--var flag=false;--%>
-        <%--for(var i=0;i<pdoNames.length;i++){--%>
-            <%--if(fileName==pdoNames[i])--%>
-                <%--flag=true;--%>
-        <%--}--%>
-        <%--if(false==true){--%>
-            <%--alert("非法")；--%>
-            <%--document.getElementById("filespan").innerHTML="文件名与已存在的pdo名称冲突";--%>
-            <%--document.getElementById("filespan").style.color="Red";--%>
-            <%--document.getElementById("filespan").style.fontSize="90%";--%>
-            <%--document.getElementById("filespan").style.fontWeight="bold";--%>
-            <%--return false;--%>
-        <%--}--%>
-        <%--return false;--%>
+<%--var flag=false;--%>
+<%--for(var i=0;i<pdoNames.length;i++){--%>
+<%--if(fileName==pdoNames[i])--%>
+<%--flag=true;--%>
+<%--}--%>
+<%--if(false==true){--%>
+<%--alert("非法")；--%>
+<%--document.getElementById("filespan").innerHTML="文件名与已存在的pdo名称冲突";--%>
+<%--document.getElementById("filespan").style.color="Red";--%>
+<%--document.getElementById("filespan").style.fontSize="90%";--%>
+<%--document.getElementById("filespan").style.fontWeight="bold";--%>
+<%--return false;--%>
+<%--}--%>
+<%--return false;--%>
 
 
 
@@ -161,7 +178,7 @@
 <%--//            document.getElementById("pwspan").style.fontWeight="bold";--%>
 <%--//            return true;--%>
 <%--//        }--%>
-    <%--}--%>
+<%--}--%>
 <%--</script>--%>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
