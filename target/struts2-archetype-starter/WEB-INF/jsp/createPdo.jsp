@@ -233,6 +233,19 @@
 //                document.getElementById("filespan").style.fontWeight = "bold";
                 return false;
             }
+//            alert(document.getElementById('pdoName').value);
+            if(document.getElementById('pdoName').value===""|| document.getElementById('pdoName').value===undefined){
+                alert("表单名为空");
+                return false;
+            }
+//            alert(document.getElementsByTagName("input").length/3);
+
+            for (var i=0;i<document.getElementsByTagName("input").length/3;i++){
+                if (document.getElementById("property"+i).value===""||document.getElementById("property"+i).value===undefined){
+                    alert("请完成所有字段名称的填写！");
+                    return false;
+                }
+            }
             return true;
         }
     </script>
