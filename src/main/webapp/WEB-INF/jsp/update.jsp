@@ -55,7 +55,7 @@
             Vector<String> info=(Vector<String>)request.getAttribute("info");
             Vector<String> type=(Vector<String>)request.getAttribute("type");
             %>
-        <s:debug></s:debug>
+        <%--<s:debug></s:debug>--%>
         <%--//            out.println(pdoName);--%>
         <form class="form-horizontal" action="UpdateRecord.action" method="post">
             <%--<div class="form-group">--%>
@@ -82,13 +82,12 @@
                 for (int i=1;i<property.size();i++){
                     out.println("<div style=\"display: none\"><input name=\"property["+i+"]\" value=\""+property.elementAt(i)+"\"></div>");
                     out.println("<div class=\"form-group\">");
+                    String t=type.elementAt(i);
                     String pro = property.elementAt(i);
                     System.out.println(pro);
                     out.println("<label for=\"property"+i+"\" class=\"col-sm-2 control-label\">"+pro+"</label>");
                     out.println("<div class=\"col-sm-8\">");
-                    if(pro == "日期"){
-                        out.println("<input type=\"text\" class=\"calendar form-control\" id=\"property"+i+"\" name=\"inofo["+i+"]\" value=\""+info.elementAt(i)+"\">");
-                    }else if(pro == "时间"){
+                    if(t.equals("time")){
                         out.println("<input type=\"text\" class=\"calendar form-control\" id=\"property"+i+"\" data-enable-time=\"true\" data-time_24hr=\"true\" name=\"inofo["+i+"]\" value=\""+info.elementAt(i)+"\">");
                     }else{
                         out.println("<input type=\"text\" class=\"form-control\" id=\"property"+i+"\" name=\"inofo["+i+"]\" value=\""+info.elementAt(i)+"\">");
