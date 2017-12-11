@@ -14,6 +14,15 @@ public class ReadyToUpdateRecord extends ActionSupport {
     String key;
     Vector<String> property = new Vector<>();
     Vector<String> info = new Vector<>();
+    Vector<String > type=new Vector<>();
+
+    public Vector<String> getType() {
+        return type;
+    }
+
+    public void setType(Vector<String> type) {
+        this.type = type;
+    }
 
     public String getKey() {
         return key;
@@ -76,7 +85,24 @@ public class ReadyToUpdateRecord extends ActionSupport {
                 for (int i = 0; i < property.size(); i++)
                     info.add(rs.getString(property.elementAt(i)));
 
+            sql="show columns from PDO."+user + "_" + pdoName;
+            rs=statement.executeQuery(sql);
+            while (rs.next()){
+                type.add(rs.getString("Type"));
 
+            }
+            for (int i=0;i<type.size();i++){
+                if(type.elementAt(i).contains("timestamp"))
+                    type.set(i,"time");
+                else if (type.elementAt(i).contains("varchar"))
+                type.set(i,"string");
+                else if(type.elementAt(i).contains("nt"))
+                    type.set(i,"int");
+                else if(type.elementAt(i).contains("ouble"))
+                    type.set(i,"double");
+
+            }
+            System.out.println(type);
 //            System.out.println(pdoHeader);
             rs.close();
             con.close();

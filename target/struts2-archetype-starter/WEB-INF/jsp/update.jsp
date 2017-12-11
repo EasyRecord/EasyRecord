@@ -52,7 +52,10 @@
     <div class="main-form">
         <% String pdoName=(String)request.getAttribute("pdoName");
             Vector<String> property=(Vector<String>)request.getAttribute("property");
-            Vector<String> info=(Vector<String>)request.getAttribute("info"); %>
+            Vector<String> info=(Vector<String>)request.getAttribute("info");
+            Vector<String> type=(Vector<String>)request.getAttribute("type");
+            %>
+        <s:debug></s:debug>
         <%--//            out.println(pdoName);--%>
         <form class="form-horizontal" action="UpdateRecord.action" method="post">
             <%--<div class="form-group">--%>
