@@ -209,6 +209,7 @@
                 return true;
             }
         }
+        return true;
 
     }
     function checkPassWord(){
@@ -227,6 +228,7 @@
             document.getElementById("pwspan").style.fontWeight="bold";
             return true;
         }
+        return true;
     }
     function checkRegister() {
         var a=checkUserName();
