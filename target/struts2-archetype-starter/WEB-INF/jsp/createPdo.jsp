@@ -43,8 +43,8 @@
                     + "<input type='text' class='form-control' id='property" + count + "' name='property[" + count + "]'></div>"
                     + "<label for='elementType" + count + "' class='col-sm-1 control-label'>字段类型</label>"
                     + "<div class='col-sm-2'><select class='form-control' name='elementType[" + count + "]' id='elementType" + count + "'>"
-                    + "<option value='String'>String</option><option value='int'>int</option>"
-                    + "<option value='double'>double</option><option value='Timestamp'>Timestamp</option></select></div>"
+                    + "<option value='String'>字符串</option><option value='int'>整数</option>"
+                    + "<option value='double'>实数</option><option value='Timestamp'>时间</option></select></div>"
                     + "<label for='size" + count + "' class='col-sm-1 control-label'>字段长度</label>"
                     + "<div class='col-sm-2'><input type='text' class='form-control' id='size" + count + "' name='size[" + count + "]'></div>"
                     + "<p class='col-sm-1' id='" + count + "'><a href='#'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></p></div>");
