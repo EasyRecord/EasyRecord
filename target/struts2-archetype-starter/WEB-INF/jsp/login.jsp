@@ -51,7 +51,7 @@
     <div class="header clearfix">
         <nav>
             <ul class="nav nav-pills pull-right">
-                <!--<li role="presentation" class="active"><a href="#">Home</a></li>-->
+                <li role="presentation"><a href="Help.action"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> 指南</a></li>
                 <%--<li role="presentation"><a href="#"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> 返回</a></li>--%>
             </ul>
             <h3 class="text-muted">EasyRecord</h3>
