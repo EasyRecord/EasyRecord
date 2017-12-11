@@ -95,5 +95,8 @@
 
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/jquery-1.12.0.min.js"></script>
+<script>
+        $('[data-toggle="tooltip"]').tooltip();
+</script>
 </body>
 </html>

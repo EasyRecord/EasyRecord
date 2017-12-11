@@ -50,6 +50,7 @@ public class SearchRecord extends ActionSupport{
     public String execute(){
         try {
             System.out.println("in Search record");
+            System.out.println(filter);
             HttpSession session = null;
             session = ServletActionContext.getRequest().getSession();
             String user=(String )session.getAttribute("user");

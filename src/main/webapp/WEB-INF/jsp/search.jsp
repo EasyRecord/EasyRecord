@@ -1,3 +1,4 @@
+<%@ page import="java.util.Vector" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
@@ -47,6 +48,10 @@
     </script>
 </head>
 <body>
+<%
+    Vector<String> property=(Vector<String>)request.getAttribute("property");
+    Vector<String> filter=(Vector<String>)request.getAttribute("filter"); %>
+
 <div class="container">
     <div class="header clearfix">
         <nav>
@@ -180,11 +185,11 @@
                     for(var i = 1; i < result.pdoHeader.length; i ++){
                         //alert(result.pdoHeader[i]);
                         if(result.pdoHeader[i] == "日期"){
-                            html += "</div><div class='form-group'><label for='info" + (i - 1) + "' class='col-sm-2 control-label'>" + result.pdoHeader[i] + "</label><div class='col-sm-8'><input type='text' class='calendar form-control' id='info" + (i - 1) + "' name='info[" + (i - 1) + "]' placeholder='请选择日期'></div></div>";
+                            html += "</div><div class='form-group'><label for='info" + (i - 1) + "' class='col-sm-2 control-label'>" + result.pdoHeader[i] + "</label><div class='col-sm-8'><input type='text' class='calendar form-control' id='info" + (i - 1) + "' name='filter[" + (i - 1) + "]' placeholder='请选择日期'></div></div>";
                         }else if(result.pdoHeader[i] == "时间"){
-                            html += "</div><div class='form-group'><label for='info" + (i - 1) + "' class='col-sm-2 control-label'>" + result.pdoHeader[i] + "</label><div class='col-sm-8'><input type='text' class='calendar form-control' id='info" + (i - 1) + "' data-enable-time='true' data-time_24hr='true' name='info[" + (i - 1) + "]' placeholder='请选择时间'></div></div>";
+                            html += "</div><div class='form-group'><label for='info" + (i - 1) + "' class='col-sm-2 control-label'>" + result.pdoHeader[i] + "</label><div class='col-sm-8'><input type='text' class='calendar form-control' id='info" + (i - 1) + "' data-enable-time='true' data-time_24hr='true' name='filter[" + (i - 1) + "]' placeholder='请选择时间'></div></div>";
                         }else{
-                            html += "</div><div class='form-group'><label for='info" + (i - 1) + "' class='col-sm-2 control-label'>" + result.pdoHeader[i] + "</label><div class='col-sm-8'><input type='text' class='form-control' id='info" + (i - 1) + "' name='info[" + (i - 1) + "]'></div></div>";
+                            html += "</div><div class='form-group'><label for='info" + (i - 1) + "' class='col-sm-2 control-label'>" + result.pdoHeader[i] + "</label><div class='col-sm-8'><input type='text' class='form-control' id='info" + (i - 1) + "' name='filter[" + (i - 1) + "]'></div></div>";
                         }
                         html += "<input type='text' class='form-control' style='display: none;' name='property[" + (i - 1) + "]' value='" + result.pdoHeader[i] + "'/>";
                         //alert(html);
